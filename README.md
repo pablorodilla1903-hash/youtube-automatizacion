@@ -6,7 +6,7 @@ Cada noche, sin que tengas que hacer nada, este repositorio genera para **cada c
 - un **Short** vertical con subtítulos grandes,
 - la **miniatura**, los **subtítulos .srt**, el **título** (y 2 alternativos), la **descripción SEO**, las **etiquetas**, un comentario para fijar y la **hora a la que debes programarlo**.
 
-Todo aparece en tu **Google Drive** (carpeta `YouTube Automático/AAAA-MM-DD/<canal>/`) hacia la **1:30-2:00 de la madrugada**,
+Todo aparece en tu **Google Drive** (carpeta `YouTube Automático/<canal>/AAAA-MM-DD - título/`; la marca del canal está en `YouTube Automático/<canal>/0_Marca y textos/`) hacia la **1:30-2:00 de la madrugada**,
 bastante antes de las 3:00. Coste: **0 €**.
 
 La estrategia (nichos, nombres y horas de publicación) está en **[ESTRATEGIA.md](ESTRATEGIA.md)**.
@@ -101,7 +101,7 @@ Si algo falla, GitHub te manda un correo. Puedes pegarme el error aquí y lo arr
 
 ## Tu rutina diaria (5-10 minutos)
 
-1. Abre Drive → `YouTube Automático/<fecha>/<canal>/`.
+1. Abre Drive → `YouTube Automático/<canal>/<fecha - título>/`.
 2. Lee `LEEME_SUBIR.txt` y **comprueba los datos de la lista "REVISA ESTOS DATOS"**. Te protege de errores y de la política de contenido no auténtico.
 3. En YouTube Studio → **Crear → Subir vídeo** → `1_VIDEO.mp4`: pega el título, la descripción y las etiquetas, sube la miniatura `2_MINIATURA.jpg` y en Subtítulos sube `3_SUBTITULOS.srt`.
 4. En Visibilidad elige **Programar** y pon la hora que indica el archivo.

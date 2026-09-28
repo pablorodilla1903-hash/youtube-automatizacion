@@ -77,29 +77,42 @@ class Drive:
 
         return retry(_do, tries=3, what=f"subida de {path.name}")
 
-    def cleanup(self, root: str, keep_days: int) -> None:
-        """Borra definitivamente las carpetas de fecha (AAAA-MM-DD) más antiguas que keep_days."""
-        limit = (dt.date.today() - dt.timedelta(days=keep_days)).isoformat()
-        q = f"'{root}' in parents and mimeType = '{FOLDER}' and trashed = false"
-        r = requests.get(API, headers=self.h, params={"q": q, "fields": "files(id,name)", "pageSize": 1000}, timeout=30)
+    def list_files(self, parent: str) -> dict[str, str]:
+        r = requests.get(API, headers=self.h, timeout=30, params={
+            "q": f"'{parent}' in parents and trashed = false", "fields": "files(id,name)", "pageSize": 1000})
         r.raise_for_status()
-        for f in r.json()["files"]:
-            if re.fullmatch(r"\d{4}-\d{2}-\d{2}", f["name"]) and f["name"] < limit:
-                requests.delete(f"{API}/{f['id']}", headers=self.h, timeout=30).raise_for_status()
-                log(f"  🗑 Drive: borrada la carpeta antigua {f['name']}")
+        return {f["name"]: f["id"] for f in r.json()["files"]}
+
+    def cleanup(self, parent: str, keep_days: int) -> None:
+        """Borra definitivamente las carpetas de vídeos (que empiezan por AAAA-MM-DD) más antiguas que keep_days."""
+        limit = (dt.date.today() - dt.timedelta(days=keep_days)).isoformat()
+        for name, fid in self.list_files(parent).items():
+            if re.match(r"\d{4}-\d{2}-\d{2}", name) and name[:10] < limit:
+                requests.delete(f"{API}/{fid}", headers=self.h, timeout=30).raise_for_status()
+                log(f"  🗑 Drive: borrada la carpeta antigua {name}")
 
 
-def upload_folder(local: Path, remote_path: list[str], keep_days: int = 7) -> None:
+ROOT_FOLDER = "YouTube Automático"
+BRAND_FOLDER = "0_Marca y textos"
+
+
+def upload_folder(local: Path, remote_path: list[str], keep_days: int | None = None, skip_existing: bool = False) -> None:
+    """Sube los archivos de `local` a YouTube Automático/<remote_path...>.
+
+    keep_days: borra antes las carpetas de vídeos antiguas del penúltimo nivel (la carpeta del canal).
+    skip_existing: no vuelve a subir archivos que ya estén (por nombre).
+    """
     drive = Drive()
-    root = drive.folder("YouTube Automático")
-    try:
-        drive.cleanup(root, keep_days)
-    except Exception as e:  # noqa: BLE001 — la limpieza nunca debe impedir la subida
-        log(f"  ⚠ limpieza de Drive: {e}")
-    parent = root
-    for part in remote_path:
+    parent = drive.folder(ROOT_FOLDER)
+    for i, part in enumerate(remote_path):
         parent = drive.folder(part, parent)
+        if keep_days is not None and i == len(remote_path) - 2:
+            try:
+                drive.cleanup(parent, keep_days)
+            except Exception as e:  # noqa: BLE001 — la limpieza nunca debe impedir la subida
+                log(f"  ⚠ limpieza de Drive: {e}")
+    existing = drive.list_files(parent) if skip_existing else {}
     for f in sorted(local.iterdir()):
-        if f.is_file():
+        if f.is_file() and f.name not in existing:
             drive.upload(f, parent)
             log(f"  ☁ Drive: {'/'.join(remote_path)}/{f.name}")
