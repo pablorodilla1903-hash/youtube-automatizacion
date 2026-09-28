@@ -15,7 +15,7 @@ canales:
     # Voces gratuitas de Microsoft Edge (edge-tts). Alternativas buenas:
     # en-US-AndrewNeural, en-US-BrianNeural, en-US-ChristopherNeural
     voz: en-US-AndrewNeural
-    velocidad_voz: "+4%"
+    velocidad_voz: "+0%"
     nicho: >
       Business and money stories: the rise and fall of famous companies,
       billionaires' biggest mistakes, bizarre money history, hidden business
@@ -42,7 +42,7 @@ canales:
     # Español latino neutro (mayor audiencia). Para castellano: es-ES-AlvaroNeural
     # Otras: es-MX-JorgeNeural, es-US-AlonsoNeural, es-CO-GonzaloNeural
     voz: es-MX-JorgeNeural
-    velocidad_voz: "+6%"
+    velocidad_voz: "+2%"
     nicho: >
       Historias de dinero y negocios: auge y caída de empresas famosas, los
       mayores errores de millonarios, estafas históricas, el modelo de negocio

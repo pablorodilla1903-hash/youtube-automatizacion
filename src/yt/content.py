@@ -119,14 +119,33 @@ def _validator(cfg: dict):
     return validate
 
 
+def written_scripts(channel_id: str, history: list[dict]) -> list[Path]:
+    """Guiones ya escritos (guiones/<canal>/*.json) que aún no se han usado, en orden."""
+    used = {h.get("script_file") for h in history}
+    return [p for p in sorted((Path("guiones") / channel_id).glob("*.json")) if p.name not in used]
+
+
 def generate_package(channel_id: str, cfg: dict) -> dict:
     history = load_history(channel_id)
-    forced = next_queued_topic(channel_id, history)
-    if forced:
-        log(f"  Tema de la cola manual: {forced}")
-    pkg = llm.generate_json(_prompt(cfg, history, forced), validate=_validator(cfg))
-    if forced:
-        pkg["topic"] = forced
+    pending = written_scripts(channel_id, history)
+    if pending:
+        log(f"  Guion ya escrito: {pending[0].name} (quedan {len(pending) - 1} después de este)")
+        pkg = json.loads(pending[0].read_text("utf-8"))
+        _validator(cfg)(pkg)
+        pkg["script_file"] = pending[0].name
+        pkg["scripts_left"] = len(pending) - 1
+    elif not llm.available():
+        raise RuntimeError(
+            f"No quedan guiones en guiones/{channel_id}/ y no hay clave de IA configurada. "
+            "Pídele a Claude una nueva tanda de guiones."
+        )
+    else:
+        forced = next_queued_topic(channel_id, history)
+        if forced:
+            log(f"  Tema de la cola manual: {forced}")
+        pkg = llm.generate_json(_prompt(cfg, history, forced), validate=_validator(cfg))
+        if forced:
+            pkg["topic"] = forced
     for seg in pkg["segments"] + (pkg.get("short") or {}).get("segments", []):
         seg["text"] = seg["text"].strip()
         seg["broll"] = [q for q in seg.get("broll", []) if isinstance(q, str) and q.strip()][:3]

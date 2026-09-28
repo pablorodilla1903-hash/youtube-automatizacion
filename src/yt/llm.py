@@ -66,6 +66,10 @@ def _groq(prompt: str, key: str) -> dict:
     return _parse_json(r.json()["choices"][0]["message"]["content"])
 
 
+def available() -> bool:
+    return bool(os.environ.get("GEMINI_API_KEY") or os.environ.get("GROQ_API_KEY"))
+
+
 def generate_json(prompt: str, validate=None) -> dict:
     """Pide JSON a la IA probando proveedores en orden hasta obtener uno válido."""
     attempts = []

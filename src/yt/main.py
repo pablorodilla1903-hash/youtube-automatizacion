@@ -63,7 +63,9 @@ def _fmt_tags(tags: list[str]) -> str:
 def _write_readme(pkg: dict, cfg: dict, date: dt.date, tz: str, out_dir: Path, minutes: float) -> None:
     short = pkg.get("short") or {}
     hashtags = " ".join(pkg.get("hashtags", []))
+    left = pkg.get("scripts_left")
     lines = [
+        f"⚠️ SOLO QUEDAN {left} GUIONES PARA ESTE CANAL: pídele a Claude una nueva tanda." if left is not None and left <= 3 else None,
         f"CANAL: {cfg['nombre']}   ·   FECHA: {date.isoformat()}   ·   DURACIÓN: {minutes:.1f} min",
         "",
         f"⏰ PROGRAMAR PUBLICACIÓN DEL VÍDEO: {cfg['publicar']['video']} (hora {tz})",
@@ -129,7 +131,10 @@ def run_channel(channel_id: str, cfg: dict, date: dt.date, tz: str, offline: boo
 
     if not offline:
         history = content.load_history(channel_id)
-        history.append({"date": date.isoformat(), "topic": pkg.get("topic", ""), "title": pkg["title"]})
+        entry = {"date": date.isoformat(), "topic": pkg.get("topic", ""), "title": pkg["title"]}
+        if pkg.get("script_file"):
+            entry["script_file"] = pkg["script_file"]
+        history.append(entry)
         content.save_history(channel_id, history)
 
     if drive.Drive.configured() and not offline:
