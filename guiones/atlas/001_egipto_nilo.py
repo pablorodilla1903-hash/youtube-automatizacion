@@ -1,4 +1,4 @@
-"""Guion del vídeo 001 de World Through Time. Ejecutar para generar el .json que lee el motor."""
+"""Guion del vídeo 001 de Timeline Earth. Ejecutar para generar el .json que lee el motor."""
 import json
 from pathlib import Path
 
@@ -139,7 +139,7 @@ script = {
             {"type": "timeline", "narration": "Reliable food from the river, and deserts on every side that kept invaders away. That combination is a big reason why one of the world's first great states appeared here, around five thousand years ago.",
              "data": {"title": "Five thousand years along one river", "focus": 0, "events": HISTORY}},
             {"type": "text", "narration": "If you're enjoying this, subscribe. Every week we find the story hidden in another map.",
-             "data": {"kicker": "World Through Time", "text": "Subscribe for a new map story every week", "highlight": ["Subscribe"]}},
+             "data": {"kicker": "Timeline Earth", "text": "Subscribe for a new map story every week", "highlight": ["Subscribe"]}},
         ]},
         {"n": 4, "title": "Taming the river", "title_youtube": "Taming the river", "scenes": [
             {"type": "text", "narration": "But the flood was never predictable. Too little water meant hunger. Too much could wash entire villages away.",

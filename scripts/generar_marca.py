@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 import yaml
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 ANTON = str(ROOT / "fonts/Anton-Regular.ttf")
@@ -155,11 +155,126 @@ def world_backdrop(w, h, th):
     return Image.composite(img, dark, vig)
 
 
+def earth(size, th, lon0=20.0, lat0=18.0):
+    """La Tierra en proyección ortográfica con continentes reales, luz lateral y atmósfera."""
+    import json
+
+    S = size * 2
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    c, R = S / 2, S * 0.5 - 2
+    ocean = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    od = ImageDraw.Draw(ocean)
+    od.ellipse([c - R, c - R, c + R, c + R], fill=th["ocean"] + (255,))
+    la0, lo0 = math.radians(lat0), math.radians(lon0)
+
+    def proj(lon, lat):
+        la, lo = math.radians(lat), math.radians(lon)
+        cosc = math.sin(la0) * math.sin(la) + math.cos(la0) * math.cos(la) * math.cos(lo - lo0)
+        x = math.cos(la) * math.sin(lo - lo0)
+        y = math.cos(la0) * math.sin(la) - math.sin(la0) * math.cos(la) * math.cos(lo - lo0)
+        return (c + R * x, c - R * y), cosc >= 0
+
+    data = json.loads((ROOT / "cache/geo/ne_110m_land.geojson").read_text("utf-8"))
+    for f in data["features"]:
+        g = f["geometry"]
+        for poly in ([g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]):
+            pts, vis = zip(*(proj(lon, lat) for lon, lat in poly[0]))
+            if sum(vis) > len(vis) * 0.5:
+                od.polygon([p for p, v in zip(pts, vis) if v], fill=th["land"] + (255,))
+    # sombreado: luz desde arriba a la izquierda
+    shade = Image.new("L", (S, S), 0)
+    ImageDraw.Draw(shade).ellipse([c - R * 0.55, c - R * 0.15, c + R * 1.9, c + R * 2.2], fill=150)
+    shade = shade.filter(ImageFilter.GaussianBlur(S // 10))
+    mask = Image.new("L", (S, S), 0)
+    ImageDraw.Draw(mask).ellipse([c - R, c - R, c + R, c + R], fill=255)
+    dark = Image.new("RGBA", (S, S), (0, 0, 0, 255))
+    ocean = Image.composite(dark, ocean, ImageChops.multiply(shade, mask))
+    ocean.putalpha(mask)
+    img.alpha_composite(ocean)
+    return img.resize((size, size), Image.LANCZOS)
+
+
+def timeline_earth_logo(size, th, text=None):
+    """Tierra rodeada por un anillo de línea del tiempo (marcas y puntos de fechas)."""
+    S = size * 2
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    R = S * 0.47
+    # anillo del tiempo: arco casi completo con marcas
+    w = int(S * 0.028)
+    d.arc([c - R, c - R, c + R, c + R], start=-80, end=250, fill=th["accent"], width=w)
+    for k in range(0, 331, 11):
+        a = math.radians(-80 + k)
+        big = k % 55 == 0
+        r1, r2 = R - w * (2.6 if big else 1.8), R - w * 1.1
+        d.line([(c + r1 * math.cos(a), c + r1 * math.sin(a)), (c + r2 * math.cos(a), c + r2 * math.sin(a))],
+               fill=th["accent2"], width=int(S * (0.012 if big else 0.006)))
+    for k in (0, 110, 220):  # "fechas" destacadas
+        a = math.radians(-80 + k)
+        x, y = c + R * math.cos(a), c + R * math.sin(a)
+        rr = S * 0.035
+        d.ellipse([x - rr, y - rr, x + rr, y + rr], fill=th["bg"], outline=th["accent"], width=int(S * 0.012))
+    # flecha al final del arco (el tiempo avanza)
+    a = math.radians(250)
+    x, y = c + R * math.cos(a), c + R * math.sin(a)
+    tang = a + math.pi / 2
+    tip = (x + S * 0.075 * math.cos(tang), y + S * 0.075 * math.sin(tang))
+    b1 = (x + S * 0.05 * math.cos(a), y + S * 0.05 * math.sin(a))
+    b2 = (x - S * 0.05 * math.cos(a), y - S * 0.05 * math.sin(a))
+    d.polygon([tip, b1, b2], fill=th["accent"])
+    g = earth(int(S * 0.72), th)
+    img.alpha_composite(g, (int(c - g.width / 2), int(c - g.height / 2)))
+    return img.resize((size, size), Image.LANCZOS)
+
+
+def timeline_banner(W, H, th, cfg):
+    img = Image.new("RGB", (W, H), th["bg"])
+    glow = Image.new("L", (W // 8, H // 8), 0)
+    ImageDraw.Draw(glow).ellipse([W // 8 * .05, H // 8 * .1, W // 8 * .95, H // 8 * .9], fill=255)
+    img.paste(Image.new("RGB", (W, H), th["bg2"]), (0, 0), glow.filter(ImageFilter.GaussianBlur(W // 8 // 7)).resize((W, H)))
+    d = ImageDraw.Draw(img)
+    rnd = __import__("random").Random(5)
+    for _ in range(260):  # estrellas tenues
+        x, y, r = rnd.uniform(0, W), rnd.uniform(0, H), rnd.choice([1, 1, 2])
+        d.ellipse([x - r, y - r, x + r, y + r], fill=S_mix(th["bg"], th["text"], rnd.uniform(.15, .5)))
+    x0, y0 = (W - 1546) // 2, (H - 423) // 2
+    # línea del tiempo de lado a lado, a la altura del centro de la zona segura
+    ly = y0 + 352
+    d.line([(0, ly), (W, ly)], fill=th["accent"], width=6)
+    years = ["3000 BC", "1000 BC", "0", "1000", "1500", "1900", "TODAY"]
+    xs = [x0 + 430 + i * (1546 - 470) / (len(years) - 1) for i in range(len(years))]
+    fy = font(36)
+    for i, (x, yr) in enumerate(zip(xs, years)):
+        r = 14 if i < len(years) - 1 else 20
+        d.ellipse([x - r, ly - r, x + r, ly + r], fill=th["bg"], outline=th["accent"], width=6)
+        d.text((x, ly + 24), yr, font=fy, fill=th["muted"], anchor="mt")
+    for x in range(0, W, 40):  # marcas finas por toda la línea
+        d.line([(x, ly - 8), (x, ly)], fill=S_mix(th["bg"], th["accent"], .6), width=2)
+    g = timeline_earth_logo(320, th)
+    img.paste(g, (x0 + 40, y0 + 8), g)
+    words = cfg["nombre"].upper().split()
+    size = 175
+    while d.textlength(" ".join(words), font=font(size)) > 1546 - 450 and size > 90:
+        size -= 5
+    f = font(size)
+    tx, ty = x0 + 430, y0 + 20
+    first = words[0] + " "
+    d.text((tx, ty), first, font=f, fill=th["text"])
+    d.text((tx + d.textlength(first, font=f), ty), " ".join(words[1:]), font=f, fill=th["accent"])
+    d.text((tx + 4, ty + int(size * 1.22)), cfg.get("lema", ""), font=font(50), fill=th["accent2"])
+    return img
+
+
+def S_mix(a, b, k):
+    return tuple(int(x + (y - x) * k) for x, y in zip(a, b))
+
+
 def make(cid, cfg):
     th = {k: hexc(v) for k, v in cfg.get("marca_tema", cfg["tema"]).items()}
     words = cfg["nombre"].upper().split()
     mono = "".join(w[0] for w in words[:2])
-    emblem = {"ingenieria": gear, "atlas": compass_clock}.get(cid, globe)
+    emblem = {"ingenieria": gear, "atlas": timeline_earth_logo}.get(cid, globe)
     out = ROOT / "marca" / cid
     out.mkdir(parents=True, exist_ok=True)
 
@@ -174,6 +289,11 @@ def make(cid, cfg):
 
     # Banner 2560x1440; el texto va dentro de la zona segura central (1546x423)
     W, H = 2560, 1440
+    if cid == "atlas":
+        timeline_banner(W, H, th, cfg).save(out / "banner_2560x1440.png")
+        emblem(150, th, mono).save(out / "marca_de_agua_150x150.png")
+        print("OK", out)
+        return
     ban = world_backdrop(W, H, th)
     d = ImageDraw.Draw(ban)
     x0, y0 = (W - 1546) // 2, (H - 423) // 2

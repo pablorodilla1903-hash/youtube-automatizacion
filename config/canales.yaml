@@ -10,20 +10,22 @@ canales:
 
   atlas:
     activo: true
-    nombre: "World Through Time"
+    nombre: "Timeline Earth"
     idioma: en
     lema: "HISTORY AND GEOGRAPHY, ONE MAP AT A TIME"
     # Colores de la marca (logo y banner): mapa antiguo, azul noche y oro
+    # Colores de la marca (logo y banner): espacio profundo, Tierra real y ámbar
     marca_tema:
-      bg: "#0C1626"
-      bg2: "#1D3150"
-      grid: "#15233A"
-      panel: "#22385A"
-      text: "#F6EEDC"
-      muted: "#8FA3BF"
-      accent: "#E3B04B"
-      accent2: "#EAD9B0"
-      land: "#1A2B44"
+      bg: "#060A14"
+      bg2: "#10203A"
+      grid: "#101A2C"
+      panel: "#16243C"
+      text: "#F3F6FB"
+      muted: "#8C9BB5"
+      accent: "#FFB020"
+      accent2: "#FFD27A"
+      land: "#7FB069"
+      ocean: "#1F5FAF"
     # Voz Kokoro (IA de código abierto, gratis). af_heart es la de mayor calidad; alternativas: af_bella, am_michael, bm_george
     voz_kokoro: af_heart
     velocidad_voz: 0.94
