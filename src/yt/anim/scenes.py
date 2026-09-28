@@ -258,9 +258,9 @@ def s_text(c, t, dur, data, th):
         rrect(d, [w / 2 - tw / 2 - 24, h * 0.22 - 30, w / 2 + tw / 2 + 24, h * 0.22 + 30], 30,
               fill=mix(th["bg"], th["panel"], a))
         d.text((w / 2, h * 0.22), k, font=f_k, fill=mix(th["bg"], th["accent"], a), anchor="mm")
-    f = fit_font(d, data["text"], "display", w * 0.82, 3 if w > h else 5, int(h * 0.105))
+    f = fit_font(d, data["text"], "display", w * 0.82, 3 if w > h else 4, int(h * (0.105 if w > h else 0.07)))
     per = min(0.14, max(0.05, (dur * 0.45) / max(1, len(data["text"].split()))))
-    reveal_words(d, data["text"].upper() if data.get("upper", True) else data["text"], (w / 2, h * 0.53), f,
+    reveal_words(d, data["text"].upper() if data.get("upper", True) else data["text"], (w / 2, h * (0.53 if w > h else 0.38)), f,
                  w * 0.82, t, 0.15, per, th, highlight=[x.upper() for x in data.get("highlight", [])] + list(data.get("highlight", [])))
 
 
@@ -594,7 +594,7 @@ def draw_captions(canvas, th, captions, t):
     asc, desc = f.getmetrics()
     lh = int((asc + desc) * 1.08)
     box_h = lh * len(lines) + 34
-    y_base = h * (0.70 if vertical else 0.935)
+    y_base = h * (0.80 if vertical else 0.935)
     y = y_base - box_h
     widest = max(text_w(d, l, f) for l in lines)
     rrect(d, [w / 2 - widest / 2 - 30, y, w / 2 + widest / 2 + 30, y + box_h], 16, fill=(8, 10, 14))
