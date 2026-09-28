@@ -19,6 +19,11 @@ from .util import log, retry
 API = "https://www.googleapis.com/drive/v3/files"
 UPLOAD = "https://www.googleapis.com/upload/drive/v3/files"
 FOLDER = "application/vnd.google-apps.folder"
+GDOC_SUFFIX = ".gdoc.txt"
+
+
+def remote_name(local_name: str) -> str:
+    return local_name[: -len(GDOC_SUFFIX)] if local_name.endswith(GDOC_SUFFIX) else local_name
 
 
 class Drive:
@@ -56,8 +61,13 @@ class Drive:
         return r.json()["id"]
 
     def upload(self, path: Path, parent: str) -> str:
-        mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+        """Sube un archivo. Los que terminan en .gdoc.txt se convierten en un documento de Google Docs."""
+        as_doc = path.name.endswith(GDOC_SUFFIX)
+        mime = "text/plain" if as_doc else (mimetypes.guess_type(path.name)[0] or "application/octet-stream")
         size = path.stat().st_size
+        meta = {"name": remote_name(path.name), "parents": [parent]}
+        if as_doc:
+            meta["mimeType"] = "application/vnd.google-apps.document"
 
         def _do() -> str:
             init = requests.post(
@@ -65,7 +75,7 @@ class Drive:
                 params={"uploadType": "resumable"},
                 headers={**self.h, "Content-Type": "application/json; charset=UTF-8",
                          "X-Upload-Content-Type": mime, "X-Upload-Content-Length": str(size)},
-                data=json.dumps({"name": path.name, "parents": [parent]}),
+                data=json.dumps(meta),
                 timeout=30,
             )
             init.raise_for_status()
@@ -116,15 +126,18 @@ def upload_folder(local: Path, remote_path: list[str], keep_days: int | None = N
                 drive.cleanup(parent, keep_days)
             except Exception as e:  # noqa: BLE001 — la limpieza nunca debe impedir la subida
                 log(f"  ⚠ limpieza de Drive: {e}")
-    existing = drive.list_files(parent, with_size=sync) if (skip_existing or sync) else {}
-    local_files = {f.name: f for f in local.iterdir() if f.is_file()}
+    existing = drive.list_files(parent, with_size=True) if (skip_existing or sync) else {}
+    local_files = {remote_name(f.name): f for f in local.iterdir() if f.is_file()}
+    docs = {n for n, f in local_files.items() if f.name.endswith(GDOC_SUFFIX)}
     if sync:
         for name, (fid, size) in existing.items():
             lf = local_files.get(name)
-            if size is not None and (lf is None or lf.stat().st_size != size):
+            is_doc = name in docs  # los Google Docs no tienen tamaño: se sustituyen siempre
+            if (size is not None and (lf is None or lf.stat().st_size != size)) or is_doc:
                 requests.delete(f"{API}/{fid}", headers=drive.h, timeout=30).raise_for_status()
                 log(f"  🗑 Drive: {'/'.join(remote_path)}/{name}")
-        existing = {k: v for k, v in existing.items() if k in local_files and v[1] == local_files[k].stat().st_size}
+        existing = {k: v for k, v in existing.items()
+                    if k in local_files and k not in docs and v[1] == local_files[k].stat().st_size}
     for name, f in sorted(local_files.items()):
         if name not in existing:
             drive.upload(f, parent)

@@ -602,6 +602,16 @@ def build(script_path: Path, preview: int | None = None, make_short: bool = Fals
         *[sc.get("narration", "") for sc, _, _ in flat if sc.get("narration")],
     ]
     (out_dir / "4 - TEXTOS PARA SUBIR.txt").write_text("\n".join(lines), "utf-8")
+
+    # Documento breve (se convierte en Google Docs al subirlo a Drive): 3 títulos + descripciones
+    titles = [script["title"], *md.get("alt_titles", [])][:3]
+    doc = ["TÍTULOS Y DESCRIPCIONES", f"{cfg['nombre']} · vídeo {num}", "",
+           "3 TÍTULOS PARA EL VÍDEO (usa el 1 y prueba los otros en 'Probar y comparar')",
+           *[f"{i}. {t}" for i, t in enumerate(titles, 1)], "",
+           "DESCRIPCIÓN DEL VÍDEO", desc, ""]
+    for k, sh in enumerate(shorts, 1):
+        doc += [f"SHORT {k}", f"Título: {sh['title']}", f"Descripción: {sh['description']}", ""]
+    (out_dir / "0 - TITULOS Y DESCRIPCIONES.gdoc.txt").write_text("\n".join(doc), "utf-8")
     (work / "cost.json").write_text(json.dumps({
         "tts_chars": tts_chars, "render_seconds": round(time.time() - t_start), "scenes": len(flat),
         "claude": "guion escrito en sesión de Claude Code (sin API)"}, indent=2), "utf-8")
