@@ -108,7 +108,7 @@ def _render_scene(job):
     proc = subprocess.Popen(
         [ffmpeg_bin(), "-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
          "-s", f"{w}x{h}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
-         "-pix_fmt", "yuv420p", "-r", str(FPS), str(out)],
+         "-pix_fmt", "yuv420p", "-r", str(FPS), "-f", "mp4", str(out) + ".part"],
         stdin=subprocess.PIPE,
     )
     canvas = Image.new("RGB", (w, h))
@@ -119,6 +119,7 @@ def _render_scene(job):
     proc.stdin.close()
     if proc.wait() != 0:
         raise RuntimeError(f"ffmpeg falló en {out.name}")
+    os.replace(str(out) + ".part", out)  # solo cuenta como hecho si se escribió entero
     return out
 
 
