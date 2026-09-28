@@ -27,9 +27,13 @@ canales:
       land: "#7FB069"
       ocean: "#1F5FAF"
     # Voz Kokoro (IA de código abierto, gratis). af_heart es la de mayor calidad; alternativas: af_bella, am_michael, bm_george
-    voz_kokoro: af_heart
+    # Voz principal: Microsoft Edge, masculina y muy natural (gratis). Alternativa: en-US-BrianMultilingualNeural
+    voz_proveedor: edge
+    voz_edge: en-US-AndrewMultilingualNeural
+    velocidad_edge: "-3%"
+    # Respaldo si Edge fallara: Kokoro (local)
+    voz_kokoro: am_michael
     velocidad_voz: 0.94
-    voz: en-US-AvaNeural            # respaldo (Microsoft Edge)
     subtitulos_incrustados: true
     tema:
       bg: "#0A1A22"

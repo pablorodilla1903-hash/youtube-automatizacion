@@ -77,11 +77,14 @@ class Drive:
 
         return retry(_do, tries=3, what=f"subida de {path.name}")
 
-    def list_files(self, parent: str) -> dict[str, str]:
+    def list_files(self, parent: str, with_size: bool = False) -> dict:
         r = requests.get(API, headers=self.h, timeout=30, params={
-            "q": f"'{parent}' in parents and trashed = false", "fields": "files(id,name)", "pageSize": 1000})
+            "q": f"'{parent}' in parents and trashed = false", "fields": "files(id,name,size,mimeType)", "pageSize": 1000})
         r.raise_for_status()
-        return {f["name"]: f["id"] for f in r.json()["files"]}
+        files = r.json()["files"]
+        if with_size:  # las carpetas no tienen tamaño: nunca se borran por sincronizar
+            return {f["name"]: (f["id"], int(f["size"]) if "size" in f else None) for f in files}
+        return {f["name"]: f["id"] for f in files}
 
     def cleanup(self, parent: str, keep_days: int) -> None:
         """Borra definitivamente las carpetas de vídeos (que empiezan por AAAA-MM-DD) más antiguas que keep_days."""
@@ -96,11 +99,13 @@ ROOT_FOLDER = "YouTube Automático"
 BRAND_FOLDER = "0_Marca y textos"
 
 
-def upload_folder(local: Path, remote_path: list[str], keep_days: int | None = None, skip_existing: bool = False) -> None:
+def upload_folder(local: Path, remote_path: list[str], keep_days: int | None = None, skip_existing: bool = False,
+                  sync: bool = False) -> None:
     """Sube los archivos de `local` a YouTube Automático/<remote_path...>.
 
     keep_days: borra antes las carpetas de vídeos antiguas del penúltimo nivel (la carpeta del canal).
     skip_existing: no vuelve a subir archivos que ya estén (por nombre).
+    sync: además, sustituye los archivos que cambiaron de tamaño y borra los que ya no existen en local.
     """
     drive = Drive()
     parent = drive.folder(ROOT_FOLDER)
@@ -111,8 +116,16 @@ def upload_folder(local: Path, remote_path: list[str], keep_days: int | None = N
                 drive.cleanup(parent, keep_days)
             except Exception as e:  # noqa: BLE001 — la limpieza nunca debe impedir la subida
                 log(f"  ⚠ limpieza de Drive: {e}")
-    existing = drive.list_files(parent) if skip_existing else {}
-    for f in sorted(local.iterdir()):
-        if f.is_file() and f.name not in existing:
+    existing = drive.list_files(parent, with_size=sync) if (skip_existing or sync) else {}
+    local_files = {f.name: f for f in local.iterdir() if f.is_file()}
+    if sync:
+        for name, (fid, size) in existing.items():
+            lf = local_files.get(name)
+            if size is not None and (lf is None or lf.stat().st_size != size):
+                requests.delete(f"{API}/{fid}", headers=drive.h, timeout=30).raise_for_status()
+                log(f"  🗑 Drive: {'/'.join(remote_path)}/{name}")
+        existing = {k: v for k, v in existing.items() if k in local_files and v[1] == local_files[k].stat().st_size}
+    for name, f in sorted(local_files.items()):
+        if name not in existing:
             drive.upload(f, parent)
-            log(f"  ☁ Drive: {'/'.join(remote_path)}/{f.name}")
+            log(f"  ☁ Drive: {'/'.join(remote_path)}/{name}")

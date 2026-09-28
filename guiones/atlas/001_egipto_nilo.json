@@ -37,226 +37,254 @@
   ],
   "thumbnails": [
    {
-    "text": "95% live here",
-    "art": "map",
-    "map": {
-     "bbox": [
-      12.5,
-      20.3,
-      38.3,
-      32.6
+    "prompt": "aerial drone photograph of the Nile river winding through the Sahara desert in Egypt, a thin vivid green strip of farmland and palm trees along the river surrounded by endless golden sand, golden hour light, ultra realistic, National Geographic style, highly detailed",
+    "tag": "Egypt",
+    "text": "95% live on this strip",
+    "highlight": [
+     "95%"
+    ],
+    "seed": 11,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       12.5,
+       20.3,
+       38.3,
+       32.6
+      ],
+      "highlight_countries": [
+       {
+        "name": "Egypt",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Nile",
+         "Rosetta Branch",
+         "Damietta Branch"
+        ],
+        "width": 8,
+        "band": 34
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          31.23,
+          30.05
+         ],
+         [
+          30.35,
+          30.7
+         ],
+         [
+          29.9,
+          31.15
+         ],
+         [
+          30.4,
+          31.47
+         ],
+         [
+          31.0,
+          31.6
+         ],
+         [
+          31.6,
+          31.55
+         ],
+         [
+          32.3,
+          31.27
+         ],
+         [
+          31.9,
+          30.8
+         ]
+        ],
+        "color": "green",
+        "start": 0.6
+       }
+      ]
+     },
+     "target": [
+      32.75,
+      26.0
      ],
-     "highlight_countries": [
-      {
-       "name": "Egypt",
-       "color": "accent",
-       "strength": 0.22
-      }
-     ],
-     "rivers": [
-      {
-       "names": [
-        "Nile",
-        "Rosetta Branch",
-        "Damietta Branch"
-       ],
-       "width": 8,
-       "band": 34
-      }
-     ],
-     "polygons": [
-      {
-       "points": [
-        [
-         31.23,
-         30.05
-        ],
-        [
-         30.35,
-         30.7
-        ],
-        [
-         29.9,
-         31.15
-        ],
-        [
-         30.4,
-         31.47
-        ],
-        [
-         31.0,
-         31.6
-        ],
-        [
-         31.6,
-         31.55
-        ],
-        [
-         32.3,
-         31.27
-        ],
-        [
-         31.9,
-         30.8
-        ]
-       ],
-       "color": "green",
-       "start": 0.6
-      }
-     ]
-    },
-    "target": [
-     32.75,
-     26.0
-    ]
+     "text": "95% live here"
+    }
    },
    {
+    "prompt": "photograph of Egypt from the International Space Station at night, the Nile valley and delta glowing with city lights as a thin bright line crossing a completely dark desert, realistic, dramatic, high detail",
+    "tag": "The Nile",
     "text": "Egypt is 95% empty",
-    "art": "map",
-    "map": {
-     "bbox": [
-      12.5,
-      20.3,
-      38.3,
-      32.6
+    "highlight": [
+     "EMPTY"
+    ],
+    "seed": 23,
+    "pos": "top",
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       12.5,
+       20.3,
+       38.3,
+       32.6
+      ],
+      "highlight_countries": [
+       {
+        "name": "Egypt",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Nile",
+         "Rosetta Branch",
+         "Damietta Branch"
+        ],
+        "width": 8,
+        "band": 34
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          31.23,
+          30.05
+         ],
+         [
+          30.35,
+          30.7
+         ],
+         [
+          29.9,
+          31.15
+         ],
+         [
+          30.4,
+          31.47
+         ],
+         [
+          31.0,
+          31.6
+         ],
+         [
+          31.6,
+          31.55
+         ],
+         [
+          32.3,
+          31.27
+         ],
+         [
+          31.9,
+          30.8
+         ]
+        ],
+        "color": "green",
+        "start": 0.6
+       }
+      ]
+     },
+     "target": [
+      29.6,
+      23.6
      ],
-     "highlight_countries": [
-      {
-       "name": "Egypt",
-       "color": "accent",
-       "strength": 0.22
-      }
-     ],
-     "rivers": [
-      {
-       "names": [
-        "Nile",
-        "Rosetta Branch",
-        "Damietta Branch"
-       ],
-       "width": 8,
-       "band": 34
-      }
-     ],
-     "polygons": [
-      {
-       "points": [
-        [
-         31.23,
-         30.05
-        ],
-        [
-         30.35,
-         30.7
-        ],
-        [
-         29.9,
-         31.15
-        ],
-        [
-         30.4,
-         31.47
-        ],
-        [
-         31.0,
-         31.6
-        ],
-        [
-         31.6,
-         31.55
-        ],
-        [
-         32.3,
-         31.27
-        ],
-        [
-         31.9,
-         30.8
-        ]
-       ],
-       "color": "green",
-       "start": 0.6
-      }
-     ]
-    },
-    "target": [
-     29.6,
-     23.6
-    ]
+     "text": "Egypt is 95% empty"
+    }
    },
    {
-    "text": "Why here?",
-    "art": "map",
-    "map": {
-     "bbox": [
-      12.5,
-      20.3,
-      38.3,
-      32.6
+    "prompt": "the Great Pyramids of Giza at sunset, green farmland and the Nile on one side and the vast empty Sahara desert on the other, realistic cinematic photograph, warm light, high detail",
+    "tag": "Ancient Egypt",
+    "text": "Why everyone lives here",
+    "highlight": [
+     "HERE"
+    ],
+    "seed": 37,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       12.5,
+       20.3,
+       38.3,
+       32.6
+      ],
+      "highlight_countries": [
+       {
+        "name": "Egypt",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Nile",
+         "Rosetta Branch",
+         "Damietta Branch"
+        ],
+        "width": 8,
+        "band": 34
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          31.23,
+          30.05
+         ],
+         [
+          30.35,
+          30.7
+         ],
+         [
+          29.9,
+          31.15
+         ],
+         [
+          30.4,
+          31.47
+         ],
+         [
+          31.0,
+          31.6
+         ],
+         [
+          31.6,
+          31.55
+         ],
+         [
+          32.3,
+          31.27
+         ],
+         [
+          31.9,
+          30.8
+         ]
+        ],
+        "color": "green",
+        "start": 0.6
+       }
+      ]
+     },
+     "target": [
+      32.75,
+      26.0
      ],
-     "highlight_countries": [
-      {
-       "name": "Egypt",
-       "color": "accent",
-       "strength": 0.22
-      }
-     ],
-     "rivers": [
-      {
-       "names": [
-        "Nile",
-        "Rosetta Branch",
-        "Damietta Branch"
-       ],
-       "width": 8,
-       "band": 34
-      }
-     ],
-     "polygons": [
-      {
-       "points": [
-        [
-         31.23,
-         30.05
-        ],
-        [
-         30.35,
-         30.7
-        ],
-        [
-         29.9,
-         31.15
-        ],
-        [
-         30.4,
-         31.47
-        ],
-        [
-         31.0,
-         31.6
-        ],
-        [
-         31.6,
-         31.55
-        ],
-        [
-         32.3,
-         31.27
-        ],
-        [
-         31.9,
-         30.8
-        ]
-       ],
-       "color": "green",
-       "start": 0.6
-      }
-     ]
-    },
-    "target": [
-     32.75,
-     26.0
-    ]
+     "text": "Why here?"
+    }
    }
   ],
   "description": "Egypt is roughly the size of France and Spain put together, yet about 95% of its more than 100 million people live on a thin green strip covering around 5% of the country. Why?\n\nIn this video: how a river that starts thousands of kilometers away crosses the Sahara, why its yearly flood created one of the first great civilizations in history, how Egypt moved the temples of Abu Simbel to save them from the Aswan High Dam, and why the Nile is now at the center of a conflict with Ethiopia.",
@@ -1653,119 +1681,228 @@
    ]
   }
  ],
- "short": {
-  "title": "95% of Egypt lives on this thin line 🇪🇬 #shorts",
-  "description": "Why Egypt is 95% empty. Full video on the channel. #geography #egypt #maps",
-  "scenes": [
-   {
-    "type": "map_route",
-    "narration": "Egypt has more than a hundred million people.",
-    "data": {
-     "bbox": [
-      23.5,
-      21.0,
-      38.0,
-      32.2
-     ],
-     "highlight_countries": [
-      {
-       "name": "Egypt",
-       "color": "accent",
-       "strength": 0.22
-      }
-     ]
+ "shorts": [
+  {
+   "title": "95% of Egypt lives on this thin line 🇪🇬 #shorts",
+   "description": "Why Egypt is 95% empty. Full video on the channel. #geography #egypt #maps",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "Egypt has more than a hundred million people.",
+     "data": {
+      "bbox": [
+       23.5,
+       21.0,
+       38.0,
+       32.2
+      ],
+      "highlight_countries": [
+       {
+        "name": "Egypt",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "But about ninety-five percent of them live on this thin green line, around five percent of the country.",
+     "data": {
+      "bbox": [
+       23.5,
+       21.0,
+       38.0,
+       32.2
+      ],
+      "highlight_countries": [
+       {
+        "name": "Egypt",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Nile",
+         "Rosetta Branch",
+         "Damietta Branch"
+        ],
+        "width": 6,
+        "band": 26
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          31.23,
+          30.05
+         ],
+         [
+          30.35,
+          30.7
+         ],
+         [
+          29.9,
+          31.15
+         ],
+         [
+          30.4,
+          31.47
+         ],
+         [
+          31.0,
+          31.6
+         ],
+         [
+          31.6,
+          31.55
+         ],
+         [
+          32.3,
+          31.27
+         ],
+         [
+          31.9,
+          30.8
+         ]
+        ],
+        "color": "green",
+        "start": 0.6
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "The rest is the Sahara. Cairo gets about twenty-five millimeters of rain a year.",
+     "data": {
+      "text": "The rest is the Sahara",
+      "highlight": [
+       "Sahara"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "The only reliable water is the Nile. So for five thousand years, wherever the river goes, Egypt goes. Full story on the channel.",
+     "data": {
+      "text": "Wherever the river goes, Egypt goes",
+      "highlight": [
+       "river"
+      ]
+     }
     }
-   },
-   {
-    "type": "map_route",
-    "narration": "But about ninety-five percent of them live on this thin green line, around five percent of the country.",
-    "data": {
-     "bbox": [
-      23.5,
-      21.0,
-      38.0,
-      32.2
-     ],
-     "highlight_countries": [
-      {
-       "name": "Egypt",
-       "color": "accent",
-       "strength": 0.22
-      }
-     ],
-     "rivers": [
-      {
-       "names": [
-        "Nile",
-        "Rosetta Branch",
-        "Damietta Branch"
-       ],
-       "width": 6,
-       "band": 26
-      }
-     ],
-     "polygons": [
-      {
-       "points": [
-        [
-         31.23,
-         30.05
-        ],
-        [
-         30.35,
-         30.7
-        ],
-        [
-         29.9,
-         31.15
-        ],
-        [
-         30.4,
-         31.47
-        ],
-        [
-         31.0,
-         31.6
-        ],
-        [
-         31.6,
-         31.55
-        ],
-        [
-         32.3,
-         31.27
-        ],
-        [
-         31.9,
-         30.8
-        ]
-       ],
-       "color": "green",
-       "start": 0.6
-      }
-     ]
+   ]
+  },
+  {
+   "title": "Ancient Egypt's two-way river highway ⛵ #shorts",
+   "description": "The clever trick that made the Nile a highway. Full video on the channel. #history #egypt #nile",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "Ancient Egyptians had a river that worked like a two-way highway.",
+     "data": {
+      "text": "A river that worked like a two-way highway",
+      "highlight": [
+       "two-way"
+      ]
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "The Nile flows north, so boats simply drifted downstream with the current.",
+     "data": {
+      "nodes": [
+       {
+        "id": "s",
+        "label": "South",
+        "x": 0.2,
+        "y": 0.4
+       },
+       {
+        "id": "n",
+        "label": "North",
+        "x": 0.8,
+        "y": 0.4
+       }
+      ],
+      "edges": [
+       [
+        "s",
+        "n",
+        "current"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "text",
+     "narration": "But the wind usually blows from the north. So to go back, they just raised their sails.",
+     "data": {
+      "text": "To go back south: raise the sail",
+      "highlight": [
+       "sail"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Even their hieroglyph for traveling south was a boat with its sail up. Full story on the channel.",
+     "data": {
+      "text": "The hieroglyph for 'south' is a boat with a sail",
+      "highlight": [
+       "south",
+       "sail"
+      ]
+     }
     }
-   },
-   {
-    "type": "text",
-    "narration": "The rest is the Sahara. Cairo gets about twenty-five millimeters of rain a year.",
-    "data": {
-     "text": "The rest is the Sahara",
-     "highlight": [
-      "Sahara"
-     ]
+   ]
+  },
+  {
+   "title": "They moved an entire ancient temple 🏛️ #shorts",
+   "description": "How Abu Simbel was saved from Lake Nasser. Full video on the channel. #history #egypt #unesco",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "In the 1960s, Egypt was building a giant dam that would flood the ancient temples of Abu Simbel.",
+     "data": {
+      "text": "A new dam was about to drown Abu Simbel",
+      "highlight": [
+       "drown"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "So engineers cut the temples into more than a thousand blocks.",
+     "data": {
+      "value": "1,000+",
+      "caption": "blocks cut by hand"
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "And rebuilt them about sixty-five meters higher, exactly as they were.",
+     "data": {
+      "value": "65 m",
+      "caption": "higher, rebuilt piece by piece"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Today, most visitors never notice they're standing in a temple that was moved. Full story on the channel.",
+     "data": {
+      "text": "Most visitors never notice it was moved",
+      "highlight": [
+       "moved"
+      ]
+     }
     }
-   },
-   {
-    "type": "text",
-    "narration": "The only reliable water is the Nile. So for five thousand years, wherever the river goes, Egypt goes. Full story on the channel.",
-    "data": {
-     "text": "Wherever the river goes, Egypt goes",
-     "highlight": [
-      "river"
-     ]
-    }
-   }
-  ]
- }
+   ]
+  }
+ ]
 }

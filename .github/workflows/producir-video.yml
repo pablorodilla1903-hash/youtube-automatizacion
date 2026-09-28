@@ -1,0 +1,91 @@
+name: Producir vídeo
+
+# Genera un vídeo completo a partir de un guion (voz, animación, subtítulos, 3 miniaturas y Shorts),
+# lo sube a Google Drive (YouTube Automático/<canal>/<nº - título>/) y deja una copia en la rama "entregas".
+on:
+  push:
+    branches: [main]
+    paths: ["guiones/*/[0-9]*.py"]   # un guion nuevo en main → se produce solo
+  workflow_dispatch:
+    inputs:
+      guion:
+        description: "Guion a producir (archivo .py dentro de guiones/)"
+        required: true
+        default: "guiones/atlas/001_egipto_nilo.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: producir-video
+  cancel-in-progress: false
+
+jobs:
+  producir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Elegir el guion
+        id: guion
+        env:
+          INPUT: ${{ inputs.guion }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -n "$INPUT" ]; then g="$INPUT"
+          else g=$(git diff --name-only "$BEFORE" HEAD -- 'guiones/*/[0-9]*.py' | sort | tail -1); fi
+          echo "Guion: $g"
+          echo "path=$g" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar ffmpeg, fuentes y dependencias
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg rsync
+          mkdir -p fonts
+          curl -fsSL -o fonts/Anton-Regular.ttf https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf
+          curl -fsSL -o fonts/Montserrat.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf"
+          pip install -q edge-tts kokoro-onnx soundfile requests pillow pyyaml imageio-ffmpeg
+
+      - name: Generar vídeo, miniaturas y Shorts
+        env:
+          GUION: ${{ steps.guion.outputs.path }}
+        run: |
+          test -f "$GUION"
+          python "$GUION"
+          cd src && python -m yt.anim.build "../${GUION%.py}.json" --short
+
+      - name: Subir a Google Drive
+        env:
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+        run: python scripts/subir_a_drive.py salida --sync
+
+      - name: Copia en la rama entregas
+        if: always()
+        run: |
+          [ -d salida ] || exit 0
+          git config user.name "videos-bot"
+          git config user.email "videos-bot@users.noreply.github.com"
+          git fetch -q origin entregas
+          git worktree add -q _entregas origin/entregas
+          for canal in salida/*/; do
+            for video in "$canal"*/; do
+              dest="_entregas/$(basename "$canal")/$(basename "$video")"
+              mkdir -p "$dest"
+              rsync -a --delete "$video" "$dest/"
+            done
+          done
+          cd _entregas
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Entrega: $(basename "${{ steps.guion.outputs.path }}" .py)"
+          git push -q origin HEAD:entregas
