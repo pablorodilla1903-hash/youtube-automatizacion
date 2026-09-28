@@ -1,0 +1,26 @@
+name: Subir entregas a Google Drive
+
+# Sube a tu Drive (carpeta "YouTube Automático") todo lo que haya en la rama "entregas".
+# Se lanza a mano: Actions → "Subir entregas a Google Drive" → Run workflow.
+on:
+  workflow_dispatch:
+
+jobs:
+  subir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: entregas
+          path: _entregas
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Subir a Google Drive
+        env:
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+        run: python scripts/subir_a_drive.py _entregas

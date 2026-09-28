@@ -63,7 +63,9 @@ def _fmt_tags(tags: list[str]) -> str:
 def _write_readme(pkg: dict, cfg: dict, date: dt.date, tz: str, out_dir: Path, minutes: float) -> None:
     short = pkg.get("short") or {}
     hashtags = " ".join(pkg.get("hashtags", []))
+    left = pkg.get("scripts_left")
     lines = [
+        f"⚠️ SOLO QUEDAN {left} GUIONES PARA ESTE CANAL: pídele a Claude una nueva tanda." if left is not None and left <= 3 else None,
         f"CANAL: {cfg['nombre']}   ·   FECHA: {date.isoformat()}   ·   DURACIÓN: {minutes:.1f} min",
         "",
         f"⏰ PROGRAMAR PUBLICACIÓN DEL VÍDEO: {cfg['publicar']['video']} (hora {tz})",
@@ -129,20 +131,34 @@ def run_channel(channel_id: str, cfg: dict, date: dt.date, tz: str, offline: boo
 
     if not offline:
         history = content.load_history(channel_id)
-        history.append({"date": date.isoformat(), "topic": pkg.get("topic", ""), "title": pkg["title"]})
+        entry = {"date": date.isoformat(), "topic": pkg.get("topic", ""), "title": pkg["title"]}
+        if pkg.get("script_file"):
+            entry["script_file"] = pkg["script_file"]
+        history.append(entry)
         content.save_history(channel_id, history)
 
     if drive.Drive.configured() and not offline:
         log("Subiendo a Google Drive…")
-        drive.upload_folder(out_dir, [date.isoformat(), cfg["nombre"]], int(keep_days))
+        prepare_drive(channel_id, cfg)
+        safe_title = re.sub(r'[\\/:*?"<>|]', "", pkg["title"])[:80]
+        folder = f"{date.isoformat()} - {safe_title}"
+        drive.upload_folder(out_dir, [cfg["nombre"], folder], keep_days=int(keep_days))
     log(f"✔ {cfg['nombre']}: {seconds / 60:.1f} min → {out_dir}")
     return out_dir
+
+
+def prepare_drive(channel_id: str, cfg: dict) -> None:
+    """Crea YouTube Automático/<canal>/0_Marca y textos con el logo, banner, marca de agua y textos."""
+    brand = ROOT / "marca" / channel_id
+    if brand.is_dir():
+        drive.upload_folder(brand, [cfg["nombre"], drive.BRAND_FOLDER], skip_existing=True)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--canal", help="id del canal (en, es…)")
     ap.add_argument("--offline", action="store_true")
+    ap.add_argument("--preparar-drive", action="store_true", help="solo crea las carpetas y sube la marca")
     args = ap.parse_args()
     os.chdir(ROOT)
     if args.offline:
@@ -155,6 +171,15 @@ def main() -> int:
     channels = {k: v for k, v in conf["canales"].items() if v.get("activo", True)}
     if args.canal:
         channels = {args.canal: conf["canales"][args.canal]}
+
+    if args.preparar_drive:
+        if not drive.Drive.configured():
+            log("✘ Falta configurar los secretos de Google Drive")
+            return 1
+        for cid, cfg in channels.items():
+            prepare_drive(cid, cfg)
+            log(f"✔ Drive preparado: {drive.ROOT_FOLDER}/{cfg['nombre']}")
+        return 0
 
     failed = []
     for cid, cfg in channels.items():

@@ -7,6 +7,13 @@ on:
     - cron: "17 23 * * *"
   workflow_dispatch:
     inputs:
+      accion:
+        description: "Qué hacer"
+        type: choice
+        options:
+          - generar videos
+          - preparar Drive (carpetas + logos y textos)
+        default: generar videos
       canal:
         description: "Canal a generar (en / es). Vacío = todos"
         required: false
@@ -21,6 +28,9 @@ concurrency:
 
 jobs:
   generar:
+    # La ejecución nocturna solo arranca si existe la variable AUTOMATICO = true
+    # (Settings → Secrets and variables → Actions → Variables). A mano siempre se puede.
+    if: github.event_name == 'workflow_dispatch' || vars.AUTOMATICO == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 150
     env:
@@ -39,7 +49,7 @@ jobs:
           sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
           mkdir -p fonts
           curl -fsSL -o fonts/Anton-Regular.ttf \
-            https://github.com/google/fonts/raw/main/ofl/anton/Anton-Regular.ttf || rm -f fonts/Anton-Regular.ttf
+            https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf || rm -f fonts/Anton-Regular.ttf
 
       - name: Instalar dependencias
         run: pip install -r requirements.txt
@@ -56,7 +66,13 @@ jobs:
           GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
           TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'edge' }}
           CANAL: ${{ inputs.canal }}
-        run: python -m yt.main ${CANAL:+--canal "$CANAL"}
+          ACCION: ${{ inputs.accion }}
+        run: |
+          if [[ "$ACCION" == preparar* ]]; then
+            python -m yt.main --preparar-drive ${CANAL:+--canal "$CANAL"}
+          else
+            python -m yt.main ${CANAL:+--canal "$CANAL"}
+          fi
 
       - name: Guardar historial de temas
         if: always()

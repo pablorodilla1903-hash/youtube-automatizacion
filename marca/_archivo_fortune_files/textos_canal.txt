@@ -1,0 +1,39 @@
+TEXTOS DEL CANAL FORTUNE FILES (copiar y pegar)
+
+🇺🇸 Fortune Files (inglés)
+
+Nombre: Fortune Files
+Identificador (@): @FortuneFiles. Si está cogido, prueba @FortuneFilesHQ o @TheFortuneFiles.
+
+Descripción del canal:
+The untold stories behind the money.
+
+How did Blockbuster lose to Netflix? How did Enron fake billions in profits? How does McDonald's really make its money?
+
+Fortune Files tells the true stories of the world's biggest companies, fortunes, scams and business mistakes — how they rose, how they fell, and the lessons they leave for your own money.
+
+New story every day. Subscribe and turn on notifications so you don't miss the next file.
+
+For business inquiries: [tu correo]
+
+Palabras clave del canal:
+business stories, business documentary, rise and fall, company collapse, biggest business mistakes, corporate scandals, scams, billionaires, money stories, finance, entrepreneurship, case study, how companies make money
+
+Configuración igual para los dos canales
+
+YouTube Studio → Configuración (⚙️ abajo a la izquierda):
+
+1. General → Moneda: EUR.
+2. Canal → Información básica → País de residencia: España. Palabras clave: las de arriba.
+3. Canal → Configuración avanzada → Público: "No, establecer este canal como no dirigido a niños". ⚠️ Es muy importante: si el canal se marca como dirigido a niños, apenas cobra por los anuncios.
+4. Subida predeterminada → pestaña *Información básica*:
+   - Visibilidad: Privado, para revisar cada vídeo antes de programarlo.
+   - Etiquetas: las palabras clave de arriba.
+   - Descripción:
+     - Inglés: Subscribe for a new business story every day 👉 @FortuneFiles
+     - Español: Suscríbete para una nueva historia cada día 👉 @ExpedienteFortuna
+5. Subida predeterminada → pestaña *Configuración avanzada*:
+   - Categoría: Educación.
+   - Idioma del vídeo: Inglés o Español según el canal.
+   - Comentarios: Activados. Retener los comentarios potencialmente inapropiados para revisarlos.
+6. Personalización → Marca → Marca de agua del vídeo: sube marca_de_agua_150x150.png y elige "Al final del vídeo".
