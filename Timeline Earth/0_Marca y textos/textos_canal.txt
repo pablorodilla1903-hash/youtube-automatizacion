@@ -1,0 +1,37 @@
+TEXTOS DEL CANAL TIMELINE EARTH (copiar y pegar)
+
+NOMBRE DEL CANAL:
+Timeline Earth
+
+IDENTIFICADOR (@), en este orden de preferencia:
+@TimelineEarth · @TimelineEarthHQ · @TheTimelineEarth · @TimelineEarthTV · @TimelineEarthMaps
+
+DESCRIPCIÓN DEL CANAL:
+History and geography, one map at a time.
+
+Why do almost all Egyptians live along one river? Why are borders drawn the way they are? Why did empires rise exactly where they did? Every map hides a story — about rivers, deserts, mountains and the people who shaped the world around them.
+
+Timeline Earth explains history and geography with clear animated maps, real data and stories you won't forget.
+
+New videos every week. Subscribe and travel through the timeline of our planet.
+
+PALABRAS CLAVE DEL CANAL:
+geography, history, maps, map explained, geography explained, history documentary, world history, why countries, borders, population, empires, rivers, animated maps, educational, documentary
+
+──────────────────────────────────────────────
+CONFIGURACIÓN EN YOUTUBE STUDIO (⚙️ Configuración)
+──────────────────────────────────────────────
+1. General → Moneda: EUR.
+2. Canal → Información básica → País de residencia: España. Palabras clave: las de arriba.
+3. Canal → Configuración avanzada → Público: "No, establecer este canal como no dirigido a niños".
+   ⚠️ Muy importante: si el canal se marca como dirigido a niños, apenas cobra por los anuncios.
+4. Subida predeterminada → Información básica:
+   - Visibilidad: Privado (revisas cada vídeo antes de programarlo)
+   - Etiquetas: las palabras clave de arriba
+   - Descripción: Subscribe for a new map story every week 👉 @TimelineEarth
+5. Subida predeterminada → Configuración avanzada:
+   - Categoría: Educación
+   - Idioma del vídeo: Inglés
+   - Doblaje automático: ACTIVADO (el vídeo llega también en español, portugués, francés…)
+6. Personalización → Marca → Marca de agua: marca_de_agua_150x150.png → "Al final del vídeo".
+7. Personalización → Perfil: foto = logo_800x800.png · banner = banner_2560x1440.png · descripción de arriba.
