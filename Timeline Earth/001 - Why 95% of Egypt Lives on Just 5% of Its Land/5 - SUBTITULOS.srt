@@ -1,0 +1,963 @@
+1
+00:00:00,000 --> 00:00:01,027
+This is Egypt.
+
+2
+00:00:01,027 --> 00:00:03,902
+It's roughly the size of France and Spain
+
+3
+00:00:03,902 --> 00:00:04,860
+put together.
+
+4
+00:00:05,210 --> 00:00:07,116
+And it's home to more than a hundred
+
+5
+00:00:07,116 --> 00:00:07,940
+million people.
+
+6
+00:00:08,290 --> 00:00:09,806
+But almost all of them,
+
+7
+00:00:09,806 --> 00:00:11,512
+about ninety-five percent,
+
+8
+00:00:11,512 --> 00:00:13,408
+live on this thin green line,
+
+9
+00:00:13,408 --> 00:00:16,251
+which covers only around five percent of the
+
+10
+00:00:16,251 --> 00:00:16,820
+country.
+
+11
+00:00:17,170 --> 00:00:20,416
+So why would a hundred million people squeeze
+
+12
+00:00:20,416 --> 00:00:22,110
+into such a tiny space?
+
+13
+00:00:25,060 --> 00:00:26,675
+By the end of this video,
+
+14
+00:00:26,675 --> 00:00:29,160
+you'll see why this strip gave birth to
+
+15
+00:00:29,160 --> 00:00:31,520
+one of the first great civilizations,
+
+16
+00:00:31,520 --> 00:00:34,067
+how Egypt moved an entire temple to save
+
+17
+00:00:34,067 --> 00:00:34,316
+it,
+
+18
+00:00:34,316 --> 00:00:36,490
+and why the river behind it all is
+
+19
+00:00:36,490 --> 00:00:38,540
+now at the center of a conflict.
+
+20
+00:00:38,890 --> 00:00:40,427
+Take away the Nile,
+
+21
+00:00:40,427 --> 00:00:43,269
+and Egypt is almost entirely desert.
+
+22
+00:00:43,269 --> 00:00:46,650
+The Sahara covers nearly the whole country.
+
+23
+00:00:47,000 --> 00:00:48,576
+And look at the borders.
+
+24
+00:00:48,576 --> 00:00:52,232
+Egypt's western and southern borders are almost perfectly
+
+25
+00:00:52,232 --> 00:00:53,240
+straight lines.
+
+26
+00:00:53,240 --> 00:00:56,644
+They were drawn in agreements between colonial powers
+
+27
+00:00:56,644 --> 00:00:59,102
+along lines of longitude and latitude,
+
+28
+00:00:59,102 --> 00:01:01,434
+and they could be drawn with a ruler
+
+29
+00:01:01,434 --> 00:01:03,640
+because almost nobody lived there.
+
+30
+00:01:03,990 --> 00:01:07,496
+Cairo gets only around twenty-five millimeters of rain
+
+31
+00:01:07,496 --> 00:01:08,707
+in an entire year.
+
+32
+00:01:08,707 --> 00:01:11,320
+London gets more than twenty times that.
+
+33
+00:01:11,670 --> 00:01:14,510
+So picture Egypt as one hundred squares of
+
+34
+00:01:14,510 --> 00:01:14,906
+land.
+
+35
+00:01:14,906 --> 00:01:17,613
+Only about five of them are green enough
+
+36
+00:01:17,613 --> 00:01:19,000
+to live on and farm.
+
+37
+00:01:19,350 --> 00:01:21,051
+Now picture the people.
+
+38
+00:01:21,051 --> 00:01:24,880
+About ninety-five out of every hundred Egyptians live
+
+39
+00:01:24,880 --> 00:01:26,510
+on those five squares.
+
+40
+00:01:26,860 --> 00:01:29,291
+That makes the Nile Valley one of the
+
+41
+00:01:29,291 --> 00:01:31,786
+most crowded farming regions on Earth,
+
+42
+00:01:31,786 --> 00:01:34,985
+with roughly two thousand people for every square
+
+43
+00:01:34,985 --> 00:01:36,840
+kilometer of habitable land.
+
+44
+00:01:39,790 --> 00:01:41,421
+The answer is one river.
+
+45
+00:01:41,421 --> 00:01:42,073
+The Nile,
+
+46
+00:01:42,073 --> 00:01:44,683
+one of the longest rivers in the world,
+
+47
+00:01:44,683 --> 00:01:48,141
+roughly six thousand six hundred kilometers from its
+
+48
+00:01:48,141 --> 00:01:50,620
+farthest source to the Mediterranean.
+
+49
+00:01:50,970 --> 00:01:53,725
+Whether it's the longest river on Earth depends
+
+50
+00:01:53,725 --> 00:01:54,643
+on who you ask.
+
+51
+00:01:54,643 --> 00:01:56,939
+Some measurements put the Amazon ahead.
+
+52
+00:01:56,939 --> 00:01:59,120
+It all comes down to where you decide
+
+53
+00:01:59,120 --> 00:02:00,440
+a river really begins.
+
+54
+00:02:00,790 --> 00:02:02,659
+And here's the strange part.
+
+55
+00:02:02,659 --> 00:02:05,558
+Most of Egypt's water doesn't fall in Egypt.
+
+56
+00:02:05,558 --> 00:02:08,586
+It falls thousands of kilometers to the south,
+
+57
+00:02:08,586 --> 00:02:11,486
+in the highlands of Ethiopia and around Lake
+
+58
+00:02:11,486 --> 00:02:12,130
+Victoria.
+
+59
+00:02:12,480 --> 00:02:13,500
+Every summer,
+
+60
+00:02:13,500 --> 00:02:16,706
+monsoon rains soak the Ethiopian Highlands.
+
+61
+00:02:16,706 --> 00:02:19,402
+The water rushes down the Blue Nile,
+
+62
+00:02:19,402 --> 00:02:21,880
+joins the White Nile at Khartoum,
+
+63
+00:02:21,880 --> 00:02:22,608
+in Sudan,
+
+64
+00:02:22,608 --> 00:02:23,847
+and flows north,
+
+65
+00:02:23,847 --> 00:02:25,960
+straight through the Sahara.
+
+66
+00:02:26,310 --> 00:02:29,190
+That's why the Nile does something that looks
+
+67
+00:02:29,190 --> 00:02:30,505
+impossible on a map.
+
+68
+00:02:30,505 --> 00:02:33,385
+It crosses well over a thousand kilometers of
+
+69
+00:02:33,385 --> 00:02:36,390
+desert without a single major river joining it,
+
+70
+00:02:36,390 --> 00:02:37,830
+and without drying up.
+
+71
+00:02:38,180 --> 00:02:39,180
+It isn't easy.
+
+72
+00:02:39,180 --> 00:02:40,513
+In the desert heat,
+
+73
+00:02:40,513 --> 00:02:43,445
+the river loses an enormous amount of water
+
+74
+00:02:43,445 --> 00:02:45,445
+to evaporation along the way.
+
+75
+00:02:45,445 --> 00:02:47,644
+Only a river fed by a huge rainy
+
+76
+00:02:47,644 --> 00:02:51,310
+region thousands of kilometers away could survive this
+
+77
+00:02:51,310 --> 00:02:51,910
+journey.
+
+78
+00:02:52,260 --> 00:02:53,852
+And for thousands of years,
+
+79
+00:02:53,852 --> 00:02:56,411
+the river did something even more important.
+
+80
+00:02:56,411 --> 00:02:57,208
+Every summer,
+
+81
+00:02:57,208 --> 00:02:57,890
+it flooded.
+
+82
+00:03:00,840 --> 00:03:03,041
+From around July to September,
+
+83
+00:03:03,041 --> 00:03:06,237
+the river rose and spread across the valley.
+
+84
+00:03:06,237 --> 00:03:08,225
+When the water pulled back,
+
+85
+00:03:08,225 --> 00:03:10,497
+it left behind a layer of dark,
+
+86
+00:03:10,497 --> 00:03:11,420
+fertile mud.
+
+87
+00:03:11,770 --> 00:03:14,903
+Ancient Egyptians called their country Kemet,
+
+88
+00:03:14,903 --> 00:03:15,993
+the black land,
+
+89
+00:03:15,993 --> 00:03:17,083
+after that mud.
+
+90
+00:03:17,083 --> 00:03:19,398
+The desert around it was Deshret,
+
+91
+00:03:19,398 --> 00:03:20,352
+the red land.
+
+92
+00:03:20,352 --> 00:03:21,578
+Life on one side.
+
+93
+00:03:21,578 --> 00:03:22,940
+Death on the other.
+
+94
+00:03:23,290 --> 00:03:26,340
+Their whole calendar followed the river.
+
+95
+00:03:26,340 --> 00:03:27,456
+Three seasons:
+
+96
+00:03:27,456 --> 00:03:27,977
+Akhet,
+
+97
+00:03:27,977 --> 00:03:28,796
+the flood.
+
+98
+00:03:28,796 --> 00:03:29,316
+Peret,
+
+99
+00:03:29,316 --> 00:03:30,804
+the growing season.
+
+100
+00:03:30,804 --> 00:03:31,623
+And Shemu,
+
+101
+00:03:31,623 --> 00:03:32,590
+the harvest.
+
+102
+00:03:32,940 --> 00:03:34,775
+They even built nilometers,
+
+103
+00:03:34,775 --> 00:03:38,051
+stone staircases and wells that measured how high
+
+104
+00:03:38,051 --> 00:03:39,099
+the flood rose.
+
+105
+00:03:39,099 --> 00:03:40,541
+The higher the water,
+
+106
+00:03:40,541 --> 00:03:42,113
+the bigger the harvest,
+
+107
+00:03:42,113 --> 00:03:44,800
+and the more tax farmers paid that year.
+
+108
+00:03:45,150 --> 00:03:48,341
+The Greek historian Herodotus summed it up about
+
+109
+00:03:48,341 --> 00:03:50,620
+two and a half thousand years ago.
+
+110
+00:03:50,620 --> 00:03:51,076
+Egypt,
+
+111
+00:03:51,076 --> 00:03:51,727
+he wrote,
+
+112
+00:03:51,727 --> 00:03:53,420
+is the gift of the river.
+
+113
+00:03:53,770 --> 00:03:56,248
+Now look where the great monuments are.
+
+114
+00:03:56,248 --> 00:03:57,610
+The pyramids of Giza.
+
+115
+00:03:57,610 --> 00:03:58,973
+The temples of Luxor.
+
+116
+00:03:58,973 --> 00:03:59,407
+Aswan.
+
+117
+00:03:59,407 --> 00:04:01,699
+Every one of them sits right next to
+
+118
+00:04:01,699 --> 00:04:02,380
+the river.
+
+119
+00:04:02,730 --> 00:04:05,020
+The Nile was also Egypt's highway,
+
+120
+00:04:05,020 --> 00:04:06,394
+with a clever trick.
+
+121
+00:04:06,394 --> 00:04:08,029
+The current flows north,
+
+122
+00:04:08,029 --> 00:04:10,843
+but the wind usually blows from the north.
+
+123
+00:04:10,843 --> 00:04:13,852
+So boats drifted downstream with the current,
+
+124
+00:04:13,852 --> 00:04:16,534
+then raised their sails and let the wind
+
+125
+00:04:16,534 --> 00:04:18,170
+push them back upstream.
+
+126
+00:04:18,520 --> 00:04:20,715
+Even their writing reflects it.
+
+127
+00:04:20,715 --> 00:04:21,813
+In hieroglyphs,
+
+128
+00:04:21,813 --> 00:04:24,694
+the sign for traveling south shows a boat
+
+129
+00:04:24,694 --> 00:04:25,929
+with its sail up.
+
+130
+00:04:25,929 --> 00:04:27,095
+Traveling north,
+
+131
+00:04:27,095 --> 00:04:28,330
+the sail is down.
+
+132
+00:04:28,680 --> 00:04:31,141
+And the flood may even help explain the
+
+133
+00:04:31,141 --> 00:04:31,756
+pyramids.
+
+134
+00:04:31,756 --> 00:04:34,833
+Many historians think that during the months when
+
+135
+00:04:34,833 --> 00:04:36,555
+the fields were underwater,
+
+136
+00:04:36,555 --> 00:04:39,201
+farmers were free to work on the pharaohs'
+
+137
+00:04:39,201 --> 00:04:40,370
+building projects.
+
+138
+00:04:40,720 --> 00:04:42,687
+Reliable food from the river,
+
+139
+00:04:42,687 --> 00:04:45,637
+and deserts on every side that kept invaders
+
+140
+00:04:45,637 --> 00:04:46,031
+away.
+
+141
+00:04:46,031 --> 00:04:48,719
+That combination is a big reason why one
+
+142
+00:04:48,719 --> 00:04:51,932
+of the world's first great states appeared here,
+
+143
+00:04:51,932 --> 00:04:54,030
+around five thousand years ago.
+
+144
+00:04:54,380 --> 00:04:56,002
+If you're enjoying this,
+
+145
+00:04:56,002 --> 00:04:56,716
+subscribe.
+
+146
+00:04:56,716 --> 00:04:59,246
+Every week we find the story hidden in
+
+147
+00:04:59,246 --> 00:05:00,090
+another map.
+
+148
+00:05:03,040 --> 00:05:05,707
+But the flood was never predictable.
+
+149
+00:05:05,707 --> 00:05:07,942
+Too little water meant hunger.
+
+150
+00:05:07,942 --> 00:05:10,970
+Too much could wash entire villages away.
+
+151
+00:05:11,320 --> 00:05:13,371
+So in the twentieth century,
+
+152
+00:05:13,371 --> 00:05:16,483
+Egypt decided to control the river once and
+
+153
+00:05:16,483 --> 00:05:17,120
+for all.
+
+154
+00:05:17,470 --> 00:05:18,121
+In 1970,
+
+155
+00:05:18,121 --> 00:05:20,581
+the Aswan High Dam was completed.
+
+156
+00:05:20,581 --> 00:05:22,606
+Behind it grew Lake Nasser,
+
+157
+00:05:22,606 --> 00:05:25,717
+one of the largest artificial lakes in the
+
+158
+00:05:25,717 --> 00:05:26,223
+world,
+
+159
+00:05:26,223 --> 00:05:28,900
+around five hundred kilometers long.
+
+160
+00:05:29,250 --> 00:05:32,108
+The new lake was going to drown ancient
+
+161
+00:05:32,108 --> 00:05:32,894
+monuments.
+
+162
+00:05:32,894 --> 00:05:34,109
+So in the 1960s,
+
+163
+00:05:34,109 --> 00:05:37,539
+an international campaign led by UNESCO cut the
+
+164
+00:05:37,539 --> 00:05:40,612
+giant temples of Abu Simbel into more than
+
+165
+00:05:40,612 --> 00:05:43,828
+a thousand blocks and rebuilt them on higher
+
+166
+00:05:43,828 --> 00:05:44,399
+ground,
+
+167
+00:05:44,399 --> 00:05:46,400
+about sixty-five meters up.
+
+168
+00:05:46,750 --> 00:05:49,088
+It wasn't the first dam at Aswan.
+
+169
+00:05:49,088 --> 00:05:51,564
+A smaller one had been built by the
+
+170
+00:05:51,564 --> 00:05:52,733
+British in 1902.
+
+171
+00:05:52,733 --> 00:05:55,208
+But the new dam was on a completely
+
+172
+00:05:55,208 --> 00:05:56,377
+different scale,
+
+173
+00:05:56,377 --> 00:05:58,440
+and it changed Egypt forever.
+
+174
+00:05:58,790 --> 00:06:00,551
+The dam ended the floods.
+
+175
+00:06:00,551 --> 00:06:02,651
+It stored water for dry years,
+
+176
+00:06:02,651 --> 00:06:05,700
+and it produced huge amounts of electricity.
+
+177
+00:06:06,050 --> 00:06:07,633
+But there was a price.
+
+178
+00:06:07,633 --> 00:06:10,662
+The fertile mud now gets trapped behind the
+
+179
+00:06:10,662 --> 00:06:11,006
+dam.
+
+180
+00:06:11,006 --> 00:06:13,553
+Farmers rely on fertilizers instead,
+
+181
+00:06:13,553 --> 00:06:15,480
+and without fresh sediment,
+
+182
+00:06:15,480 --> 00:06:18,646
+parts of the Nile Delta are slowly retreating
+
+183
+00:06:18,646 --> 00:06:19,610
+into the sea.
+
+184
+00:06:22,560 --> 00:06:22,993
+Today,
+
+185
+00:06:22,993 --> 00:06:25,281
+the delta and the valley hold one of
+
+186
+00:06:25,281 --> 00:06:27,074
+the biggest cities on Earth.
+
+187
+00:06:27,074 --> 00:06:29,671
+Greater Cairo is home to more than twenty
+
+188
+00:06:29,671 --> 00:06:30,660
+million people.
+
+189
+00:06:31,010 --> 00:06:34,769
+There's one more thin strip where Egyptians cluster:
+
+190
+00:06:34,769 --> 00:06:36,330
+along the Suez Canal.
+
+191
+00:06:36,330 --> 00:06:37,464
+Opened in 1869,
+
+192
+00:06:37,464 --> 00:06:40,514
+it links the Mediterranean to the Red Sea,
+
+193
+00:06:40,514 --> 00:06:43,139
+and a big share of the world's trade
+
+194
+00:06:43,139 --> 00:06:44,486
+passes through it,
+
+195
+00:06:44,486 --> 00:06:47,820
+bringing Egypt billions of dollars every year.
+
+196
+00:06:48,170 --> 00:06:50,652
+But the delta faces a new threat.
+
+197
+00:06:50,652 --> 00:06:52,987
+Much of it lies only a meter or
+
+198
+00:06:52,987 --> 00:06:54,374
+two above the sea,
+
+199
+00:06:54,374 --> 00:06:57,002
+and as sea levels rise and the land
+
+200
+00:06:57,002 --> 00:06:58,024
+slowly sinks,
+
+201
+00:06:58,024 --> 00:07:01,235
+salt water is creeping into some of Egypt's
+
+202
+00:07:01,235 --> 00:07:02,330
+best farmland.
+
+203
+00:07:02,680 --> 00:07:04,491
+And Egypt keeps growing.
+
+204
+00:07:04,491 --> 00:07:08,476
+Its population has multiplied roughly five times since
+
+205
+00:07:08,476 --> 00:07:08,911
+1950,
+
+206
+00:07:08,911 --> 00:07:11,664
+and almost all of that growth has had
+
+207
+00:07:11,664 --> 00:07:14,200
+to fit into the same narrow strip.
+
+208
+00:07:14,550 --> 00:07:17,408
+And the river itself is under pressure.
+
+209
+00:07:17,408 --> 00:07:18,122
+Upstream,
+
+210
+00:07:18,122 --> 00:07:22,051
+Ethiopia has built Africa's largest hydroelectric dam,
+
+211
+00:07:22,051 --> 00:07:24,694
+the Grand Ethiopian Renaissance Dam,
+
+212
+00:07:24,694 --> 00:07:25,980
+on the Blue Nile.
+
+213
+00:07:26,330 --> 00:07:27,055
+For Egypt,
+
+214
+00:07:27,055 --> 00:07:29,889
+which gets more than ninety percent of its
+
+215
+00:07:29,889 --> 00:07:31,669
+fresh water from the Nile,
+
+216
+00:07:31,669 --> 00:07:33,053
+that's a huge worry.
+
+217
+00:07:33,053 --> 00:07:33,975
+For Ethiopia,
+
+218
+00:07:33,975 --> 00:07:37,271
+the dam means electricity for millions of people.
+
+219
+00:07:37,271 --> 00:07:39,973
+Both countries see the river as a matter
+
+220
+00:07:39,973 --> 00:07:40,830
+of survival.
+
+221
+00:07:41,180 --> 00:07:43,663
+Egypt is also trying to break out of
+
+222
+00:07:43,663 --> 00:07:44,468
+the valley.
+
+223
+00:07:44,468 --> 00:07:45,475
+East of Cairo,
+
+224
+00:07:45,475 --> 00:07:48,293
+it's building a brand new capital city in
+
+225
+00:07:48,293 --> 00:07:49,098
+the desert,
+
+226
+00:07:49,098 --> 00:07:51,782
+and it's pumping Nile water to farm new
+
+227
+00:07:51,782 --> 00:07:53,460
+land far from the river.
+
+228
+00:07:53,810 --> 00:07:57,135
+So why do ninety-five percent of Egyptians live
+
+229
+00:07:57,135 --> 00:07:59,144
+on five percent of the land?
+
+230
+00:07:59,144 --> 00:08:02,123
+Because in a country where it almost never
+
+231
+00:08:02,123 --> 00:08:02,608
+rains,
+
+232
+00:08:02,608 --> 00:08:05,032
+the Nile is the only water you can
+
+233
+00:08:05,032 --> 00:08:05,725
+count on.
+
+234
+00:08:05,725 --> 00:08:07,457
+For five thousand years,
+
+235
+00:08:07,457 --> 00:08:09,189
+wherever the river goes,
+
+236
+00:08:09,189 --> 00:08:10,020
+Egypt goes.
+
+237
+00:08:10,370 --> 00:08:15,857
+And Egypt isn't the only country shaped by
+
+238
+00:08:15,857 --> 00:08:18,791
+where people can live.
+
+239
+00:08:18,791 --> 00:08:19,557
+Next,
+
+240
+00:08:19,557 --> 00:08:25,426
+we'll find out why most Canadians live within
+
+241
+00:08:25,426 --> 00:08:30,020
+a short drive of the United States.
