@@ -36,9 +36,15 @@ script = {
     "metadata": {
         "alt_titles": ["Egypt Is 95% Empty. Here's Why", "Why Almost Everyone in Egypt Lives Along One River"],
         "thumbnails": [
-            {"text": "95% live here", "art": "map", "map": THUMB_MAP, "target": [32.75, 26.0]},
-            {"text": "Egypt is 95% empty", "art": "map", "map": THUMB_MAP, "target": [29.6, 23.6]},
-            {"text": "Why here?", "art": "map", "map": THUMB_MAP, "target": [32.75, 26.0]},
+            {"prompt": "aerial drone photograph of the Nile river winding through the Sahara desert in Egypt, a thin vivid green strip of farmland and palm trees along the river surrounded by endless golden sand, golden hour light, ultra realistic, National Geographic style, highly detailed",
+             "tag": "Egypt", "text": "95% live on this strip", "highlight": ["95%"], "seed": 11,
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [32.75, 26.0], "text": "95% live here"}},
+            {"prompt": "photograph of Egypt from the International Space Station at night, the Nile valley and delta glowing with city lights as a thin bright line crossing a completely dark desert, realistic, dramatic, high detail",
+             "tag": "The Nile", "text": "Egypt is 95% empty", "highlight": ["EMPTY"], "seed": 23, "pos": "top",
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [29.6, 23.6], "text": "Egypt is 95% empty"}},
+            {"prompt": "the Great Pyramids of Giza at sunset, green farmland and the Nile on one side and the vast empty Sahara desert on the other, realistic cinematic photograph, warm light, high detail",
+             "tag": "Ancient Egypt", "text": "Why everyone lives here", "highlight": ["HERE"], "seed": 37,
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [32.75, 26.0], "text": "Why here?"}},
         ],
         "description": (
             "Egypt is roughly the size of France and Spain put together, yet about 95% of its more than 100 million "
@@ -189,20 +195,45 @@ script = {
              "data": {"text": "Another hidden map", "next_title": "Why most Canadians live near the US border", "next_label": "Watch next", "sub_label": "Subscribe"}},
         ]},
     ],
-    "short": {
-        "title": "95% of Egypt lives on this thin line 🇪🇬 #shorts",
-        "description": "Why Egypt is 95% empty. Full video on the channel. #geography #egypt #maps",
-        "scenes": [
-            {"type": "map_route", "narration": "Egypt has more than a hundred million people.",
-             "data": {"bbox": EGYPT_BBOX, "highlight_countries": EGYPT_HL}},
-            {"type": "map_route", "narration": "But about ninety-five percent of them live on this thin green line, around five percent of the country.",
-             "data": EGYPT_BAND_MAP},
-            {"type": "text", "narration": "The rest is the Sahara. Cairo gets about twenty-five millimeters of rain a year.",
-             "data": {"text": "The rest is the Sahara", "highlight": ["Sahara"]}},
-            {"type": "text", "narration": "The only reliable water is the Nile. So for five thousand years, wherever the river goes, Egypt goes. Full story on the channel.",
-             "data": {"text": "Wherever the river goes, Egypt goes", "highlight": ["river"]}},
-        ],
-    },
+    "shorts": [
+        {"title": "95% of Egypt lives on this thin line 🇪🇬 #shorts",
+         "description": "Why Egypt is 95% empty. Full video on the channel. #geography #egypt #maps",
+         "scenes": [
+             {"type": "map_route", "narration": "Egypt has more than a hundred million people.",
+              "data": {"bbox": EGYPT_BBOX, "highlight_countries": EGYPT_HL}},
+             {"type": "map_route", "narration": "But about ninety-five percent of them live on this thin green line, around five percent of the country.",
+              "data": EGYPT_BAND_MAP},
+             {"type": "text", "narration": "The rest is the Sahara. Cairo gets about twenty-five millimeters of rain a year.",
+              "data": {"text": "The rest is the Sahara", "highlight": ["Sahara"]}},
+             {"type": "text", "narration": "The only reliable water is the Nile. So for five thousand years, wherever the river goes, Egypt goes. Full story on the channel.",
+              "data": {"text": "Wherever the river goes, Egypt goes", "highlight": ["river"]}},
+         ]},
+        {"title": "Ancient Egypt's two-way river highway ⛵ #shorts",
+         "description": "The clever trick that made the Nile a highway. Full video on the channel. #history #egypt #nile",
+         "scenes": [
+             {"type": "text", "narration": "Ancient Egyptians had a river that worked like a two-way highway.",
+              "data": {"text": "A river that worked like a two-way highway", "highlight": ["two-way"]}},
+             {"type": "diagram", "narration": "The Nile flows north, so boats simply drifted downstream with the current.",
+              "data": {"nodes": [{"id": "s", "label": "South", "x": 0.2, "y": 0.4}, {"id": "n", "label": "North", "x": 0.8, "y": 0.4}],
+                       "edges": [["s", "n", "current"]], "pulse": True}},
+             {"type": "text", "narration": "But the wind usually blows from the north. So to go back, they just raised their sails.",
+              "data": {"text": "To go back south: raise the sail", "highlight": ["sail"]}},
+             {"type": "text", "narration": "Even their hieroglyph for traveling south was a boat with its sail up. Full story on the channel.",
+              "data": {"text": "The hieroglyph for 'south' is a boat with a sail", "highlight": ["south", "sail"]}},
+         ]},
+        {"title": "They moved an entire ancient temple 🏛️ #shorts",
+         "description": "How Abu Simbel was saved from Lake Nasser. Full video on the channel. #history #egypt #unesco",
+         "scenes": [
+             {"type": "text", "narration": "In the 1960s, Egypt was building a giant dam that would flood the ancient temples of Abu Simbel.",
+              "data": {"text": "A new dam was about to drown Abu Simbel", "highlight": ["drown"]}},
+             {"type": "big_number", "narration": "So engineers cut the temples into more than a thousand blocks.",
+              "data": {"value": "1,000+", "caption": "blocks cut by hand"}},
+             {"type": "big_number", "narration": "And rebuilt them about sixty-five meters higher, exactly as they were.",
+              "data": {"value": "65 m", "caption": "higher, rebuilt piece by piece"}},
+             {"type": "text", "narration": "Today, most visitors never notice they're standing in a temple that was moved. Full story on the channel.",
+              "data": {"text": "Most visitors never notice it was moved", "highlight": ["moved"]}},
+         ]},
+    ],
 }
 
 out = Path(__file__).with_suffix(".json")
