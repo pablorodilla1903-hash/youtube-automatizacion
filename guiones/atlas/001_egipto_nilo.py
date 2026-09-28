@@ -191,8 +191,8 @@ script = {
         {"n": 6, "title": "The answer", "card": False, "title_youtube": "The answer", "scenes": [
             {"type": "map_route", "narration": "So why do ninety-five percent of Egyptians live on five percent of the land? Because in a country where it almost never rains, the Nile is the only water you can count on. For five thousand years, wherever the river goes, Egypt goes.",
              "data": EGYPT_BAND_MAP},
-            {"type": "end_screen", "minDuration": 20, "narration": "And Egypt isn't the only country shaped by where people can live. Next, we'll find out why most Canadians live within a short drive of the United States.",
-             "data": {"text": "Another hidden map", "next_title": "Why most Canadians live near the US border", "next_label": "Watch next", "sub_label": "Subscribe"}},
+            {"type": "end_screen", "minDuration": 12, "narration": "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.",
+             "data": {"text": "Thanks for watching", "sub_label": "Subscribe"}},
         ]},
     ],
     "shorts": [

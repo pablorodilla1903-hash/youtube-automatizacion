@@ -1669,12 +1669,10 @@
     },
     {
      "type": "end_screen",
-     "minDuration": 20,
-     "narration": "And Egypt isn't the only country shaped by where people can live. Next, we'll find out why most Canadians live within a short drive of the United States.",
+     "minDuration": 12,
+     "narration": "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.",
      "data": {
-      "text": "Another hidden map",
-      "next_title": "Why most Canadians live near the US border",
-      "next_label": "Watch next",
+      "text": "Thanks for watching",
       "sub_label": "Subscribe"
      }
     }

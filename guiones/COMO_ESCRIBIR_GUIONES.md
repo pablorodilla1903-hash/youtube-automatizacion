@@ -20,7 +20,7 @@ Cada guion es un archivo `guiones/<canal>/NNN_slug.py` que, al ejecutarse, gener
 - **4-6 capítulos** con título, cada uno con un bucle abierto (una pregunta que se responde más adelante).
 - **Suscripción a mitad**, en una frase, justo después de un momento fuerte (escena `text` con kicker "Timeline Earth").
 - **Capítulo final** `"card": False` con la respuesta completa a la pregunta del título.
-- **Última escena**: `end_screen` (minDuration 20) que anuncia el **siguiente tema de TEMAS.md** (así la pantalla final y la serie encajan).
+- **Última escena**: `end_screen` (minDuration 12) **solo con suscripción**: `data: {"text": "Thanks for watching", "sub_label": "Subscribe"}`. **No** menciones ningún vídeo concreto ni pongas `next_title`: el dueño todavía no ha subido los vídeos anteriores. La narración cierra invitando a suscribirse (p. ej. "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.").
 - **Duración**: 1.250-1.600 palabras de narración (8-10 min). Máximo ~45 palabras por escena: un cambio visual cada 5-15 s.
 - **Datos**: solo cifras verificables. Si no es exacta, redondea y di "about"/"around". Nunca inventes citas.
 - **Nada de**: consejos médicos o financieros, ni detalles morbosos de tragedias con víctimas.
@@ -43,7 +43,7 @@ Cada guion es un archivo `guiones/<canal>/NNN_slug.py` que, al ejecutarse, gener
 | `quote` | cita histórica real | `text`, `author` |
 | `stamp` | sello sobre un documento (tratados, quiebras…) | `doc_title`, `text` |
 | `scale` / `cross_section` / `multi_line` / `altitude` | comparaciones de tamaño, cortes, varias series, altitud | ver el código |
-| `end_screen` | pantalla final (20 s) | `text`, `next_title`, `next_label`, `sub_label` |
+| `end_screen` | pantalla final: solo botón de suscribirse | `text`, `sub_label` (no usar `next_title` por ahora) |
 
 Los nombres de países son los de Natural Earth (`NAME` en inglés: "Egypt", "Canada", "Russia"…). Los ríos, por su nombre en inglés ("Nile", "Danube", "Mississippi"…).
 
