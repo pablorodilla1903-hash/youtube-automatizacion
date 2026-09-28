@@ -8,35 +8,46 @@ drive_dias_guardar: 7         # se borran de Drive las carpetas con más días (
 
 canales:
 
-  ingenieria:
+  atlas:
     activo: true
-    nombre: "Hidden Engineering"
+    nombre: "World Through Time"
     idioma: en
-    lema: "HOW THE WORLD REALLY WORKS"
-    # Voz: Kokoro (IA de código abierto, gratis y sin límites). Otras: am_fenrir, am_puck, bm_george
-    voz_kokoro: am_michael
-    velocidad_voz: 1.0
-    # Voz de respaldo (Microsoft Edge) si Kokoro no estuviera disponible
-    voz: en-US-AndrewNeural
-    # Paleta propia del canal (distinta de otros canales para que YouTube no vea "la misma plantilla")
+    lema: "HISTORY AND GEOGRAPHY, ONE MAP AT A TIME"
+    # Colores de la marca (logo y banner): mapa antiguo, azul noche y oro
+    marca_tema:
+      bg: "#0C1626"
+      bg2: "#1D3150"
+      grid: "#15233A"
+      panel: "#22385A"
+      text: "#F6EEDC"
+      muted: "#8FA3BF"
+      accent: "#E3B04B"
+      accent2: "#EAD9B0"
+      land: "#1A2B44"
+    # Voz Kokoro (IA de código abierto, gratis). af_heart es la de mayor calidad; alternativas: af_bella, am_michael, bm_george
+    voz_kokoro: af_heart
+    velocidad_voz: 0.94
+    voz: en-US-AvaNeural            # respaldo (Microsoft Edge)
+    subtitulos_incrustados: true
     tema:
-      bg: "#081426"
-      bg2: "#11325E"
-      grid: "#0C1D36"
-      panel: "#14294A"
-      text: "#F4F8FF"
-      muted: "#8EA6C9"
-      accent: "#38BDF8"
-      accent2: "#FFD24A"
-      red: "#FF4D4D"
-      green: "#34D399"
-      land: "#1C3A66"
-      ocean: "#0A1A31"
+      bg: "#0A1A22"
+      bg2: "#173747"
+      grid: "#0E222C"
+      panel: "#16323F"
+      text: "#F7F2E7"
+      muted: "#9DB3B8"
+      accent: "#F2B84B"
+      accent2: "#FFD978"
+      red: "#FF5A4E"
+      green: "#4FC38A"
+      blue: "#4DA8FF"
+      land: "#2A4639"
+      ocean: "#0B1C26"
     nicho: >
-      Engineering and "how the world works": the hidden infrastructure and clever
-      engineering behind everyday things (internet cables, power grids, bridges,
-      skyscrapers, airports, tunnels, ships, water systems, logistics).
-    publico: "Curious adults 18-54 in the US, UK, Canada and Australia"
+      Geography and history: why people live where they live, borders and maps
+      with surprising stories, how rivers, mountains and deserts shaped empires
+      and modern countries.
+    publico: "Curious adults 18-54 in the US, UK, Canada, Australia and worldwide (auto-dubbed)"
     duracion_min: 10
     publicar:
       video: "18:00"

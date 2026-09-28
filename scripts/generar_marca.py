@@ -56,62 +56,143 @@ def gear(size, th, text):
     return img.resize((size, size), Image.LANCZOS)
 
 
-def globe(size, th, text):
-    """Globo con meridianos: icono del canal de geografía."""
+def globe(size, th, text=None, lon0=18.0, lat0=22.0):
+    """Globo terráqueo con los continentes reales (Natural Earth) en proyección ortográfica."""
+    import json
+
     S = size * 2
     img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    c, r, lw = S / 2, S * .44, int(S * .03)
+    c, r, lw = S / 2, S * .44, int(S * .035)
     d.ellipse([c - r, c - r, c + r, c + r], fill=th["accent"])
-    ri = r - lw * 1.5
-    d.ellipse([c - ri, c - ri, c + ri, c + ri], fill=th["bg"])
-    for k in (0.35, 0.7):
-        d.ellipse([c - ri * k, c - ri, c + ri * k, c + ri], outline=th["land"], width=lw // 2)
-    for y in (-0.5, 0, 0.5):
-        half = ri * math.sqrt(1 - y * y)
-        d.line([(c - half, c + ri * y), (c + half, c + ri * y)], fill=th["land"], width=lw // 2)
-    d.text((c, c), text, font=font(int(S * .30)), fill=th["text"], anchor="mm")
+    R = r - lw * 1.3
+    d.ellipse([c - R, c - R, c + R, c + R], fill=th["ocean"])
+    la0, lo0 = math.radians(lat0), math.radians(lon0)
+
+    def proj(lon, lat):
+        la, lo = math.radians(lat), math.radians(lon)
+        cosc = math.sin(la0) * math.sin(la) + math.cos(la0) * math.cos(la) * math.cos(lo - lo0)
+        x = math.cos(la) * math.sin(lo - lo0)
+        y = math.cos(la0) * math.sin(la) - math.sin(la0) * math.cos(la) * math.cos(lo - lo0)
+        return (c + R * x, c - R * y), cosc >= 0
+
+    geo = ROOT / "cache/geo/ne_110m_land.geojson"
+    data = json.loads(geo.read_text("utf-8"))
+    for f in data["features"]:
+        g = f["geometry"]
+        polys = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+        for poly in polys:
+            pts, vis = zip(*(proj(lon, lat) for lon, lat in poly[0]))
+            if sum(vis) > len(vis) * 0.5:
+                d.polygon([p for p, v in zip(pts, vis) if v], fill=th["accent2"])
+    # meridianos y paralelos finos
+    for k in range(-60, 61, 30):
+        line = [proj(lon, k) for lon in range(-180, 181, 3)]
+        d.line([p for p, v in line if v], fill=th["bg2"], width=max(1, lw // 4))
+    for m in range(-180, 180, 30):
+        line = [proj(m, lat) for lat in range(-90, 91, 3)]
+        d.line([p for p, v in line if v], fill=th["bg2"], width=max(1, lw // 4))
     return img.resize((size, size), Image.LANCZOS)
 
 
+def compass_clock(size, th, text=None):
+    """Brújula dentro de un reloj: geografía (rosa de los vientos) + historia (marcas del tiempo)."""
+    S = size * 2
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    gold, parch, dark = th["accent"], th["accent2"], th["bg"]
+    R = S * .46
+    d.ellipse([c - R, c - R, c + R, c + R], fill=gold)
+    r2 = R * .9
+    d.ellipse([c - r2, c - r2, c + r2, c + r2], fill=dark)
+    # marcas del reloj (60 minutos, 12 horas más largas)
+    for k in range(60):
+        a = k / 60 * 2 * math.pi
+        L = R * (.14 if k % 5 == 0 else .06)
+        w_ = int(S * (.014 if k % 5 == 0 else .006))
+        x0, y0 = c + (r2 - S * .02) * math.sin(a), c - (r2 - S * .02) * math.cos(a)
+        x1, y1 = c + (r2 - S * .02 - L) * math.sin(a), c - (r2 - S * .02 - L) * math.cos(a)
+        d.line([(x0, y0), (x1, y1)], fill=parch, width=w_)
+    # rosa de los vientos: 8 puntas (4 largas doradas, 4 cortas)
+    def star(n_len, width, rot, col_a, col_b):
+        a = rot
+        tip = (c + n_len * math.sin(a), c - n_len * math.cos(a))
+        l = (c + width * math.sin(a - math.pi / 2), c - width * math.cos(a - math.pi / 2))
+        rr = (c + width * math.sin(a + math.pi / 2), c - width * math.cos(a + math.pi / 2))
+        d.polygon([tip, l, (c, c)], fill=col_a)
+        d.polygon([tip, rr, (c, c)], fill=col_b)
+    for k in range(4):
+        star(R * .5, R * .1, math.pi / 4 + k * math.pi / 2, th["muted"], th["panel"])
+    for k in range(4):
+        star(R * .7, R * .13, k * math.pi / 2, gold, parch)
+    d.ellipse([c - R * .07, c - R * .07, c + R * .07, c + R * .07], fill=dark, outline=gold, width=int(S * .01))
+    return img.resize((size, size), Image.LANCZOS)
+
+
+def world_backdrop(w, h, th):
+    """Mapamundi antiguo muy tenue para el fondo del banner, con meridianos y paralelos."""
+    import json
+    img = Image.new("RGB", (w, h), th["bg"])
+    d = ImageDraw.Draw(img)
+    data = json.loads((ROOT / "cache/geo/ne_110m_land.geojson").read_text("utf-8"))
+    def P(lon, lat):
+        return ((lon + 180) / 360 * w, (84 - lat) / (84 + 58) * h)
+    for lon in range(-180, 181, 15):
+        d.line([P(lon, 84), P(lon, -58)], fill=th["grid"], width=2)
+    for lat in range(-45, 84, 15):
+        d.line([P(-180, lat), P(180, lat)], fill=th["grid"], width=2)
+    for f_ in data["features"]:
+        g = f_["geometry"]
+        polys = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+        for poly in polys:
+            d.polygon([P(lon, lat) for lon, lat in poly[0]], fill=th["land"])
+    # viñeta para centrar la mirada
+    vig = Image.new("L", (w // 8, h // 8), 0)
+    ImageDraw.Draw(vig).ellipse([w // 8 * .12, h // 8 * .12, w // 8 * .88, h // 8 * .88], fill=255)
+    vig = vig.filter(ImageFilter.GaussianBlur(w // 8 // 10)).resize((w, h))
+    dark = Image.new("RGB", (w, h), th["bg"])
+    return Image.composite(img, dark, vig)
+
+
 def make(cid, cfg):
-    th = {k: hexc(v) for k, v in cfg["tema"].items()}
+    th = {k: hexc(v) for k, v in cfg.get("marca_tema", cfg["tema"]).items()}
     words = cfg["nombre"].upper().split()
     mono = "".join(w[0] for w in words[:2])
-    emblem = gear if cid == "ingenieria" else globe
+    emblem = {"ingenieria": gear, "atlas": compass_clock}.get(cid, globe)
     out = ROOT / "marca" / cid
     out.mkdir(parents=True, exist_ok=True)
 
-    # Logo 800x800 (YouTube lo recorta en círculo: todo lo importante centrado)
-    logo = blueprint_bg(800, 800, th, 80)
-    g = emblem(600, th, mono)
-    logo.paste(g, (100, 100), g)
+    # Foto de perfil 800x800 (YouTube la recorta en círculo)
+    logo = Image.new("RGB", (800, 800), th["bg"])
+    glow = Image.new("L", (800, 800), 0)
+    ImageDraw.Draw(glow).ellipse([60, 60, 740, 740], fill=120)
+    logo.paste(Image.new("RGB", (800, 800), th["bg2"]), (0, 0), glow.filter(ImageFilter.GaussianBlur(90)))
+    g = emblem(660, th, mono)
+    logo.paste(g, (70, 70), g)
     logo.save(out / "logo_800x800.png")
 
-    # Banner 2560x1440 con el contenido dentro de la zona segura 1546x423
+    # Banner 2560x1440; el texto va dentro de la zona segura central (1546x423)
     W, H = 2560, 1440
-    ban = blueprint_bg(W, H, th, 80)
+    ban = world_backdrop(W, H, th)
     d = ImageDraw.Draw(ban)
-    # esquema técnico decorativo a los lados (fuera de la zona segura: solo se ve en TV/escritorio)
-    for side in (380, W - 380):
-        for r in (120, 180, 240):
-            d.ellipse([side - r, H / 2 - r, side + r, H / 2 + r], outline=th["panel"], width=4)
-        d.line([(side - 300, H / 2), (side + 300, H / 2)], fill=th["panel"], width=3)
-        d.line([(side, H / 2 - 300), (side, H / 2 + 300)], fill=th["panel"], width=3)
     x0, y0 = (W - 1546) // 2, (H - 423) // 2
-    g = emblem(320, th, mono)
-    ban.paste(g, (x0, y0 + 50), g)
-    f = font(150)
-    tx, ty = x0 + 370, y0 + 55
-    first, rest = words[0] + " ", " ".join(words[1:])
-    d.text((tx, ty), first, font=f, fill=th["accent"])
-    d.text((tx + d.textlength(first, font=f), ty), rest, font=f, fill=th["text"])
-    d.text((tx + 4, ty + 210), cfg.get("lema", ""), font=font(56), fill=th["muted"])
+    g = emblem(360, th, mono)
+    ban.paste(g, (x0 + 10, y0 + 32), g)
+    tx, ty = x0 + 420, y0 + 40
+    size = 170
+    while d.textlength(" ".join(words), font=font(size)) > 1546 - 440 and size > 90:
+        size -= 6
+    f = font(size)
+    first = words[0] + " "
+    rest = " ".join(words[1:])
+    d.text((tx, ty), first, font=f, fill=th["accent"], stroke_width=6, stroke_fill=th["bg"])
+    d.text((tx + d.textlength(first, font=f), ty), rest, font=f, fill=th["text"], stroke_width=6, stroke_fill=th["bg"])
+    d.text((tx + 6, ty + int(size * 1.3)), cfg.get("lema", ""), font=font(58), fill=th["accent2"], stroke_width=4, stroke_fill=th["bg"])
     ban.save(out / "banner_2560x1440.png")
 
-    # Marca de agua 150x150
-    wm = emblem(150, th, mono)
-    wm.save(out / "marca_de_agua_150x150.png")
+    # Marca de agua 150x150 (PNG con transparencia)
+    emblem(150, th, mono).save(out / "marca_de_agua_150x150.png")
     print("OK", out)
 
 
