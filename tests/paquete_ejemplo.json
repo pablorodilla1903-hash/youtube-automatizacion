@@ -1,0 +1,61 @@
+{
+  "topic": "test",
+  "title": "How One Phone Call Wiped Out $9 Billion",
+  "alt_titles": [
+    "The $9 Billion Phone Call",
+    "From Pizza Shop to Private Island to Zero"
+  ],
+  "thumbnail_text": "$9 BILLION GONE",
+  "thumbnail_highlight": "GONE",
+  "description": "Test description.",
+  "tags": [
+    "business",
+    "money",
+    "finance stories"
+  ],
+  "hashtags": [
+    "#business",
+    "#money",
+    "#story"
+  ],
+  "pinned_comment": "What would you have done?",
+  "segments": [
+    {
+      "text": "In 2008, a single phone call wiped out nine billion dollars in value in less than a week. Nobody at the company saw it coming, not even the founder.",
+      "broll": [
+        "stock market crash screen",
+        "worried businessman"
+      ]
+    },
+    {
+      "text": "To understand how this happened, we need to go back twenty years, to a tiny office above a pizza shop, where two friends had an idea that everyone told them was stupid. But that was not the worst part.",
+      "broll": [
+        "small office",
+        "pizza shop street"
+      ]
+    },
+    {
+      "text": "Within five years, the company was worth more than its three biggest rivals combined. Investors were lining up, and the founder bought a private island. What do you think went wrong? Tell me in the comments.",
+      "broll": [
+        "private island aerial",
+        "luxury yacht"
+      ]
+    }
+  ],
+  "short": {
+    "title": "This phone call cost $9 billion #shorts",
+    "description": "Full story on the channel.",
+    "segments": [
+      {
+        "text": "In 2008, a single phone call wiped out nine billion dollars in value in less than a week. Nobody at the company saw it coming, not even the founder.",
+        "broll": [
+          "stock market crash screen",
+          "worried businessman"
+        ]
+      }
+    ]
+  },
+  "sources_to_check": [
+    "Check the 9 billion figure"
+  ]
+}

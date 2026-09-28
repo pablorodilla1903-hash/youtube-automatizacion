@@ -1,0 +1,80 @@
+name: Vídeos diarios
+
+on:
+  schedule:
+    # GitHub usa hora UTC: 23:17 UTC = 01:17 en España (verano) / 00:17 (invierno).
+    # Tarda ~30-40 min, así que todo está en tu Drive antes de las 3:00.
+    - cron: "17 23 * * *"
+  workflow_dispatch:
+    inputs:
+      canal:
+        description: "Canal a generar (en / es). Vacío = todos"
+        required: false
+        default: ""
+
+permissions:
+  contents: write   # para guardar el historial de temas y no repetirlos
+
+concurrency:
+  group: videos-diarios
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      HAS_DRIVE: ${{ secrets.GDRIVE_REFRESH_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar ffmpeg y fuentes
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          mkdir -p fonts
+          curl -fsSL -o fonts/Anton-Regular.ttf \
+            https://github.com/google/fonts/raw/main/ofl/anton/Anton-Regular.ttf || rm -f fonts/Anton-Regular.ttf
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Generar vídeos
+        working-directory: src
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
+          TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'edge' }}
+          CANAL: ${{ inputs.canal }}
+        run: python -m yt.main ${CANAL:+--canal "$CANAL"}
+
+      - name: Guardar historial de temas
+        if: always()
+        run: |
+          git config user.name "videos-bot"
+          git config user.email "videos-bot@users.noreply.github.com"
+          git add data/historial
+          git diff --cached --quiet && exit 0
+          git commit -m "Historial de temas $(date -u +%F)"
+          git pull --rebase -q && git push
+
+      # Solo si no has configurado Google Drive: los vídeos quedan descargables
+      # 2 días en la pestaña Actions (el espacio gratuito de GitHub es limitado).
+      - name: Guardar vídeos en GitHub (sin Drive)
+        if: always() && env.HAS_DRIVE != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ github.run_id }}
+          path: salida/
+          retention-days: 2
+          if-no-files-found: ignore

@@ -1,0 +1,2 @@
+# Opcional: escribe aquí temas concretos (uno por línea) y el sistema los usará
+# antes de inventar temas nuevos. Las líneas que empiezan por # se ignoran.
