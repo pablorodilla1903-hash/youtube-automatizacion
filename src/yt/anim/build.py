@@ -247,13 +247,17 @@ def _photo(prompt: str, seed: int, W: int, H: int):
 
     import requests
 
-    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt)
-           + f"?width={W}&height={H}&seed={seed}&nologo=true&model=flux&enhance=true")
+    # se pide la imagen 80 px más alta y se recorta la franja inferior (donde va la marca de agua del servicio)
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt + ", no text, no watermark")
+           + f"?width={W}&height={H + 80}&seed={seed}&nologo=true&model=flux&enhance=true")
     for attempt in range(4):
         try:
             r = requests.get(url, timeout=180)
             if r.status_code == 200 and r.headers.get("content-type", "").startswith("image"):
                 img = Image.open(io.BytesIO(r.content)).convert("RGB")
+                img = img.resize((W, round(img.height * W / img.width)), Image.LANCZOS)
+                crop_h = min(img.height, H + 80) - 80  # quita la franja inferior
+                img = img.crop((0, 0, W, crop_h))
                 return img.resize((W, H), Image.LANCZOS) if img.size != (W, H) else img
             log(f"  ⚠ Pollinations respondió {r.status_code}")
         except Exception as e:  # noqa: BLE001
