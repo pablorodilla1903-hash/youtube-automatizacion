@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Configuración de los canales. Puedes editar este archivo desde la web de
+# GitHub (icono del lápiz) sin tocar nada más.
+# ─────────────────────────────────────────────────────────────────────────────
+
+zona_horaria: Europe/Madrid   # tu hora local (para las horas de publicación)
+drive_dias_guardar: 7         # se borran de Drive las carpetas con más días (15 GB gratis)
+
+canales:
+
+  en:
+    activo: true
+    nombre: "Fortune Files"
+    idioma: en
+    # Voces gratuitas de Microsoft Edge (edge-tts). Alternativas buenas:
+    # en-US-AndrewNeural, en-US-BrianNeural, en-US-ChristopherNeural
+    voz: en-US-AndrewNeural
+    velocidad_voz: "+4%"
+    nicho: >
+      Business and money stories: the rise and fall of famous companies,
+      billionaires' biggest mistakes, bizarre money history, hidden business
+      models of everyday brands and the psychology of money.
+    pilares:
+      - "Rise and fall of a famous company (how X went from billions to zero)"
+      - "The hidden business model of an everyday brand (how X really makes money)"
+      - "Biggest financial blunders and scams in history"
+      - "How a billionaire actually built their fortune (the untold part)"
+      - "Money psychology: why people stay poor / what the rich do differently"
+    publico: "Adults 25-54 in the United States, United Kingdom, Canada and Australia"
+    palabras_video: 1350        # ≈ 9 minutos (mínimo 8 min para anuncios mid-roll)
+    short: true                 # generar también un YouTube Short diario
+    musica_volumen: 0.07        # 0 = sin música (pon .mp3 en assets/musica/)
+    busqueda_generica: ["city skyline", "money", "stock market", "office building", "luxury"]
+    publicar:                   # horas en TU zona horaria
+      video: "18:00"
+      short: "23:00"
+
+  es:
+    activo: true
+    nombre: "Expediente Fortuna"
+    idioma: es
+    # Español latino neutro (mayor audiencia). Para castellano: es-ES-AlvaroNeural
+    # Otras: es-MX-JorgeNeural, es-US-AlonsoNeural, es-CO-GonzaloNeural
+    voz: es-MX-JorgeNeural
+    velocidad_voz: "+6%"
+    nicho: >
+      Historias de dinero y negocios: auge y caída de empresas famosas, los
+      mayores errores de millonarios, estafas históricas, el modelo de negocio
+      oculto de marcas cotidianas y la psicología del dinero. Español neutro,
+      comprensible en España y Latinoamérica (evitar modismos locales).
+    pilares:
+      - "Auge y caída de una empresa famosa (de valer miles de millones a nada)"
+      - "El negocio oculto de una marca cotidiana (cómo gana dinero realmente)"
+      - "Las mayores estafas y errores financieros de la historia"
+      - "Cómo construyó realmente su fortuna un multimillonario (la parte que nadie cuenta)"
+      - "Psicología del dinero: por qué la mayoría nunca ahorra / qué hacen distinto los ricos"
+    publico: "Adultos 20-45 de México, España, Colombia, Argentina, EE. UU. hispano y resto de Latinoamérica"
+    palabras_video: 1350
+    short: true
+    musica_volumen: 0.07
+    busqueda_generica: ["city skyline", "money", "stock market", "office building", "luxury"]
+    publicar:
+      video: "22:00"
+      short: "19:00"
