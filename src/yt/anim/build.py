@@ -595,7 +595,7 @@ def build(script_path: Path, preview: int | None = None, make_short: bool = Fals
         "CHECKLIST ANTES DE PUBLICAR:",
         "  [ ] Público: 'No, no es contenido para niños'",
         "  [ ] Contenido alterado o sintético: SÍ (voz generada por IA)",
-        "  [ ] Pantalla final (últimos 20 s): vídeo recomendado a la izquierda + botón de suscribirse a la derecha",
+        "  [ ] Pantalla final (últimos segundos): SOLO el elemento 'Suscribirse', centrado sobre el círculo. Sin vídeos recomendados",
         "  [ ] Doblaje automático activado", "",
         *short_texts,
         "════════ GUION ════════",

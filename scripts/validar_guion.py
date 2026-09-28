@@ -48,6 +48,8 @@ def main(path: Path) -> int:
             errors.append(f"escena sin narración: {sc.get('type')}")
     if scenes and scenes[-1].get("type") != "end_screen":
         errors.append("la última escena debe ser end_screen")
+    elif scenes and scenes[-1].get("data", {}).get("next_title"):
+        errors.append("la pantalla final no debe anunciar otro vídeo (quita next_title): solo suscripción")
     long_scenes = [s for s in scenes if len(s.get("narration", "").split()) > 55]
     if long_scenes:
         errors.append(f"{len(long_scenes)} escenas con más de 55 palabras (divídelas: un cambio visual cada 5-15 s)")

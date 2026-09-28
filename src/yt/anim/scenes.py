@@ -532,20 +532,25 @@ def s_list(c, t, dur, data, th):
 
 
 def s_end_screen(c, t, dur, data, th):
+    """Pantalla final. Por defecto solo invita a suscribirse (sin recuadro de "siguiente vídeo").
+    Con data["next_title"] añade el hueco para un vídeo recomendado (cuando ya haya vídeos subidos)."""
     d = ImageDraw.Draw(c)
     w, h = c.size
-    # huecos para los elementos de pantalla final de YouTube (vídeo a la izquierda, suscribirse a la derecha)
     a = prog(t, 0, 0.6)
-    vx, vy, vw, vh = w * 0.08, h * 0.3, w * 0.46, w * 0.46 * 9 / 16
-    rrect(d, [vx, vy, vx + vw, vy + vh], 20, outline=mix(th["bg"], th["accent"], a), width=6)
-    d.text((vx + vw / 2, vy - 40), data.get("next_label", "WATCH NEXT").upper(), font=font("display", int(h * .05)),
-           fill=mix(th["bg"], th["accent"], a), anchor="mm")
     if data.get("next_title"):
+        vx, vy, vw, vh = w * 0.08, h * 0.3, w * 0.46, w * 0.46 * 9 / 16
+        rrect(d, [vx, vy, vx + vw, vy + vh], 20, outline=mix(th["bg"], th["accent"], a), width=6)
+        d.text((vx + vw / 2, vy - 40), data.get("next_label", "WATCH NEXT").upper(), font=font("display", int(h * .05)),
+               fill=mix(th["bg"], th["accent"], a), anchor="mm")
         f = fit_font(d, data["next_title"], "bold", vw * 0.85, 3, int(h * .05))
         reveal_words(d, data["next_title"], (vx + vw / 2, vy + vh / 2), f, vw * 0.85, t, 0.3, 0.05, th)
-    cx, cy, r = w * 0.76, vy + vh / 2, h * 0.17
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=mix(th["bg"], th["text"], a), width=6)
-    d.text((cx, cy + r + 50), data.get("sub_label", "SUBSCRIBE").upper(), font=font("display", int(h * .05)),
+        cx, cy, r = w * 0.76, vy + vh / 2, h * 0.17
+    else:
+        cx, cy, r = w / 2, h * 0.5, h * 0.17
+    pulse = 1 + 0.04 * math.sin(t * 3)
+    rr = r * pulse
+    d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], outline=mix(th["bg"], th["accent"], a), width=8)
+    d.text((cx, cy + r + 60), data.get("sub_label", "SUBSCRIBE").upper(), font=font("display", int(h * .06)),
            fill=mix(th["bg"], th["text"], a), anchor="mm")
     if data.get("text"):
         f = fit_font(d, data["text"].upper(), "display", w * 0.8, 1, int(h * .08))
