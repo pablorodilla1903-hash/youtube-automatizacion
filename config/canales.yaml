@@ -8,57 +8,67 @@ drive_dias_guardar: 7         # se borran de Drive las carpetas con más días (
 
 canales:
 
-  en:
+  ingenieria:
     activo: true
-    nombre: "Fortune Files"
+    nombre: "Hidden Engineering"
     idioma: en
-    # Voces gratuitas de Microsoft Edge (edge-tts). Alternativas buenas:
-    # en-US-AndrewNeural, en-US-BrianNeural, en-US-ChristopherNeural
+    lema: "HOW THE WORLD REALLY WORKS"
+    # Voz: Kokoro (IA de código abierto, gratis y sin límites). Otras: am_fenrir, am_puck, bm_george
+    voz_kokoro: am_michael
+    velocidad_voz: 1.0
+    # Voz de respaldo (Microsoft Edge) si Kokoro no estuviera disponible
     voz: en-US-AndrewNeural
-    velocidad_voz: "+0%"
+    # Paleta propia del canal (distinta de otros canales para que YouTube no vea "la misma plantilla")
+    tema:
+      bg: "#081426"
+      bg2: "#11325E"
+      grid: "#0C1D36"
+      panel: "#14294A"
+      text: "#F4F8FF"
+      muted: "#8EA6C9"
+      accent: "#38BDF8"
+      accent2: "#FFD24A"
+      red: "#FF4D4D"
+      green: "#34D399"
+      land: "#1C3A66"
+      ocean: "#0A1A31"
     nicho: >
-      Business and money stories: the rise and fall of famous companies,
-      billionaires' biggest mistakes, bizarre money history, hidden business
-      models of everyday brands and the psychology of money.
-    pilares:
-      - "Rise and fall of a famous company (how X went from billions to zero)"
-      - "The hidden business model of an everyday brand (how X really makes money)"
-      - "Biggest financial blunders and scams in history"
-      - "How a billionaire actually built their fortune (the untold part)"
-      - "Money psychology: why people stay poor / what the rich do differently"
-    publico: "Adults 25-54 in the United States, United Kingdom, Canada and Australia"
-    palabras_video: 1350        # ≈ 9 minutos (mínimo 8 min para anuncios mid-roll)
-    short: true                 # generar también un YouTube Short diario
-    musica_volumen: 0.07        # 0 = sin música (pon .mp3 en assets/musica/)
-    busqueda_generica: ["city skyline", "money", "stock market", "office building", "luxury"]
-    publicar:                   # horas en TU zona horaria
+      Engineering and "how the world works": the hidden infrastructure and clever
+      engineering behind everyday things (internet cables, power grids, bridges,
+      skyscrapers, airports, tunnels, ships, water systems, logistics).
+    publico: "Curious adults 18-54 in the US, UK, Canada and Australia"
+    duracion_min: 10
+    publicar:
       video: "18:00"
       short: "23:00"
 
-  es:
-    activo: true
-    nombre: "Expediente Fortuna"
+  geografia:
+    activo: false          # se activa cuando empecemos con este canal
+    nombre: "Mapas Imposibles"
     idioma: es
-    # Español latino neutro (mayor audiencia). Para castellano: es-ES-AlvaroNeural
-    # Otras: es-MX-JorgeNeural, es-US-AlonsoNeural, es-CO-GonzaloNeural
+    lema: "EL MUNDO COMO NUNCA TE LO HABÍAN EXPLICADO"
+    voz_kokoro: em_alex
+    velocidad_voz: 1.0
     voz: es-MX-JorgeNeural
-    velocidad_voz: "+2%"
+    tema:
+      bg: "#0E1A14"
+      bg2: "#1F4A36"
+      grid: "#13241B"
+      panel: "#1A3327"
+      text: "#FAF7F0"
+      muted: "#9FB8A8"
+      accent: "#FFA630"
+      accent2: "#FFE08A"
+      red: "#FF5A4E"
+      green: "#5EE3A1"
+      land: "#2B5A43"
+      ocean: "#0B1611"
     nicho: >
-      Historias de dinero y negocios: auge y caída de empresas famosas, los
-      mayores errores de millonarios, estafas históricas, el modelo de negocio
-      oculto de marcas cotidianas y la psicología del dinero. Español neutro,
-      comprensible en España y Latinoamérica (evitar modismos locales).
-    pilares:
-      - "Auge y caída de una empresa famosa (de valer miles de millones a nada)"
-      - "El negocio oculto de una marca cotidiana (cómo gana dinero realmente)"
-      - "Las mayores estafas y errores financieros de la historia"
-      - "Cómo construyó realmente su fortuna un multimillonario (la parte que nadie cuenta)"
-      - "Psicología del dinero: por qué la mayoría nunca ahorra / qué hacen distinto los ricos"
-    publico: "Adultos 20-45 de México, España, Colombia, Argentina, EE. UU. hispano y resto de Latinoamérica"
-    palabras_video: 1350
-    short: true
-    musica_volumen: 0.07
-    busqueda_generica: ["city skyline", "money", "stock market", "office building", "luxury"]
+      Geografía explicada: fronteras extrañas, por qué las ciudades están donde
+      están, países y lugares con historias sorprendentes, mapas que cambian cómo
+      ves el mundo. Español neutro.
+    publico: "Adultos 18-45 de México, España, Colombia, Argentina, EE. UU. hispano y Latinoamérica"
+    duracion_min: 10
     publicar:
       video: "22:00"
       short: "19:00"

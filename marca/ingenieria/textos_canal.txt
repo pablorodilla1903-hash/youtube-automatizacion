@@ -1,0 +1,37 @@
+TEXTOS DEL CANAL HIDDEN ENGINEERING (copiar y pegar)
+
+NOMBRE DEL CANAL:
+Hidden Engineering
+
+IDENTIFICADOR (@), en este orden de preferencia:
+@HiddenEngineering · @HiddenEngineeringHQ · @TheHiddenEngineering · @HiddenEngineeringTV
+
+DESCRIPCIÓN DEL CANAL:
+How the world really works.
+
+Every time you send a message, turn on a light or board a plane, you're trusting engineering you never see. Hidden Engineering explains the invisible systems that run modern life — the cables under the ocean, the grids that keep the lights on, the tunnels, bridges, ships and machines that make everything possible.
+
+Clear animations. Real numbers. No boring lectures.
+
+New videos every week. Subscribe and see the world differently.
+
+PALABRAS CLAVE DEL CANAL:
+engineering, how it works, infrastructure, engineering explained, how things work, megaprojects, internet cables, power grid, bridges, tunnels, technology explained, science, educational, documentary, animation
+
+──────────────────────────────────────────────
+CONFIGURACIÓN EN YOUTUBE STUDIO (⚙️ Configuración)
+──────────────────────────────────────────────
+1. General → Moneda: EUR.
+2. Canal → Información básica → País de residencia: España. Palabras clave: las de arriba.
+3. Canal → Configuración avanzada → Público: "No, establecer este canal como no dirigido a niños".
+   ⚠️ Muy importante: si el canal se marca como dirigido a niños, apenas cobra por los anuncios.
+4. Subida predeterminada → Información básica:
+   - Visibilidad: Privado (revisas cada vídeo antes de programarlo)
+   - Etiquetas: las palabras clave de arriba
+   - Descripción: Subscribe for new engineering stories every week 👉 @HiddenEngineering
+5. Subida predeterminada → Configuración avanzada:
+   - Categoría: Ciencia y tecnología
+   - Idioma del vídeo: Inglés
+   - Doblaje automático: ACTIVADO (así el vídeo llega también en español y otros idiomas)
+6. Personalización → Marca → Marca de agua del vídeo: marca_de_agua_150x150.png → "Al final del vídeo".
+7. Personalización → Perfil: foto = logo_800x800.png, banner = banner_2560x1440.png, descripción de arriba.
