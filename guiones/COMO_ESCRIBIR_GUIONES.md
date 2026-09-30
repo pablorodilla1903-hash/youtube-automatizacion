@@ -17,11 +17,11 @@ Cada guion es un archivo `guiones/<canal>/NNN_slug.py` que, al ejecutarse, gener
 - **Título** (≤ 65 caracteres): honesto pero con curiosidad, con un icono o lugar conocido y un número o contraste. Nada de "ALERTA", "ÚLTIMA HORA" ni exageraciones falsas.
 - **Gancho (capítulo 0, < 30 s)**: la pregunta del título con el visual más potente. Sin saludos ni presentación.
 - **Antes del minuto 2**: una promesa explícita de lo que se verá ("By the end of this video…").
-- **4-6 capítulos** con título, cada uno con un bucle abierto (una pregunta que se responde más adelante).
+- **6-8 capítulos** con título, cada uno con un bucle abierto (una pregunta que se responde más adelante).
 - **Suscripción a mitad**, en una frase, justo después de un momento fuerte (escena `text` con kicker "Timeline Earth").
 - **Capítulo final** `"card": False` con la respuesta completa a la pregunta del título.
 - **Última escena**: `end_screen` (minDuration 12) **solo con suscripción**: `data: {"text": "Thanks for watching", "sub_label": "Subscribe"}`. **No** menciones ningún vídeo concreto ni pongas `next_title`: el dueño todavía no ha subido los vídeos anteriores. La narración cierra invitando a suscribirse (p. ej. "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.").
-- **Duración**: 1.250-1.600 palabras de narración (8-10 min). Máximo ~45 palabras por escena: un cambio visual cada 5-15 s.
+- **Duración**: **mínimo 15 minutos**: 2.300-2.700 palabras de narración (15-18 min), 80-100 escenas y 6-8 capítulos. Máximo ~45 palabras por escena: un cambio visual cada 5-15 s. Para llegar a esa duración, profundiza: historia, ejemplos concretos, comparaciones, datos curiosos y el futuro del tema (nunca relleno ni repeticiones).
 - **Datos**: solo cifras verificables. Si no es exacta, redondea y di "about"/"around". Nunca inventes citas.
 - **Nada de**: consejos médicos o financieros, ni detalles morbosos de tragedias con víctimas.
 - Narración escrita para leerse en voz alta: números en letras ("ninety-five percent"), sin símbolos.

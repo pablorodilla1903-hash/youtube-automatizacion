@@ -30,7 +30,7 @@ canales:
     # Voz principal: Microsoft Edge, masculina y muy natural (gratis). Alternativa: en-US-BrianMultilingualNeural
     voz_proveedor: edge
     voz_edge: en-US-AndrewMultilingualNeural
-    velocidad_edge: "-3%"
+    velocidad_edge: "-5%"
     # Respaldo si Edge fallara: Kokoro (local)
     voz_kokoro: am_michael
     velocidad_voz: 0.94
