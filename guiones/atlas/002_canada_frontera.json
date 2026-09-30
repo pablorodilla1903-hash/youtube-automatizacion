@@ -1,0 +1,1933 @@
+{
+ "videoId": "002-canada-frontera",
+ "channel": "atlas",
+ "title": "Why Most Canadians Live Near the US Border",
+ "hook_chapter": "The empty giant",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.statcan.gc.ca/",
+   "note": "Statistics Canada – population and where Canadians live"
+  },
+  {
+   "id": "s2",
+   "url": "https://natural-resources.canada.ca/",
+   "note": "Natural Resources Canada – permafrost and the Canadian Shield"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.thecanadianencyclopedia.ca/",
+   "note": "The Canadian Encyclopedia – New France, the fur trade and the Canadian Pacific Railway"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.britannica.com/place/Canada",
+   "note": "Britannica – Canada: area, climate, border and population"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.international.gc.ca/",
+   "note": "Global Affairs Canada – trade with the United States"
+  }
+ ],
+ "metadata": {
+  "alt_titles": [
+   "Canada Is Huge. So Why Is It Almost Empty?",
+   "The Thin Line Where Almost All of Canada Lives"
+  ],
+  "thumbnails": [
+   {
+    "prompt": "real NASA night satellite photograph of North America: Canada almost completely dark, with a thin line of bright city lights running along the border with the United States, the Great Lakes visible, realistic, high detail",
+    "tag": "Canada",
+    "text": "Almost everyone lives here",
+    "highlight": [
+     "HERE"
+    ],
+    "seed": 41,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       -160,
+       38,
+       -50,
+       75
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     },
+     "target": [
+      -80,
+      45
+     ],
+     "text": "Everyone lives here"
+    }
+   },
+   {
+    "prompt": "aerial drone photograph of endless Canadian boreal forest, frozen lakes and tundra stretching to the horizon with no roads or people, dramatic cold light, ultra realistic, National Geographic style",
+    "tag": "Canada",
+    "text": "Why is Canada so empty?",
+    "highlight": [
+     "EMPTY?"
+    ],
+    "seed": 53,
+    "pos": "top",
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       -160,
+       38,
+       -50,
+       75
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     },
+     "target": [
+      -100,
+      62
+     ],
+     "text": "Why so empty?"
+    }
+   },
+   {
+    "prompt": "aerial photograph of the Toronto skyline and CN Tower on the shore of Lake Ontario at golden hour, with the lake stretching south towards the United States, ultra realistic, cinematic",
+    "tag": "Canada",
+    "text": "Why they hug the border",
+    "highlight": [
+     "BORDER"
+    ],
+    "seed": 67,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       -160,
+       38,
+       -50,
+       75
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     },
+     "target": [
+      -79.4,
+      43.7
+     ],
+     "text": "Why hug the border?"
+    }
+   }
+  ],
+  "description": "Canada is the second largest country on Earth, yet it has roughly the same population as California — and most of those people live in a thin strip close to the United States. Why?\n\nIn this video: how cold, permafrost and the rocky Canadian Shield decide where people can live, why the St. Lawrence River and the Great Lakes shaped the first settlements, how a railway built in 1885 created Canada's western cities, and why the pull of the United States still keeps Canadians close to the border.",
+  "tags": [
+   "canada",
+   "canada population",
+   "why canadians live near the border",
+   "canada geography",
+   "canada map",
+   "us canada border",
+   "49th parallel",
+   "canadian shield",
+   "permafrost",
+   "st lawrence river",
+   "canadian pacific railway",
+   "toronto",
+   "geography explained",
+   "history explained",
+   "maps",
+   "timeline earth",
+   "why people live where they live",
+   "north america geography",
+   "nunavut",
+   "geography documentary"
+  ],
+  "hashtags": [
+   "#geography",
+   "#canada",
+   "#history"
+  ],
+  "pinned_comment": "Canadians: how far do you live from the US border? Everyone else: guess the answer before you check 👇"
+ },
+ "chapters": [
+  {
+   "n": 0,
+   "title": "Hook",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "This is Canada, the second largest country on Earth.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ]
+     }
+    },
+    {
+     "type": "bars",
+     "narration": "And yet it has roughly the same number of people as the state of California.",
+     "data": {
+      "title": "Population (millions, approx.)",
+      "highlight": 0,
+      "bars": [
+       {
+        "label": "Canada",
+        "value": 41,
+        "display": "~41 M"
+       },
+       {
+        "label": "California",
+        "value": 39,
+        "display": "~39 M",
+        "color": "blue"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Even stranger, most of those people live squeezed into a thin strip right next to the United States.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So why does almost everyone in a giant country live along one edge of it?",
+     "data": {
+      "text": "Why does almost everyone live along one edge?",
+      "highlight": [
+       "edge?"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 1,
+   "title": "An almost empty giant",
+   "title_youtube": "An almost empty giant",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "By the end of this video, you'll see how the cold, a rocky shield, two rivers and one railway drew this line, and why the United States keeps pulling Canadians south.",
+     "data": {
+      "kicker": "Coming up",
+      "text": "Cold, rock, rivers, a railway and a powerful neighbor",
+      "highlight": [
+       "railway",
+       "neighbor"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Canada covers almost ten million square kilometers. That's bigger than the whole United States, and more than twenty times the size of Spain.",
+     "data": {
+      "kicker": "Area of Canada",
+      "value": "9,985,000 km²",
+      "caption": "bigger than the United States"
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "But spread evenly, that would be only about four people for every square kilometer.",
+     "data": {
+      "kicker": "People per square kilometer",
+      "value": "~4",
+      "caption": "one of the lowest densities on Earth",
+      "color": "accent2"
+     }
+    },
+    {
+     "type": "icon_grid",
+     "narration": "In reality, they are not spread evenly at all. Roughly two out of every three Canadians live within about one hundred kilometers of the US border.",
+     "data": {
+      "icon": "person",
+      "icons": 100,
+      "cols": 20,
+      "highlight": 66,
+      "label": "Within ~100 km of the border",
+      "caption": "each figure = 1% of Canadians"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Look at the biggest cities. Vancouver, Calgary, Winnipeg, Toronto, Montreal. All of them sit in the south.",
+     "data": {
+      "bbox": [
+       -128,
+       40.5,
+       -58,
+       56
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": -123.12,
+        "lat": 49.28,
+        "label": "Vancouver",
+        "anchor": "rm"
+       },
+       {
+        "lon": -114.07,
+        "lat": 51.05,
+        "label": "Calgary",
+        "anchor": "mb"
+       },
+       {
+        "lon": -97.14,
+        "lat": 49.9,
+        "label": "Winnipeg",
+        "anchor": "mb"
+       },
+       {
+        "lon": -79.38,
+        "lat": 43.65,
+        "label": "Toronto",
+        "anchor": "mt"
+       },
+       {
+        "lon": -73.57,
+        "lat": 45.5,
+        "label": "Montreal",
+        "anchor": "mb"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Meanwhile the northern territory of Nunavut is bigger than Mexico, and home to only around forty thousand people.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "labels": [
+       {
+        "lon": -95,
+        "lat": 66,
+        "text": "NUNAVUT",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2"
+       },
+       {
+        "lon": -95,
+        "lat": 62.8,
+        "text": "~40,000 people",
+        "size": 0.04,
+        "start": 0.9
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Cold and rock",
+   "title_youtube": "Cold and rock",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "The first reason is simple. Most of Canada is extremely cold.",
+     "data": {
+      "text": "Most of Canada is extremely cold",
+      "highlight": [
+       "cold"
+      ]
+     }
+    },
+    {
+     "type": "bars",
+     "narration": "In January, Toronto averages a few degrees below zero. Yellowknife and Iqaluit, further north, sit at around minus twenty-five.",
+     "data": {
+      "title": "Average January temperature",
+      "highlight": 0,
+      "bars": [
+       {
+        "label": "Toronto",
+        "value": 4,
+        "display": "about -4 °C"
+       },
+       {
+        "label": "Yellowknife",
+        "value": 25,
+        "display": "about -25 °C",
+        "color": "blue"
+       },
+       {
+        "label": "Iqaluit",
+        "value": 26,
+        "display": "about -26 °C",
+        "color": "blue"
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Under around half of the country, the ground is permafrost. It stays frozen all year, which makes building roads, pipes and houses difficult and expensive.",
+     "data": {
+      "kicker": "Permafrost",
+      "value": "~50%",
+      "caption": "of Canada sits on frozen ground",
+      "color": "blue"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Then there's the rock. The Canadian Shield, a huge block of ancient rock covered by thin soil, lakes and forest, spreads across about half of the country.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -120,
+          67
+         ],
+         [
+          -102,
+          60
+         ],
+         [
+          -97,
+          55
+         ],
+         [
+          -90,
+          50
+         ],
+         [
+          -84,
+          47.5
+         ],
+         [
+          -78,
+          45.5
+         ],
+         [
+          -75,
+          45.5
+         ],
+         [
+          -70,
+          47.5
+         ],
+         [
+          -65,
+          51
+         ],
+         [
+          -60,
+          53
+         ],
+         [
+          -62,
+          58
+         ],
+         [
+          -70,
+          60
+         ],
+         [
+          -78,
+          62
+         ],
+         [
+          -82,
+          66
+         ],
+         [
+          -95,
+          68.5
+         ],
+         [
+          -110,
+          69
+         ]
+        ],
+        "color": "red",
+        "start": 0.3
+       }
+      ],
+      "labels": [
+       {
+        "lon": -88,
+        "lat": 57,
+        "text": "CANADIAN SHIELD",
+        "font": "display",
+        "size": 0.06,
+        "start": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Put the cold and the rock together, and only around five percent of Canada's land is good for growing crops.",
+     "data": {
+      "kicker": "Land good for crops",
+      "value": "~5%",
+      "caption": "of all of Canada",
+      "color": "red"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "And people have always lived where food can be grown. Which in Canada means one place: the far south.",
+     "data": {
+      "text": "Food grows in the far south",
+      "highlight": [
+       "south"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Rivers and lakes",
+   "title_youtube": "Rivers, lakes and the first settlers",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "But cold and rock only explain half the story. The other half is water. Look at the St. Lawrence River and the Great Lakes.",
+     "data": {
+      "bbox": [
+       -85,
+       40.5,
+       -60,
+       50.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "St. Lawrence",
+         "Niagara",
+         "Ottawa"
+        ],
+        "width": 7,
+        "grow": 2.0
+       }
+      ],
+      "labels": [
+       {
+        "lon": -87.5,
+        "lat": 47.8,
+        "text": "Great Lakes",
+        "size": 0.04,
+        "color": "blue",
+        "start": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "type": "timeline",
+     "narration": "When French explorers arrived, this river was a highway into the heart of the continent. Quebec City was founded in 1608, and Montreal in 1642, right on its banks.",
+     "data": {
+      "title": "Canada along the water",
+      "focus": 0,
+      "events": [
+       {
+        "year": "1608",
+        "label": "Quebec City founded"
+       },
+       {
+        "year": "1642",
+        "label": "Montreal founded"
+       },
+       {
+        "year": "1818",
+        "label": "Border set on the 49th parallel"
+       },
+       {
+        "year": "1885",
+        "label": "Railway reaches the Pacific"
+       },
+       {
+        "year": "Today",
+        "label": "~41 million Canadians"
+       }
+      ]
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "The fur trade followed the water too. Beaver pelts were carried by canoe along rivers and lakes, and trading posts grew into towns.",
+     "data": {
+      "title": "How the fur trade built towns",
+      "nodes": [
+       {
+        "id": "a",
+        "label": "Beaver pelts",
+        "x": 0.14,
+        "y": 0.52
+       },
+       {
+        "id": "b",
+        "label": "Canoes on rivers",
+        "x": 0.38,
+        "y": 0.52
+       },
+       {
+        "id": "c",
+        "label": "Trading posts",
+        "x": 0.62,
+        "y": 0.52
+       },
+       {
+        "id": "d",
+        "label": "Towns and cities",
+        "x": 0.86,
+        "y": 0.52,
+        "color": "green"
+       }
+      ],
+      "edges": [
+       [
+        "a",
+        "b"
+       ],
+       [
+        "b",
+        "c"
+       ],
+       [
+        "c",
+        "d"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Water meant transport, trade and milder winters than the interior. So the first Canada grew as a chain of towns along the St. Lawrence and the Great Lakes.",
+     "data": {
+      "text": "The first Canada was a chain of river towns",
+      "highlight": [
+       "river"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "That pattern never went away. Today, around half of all Canadians live in the corridor between Quebec City and Windsor, along that same water.",
+     "data": {
+      "kicker": "Quebec City to Windsor corridor",
+      "value": "~50%",
+      "caption": "of all Canadians live here"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "If you're enjoying this, subscribe. Every week we find the story hidden in another map.",
+     "data": {
+      "kicker": "Timeline Earth",
+      "text": "Subscribe for a new map story every week",
+      "highlight": [
+       "Subscribe"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "A line and a railway",
+   "title_youtube": "A border and a railway",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "Further west, the border itself was drawn with a ruler. In 1818, Britain and the United States agreed on the forty-ninth parallel, and in 1846 the line was extended to the Pacific.",
+     "data": {
+      "bbox": [
+       -128,
+       40.5,
+       -85,
+       58
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       },
+       {
+        "name": "United States of America",
+        "color": "blue",
+        "strength": 0.25
+       }
+      ],
+      "labels": [
+       {
+        "lon": -106,
+        "lat": 49.8,
+        "text": "49th parallel",
+        "size": 0.045,
+        "color": "accent2",
+        "start": 0.8
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Including Alaska, the Canada US border runs for almost nine thousand kilometers, the longest border between two countries in the world.",
+     "data": {
+      "kicker": "Canada–US border",
+      "value": "8,891 km",
+      "caption": "the longest international border on Earth"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "But a line on a map doesn't make people move west. For that, Canada needed a railway.",
+     "data": {
+      "text": "A line on a map needs a railway",
+      "highlight": [
+       "railway"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "In 1885, the Canadian Pacific Railway was completed, linking Montreal to the Pacific coast. And it was built close to the border, partly to keep the western lands firmly Canadian.",
+     "data": {
+      "bbox": [
+       -128,
+       40.5,
+       -58,
+       56
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          -73.57,
+          45.5
+         ],
+         [
+          -75.7,
+          45.42
+         ],
+         [
+          -79.46,
+          46.31
+         ],
+         [
+          -80.99,
+          46.49
+         ],
+         [
+          -85.8,
+          48.6
+         ],
+         [
+          -89.25,
+          48.38
+         ],
+         [
+          -94.49,
+          49.77
+         ],
+         [
+          -97.14,
+          49.9
+         ],
+         [
+          -104.62,
+          50.45
+         ],
+         [
+          -110.68,
+          50.04
+         ],
+         [
+          -114.07,
+          51.05
+         ],
+         [
+          -115.57,
+          51.18
+         ],
+         [
+          -118.2,
+          51.0
+         ],
+         [
+          -120.33,
+          50.67
+         ],
+         [
+          -123.12,
+          49.28
+         ]
+        ],
+        "label": "Canadian Pacific · 1885"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Towns grew wherever the trains stopped. Winnipeg, Regina, Calgary and Vancouver all boomed along the line, and they are still Canada's western capitals today.",
+     "data": {
+      "bbox": [
+       -128,
+       40.5,
+       -58,
+       56
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          -73.57,
+          45.5
+         ],
+         [
+          -75.7,
+          45.42
+         ],
+         [
+          -79.46,
+          46.31
+         ],
+         [
+          -80.99,
+          46.49
+         ],
+         [
+          -85.8,
+          48.6
+         ],
+         [
+          -89.25,
+          48.38
+         ],
+         [
+          -94.49,
+          49.77
+         ],
+         [
+          -97.14,
+          49.9
+         ],
+         [
+          -104.62,
+          50.45
+         ],
+         [
+          -110.68,
+          50.04
+         ],
+         [
+          -114.07,
+          51.05
+         ],
+         [
+          -115.57,
+          51.18
+         ],
+         [
+          -118.2,
+          51.0
+         ],
+         [
+          -120.33,
+          50.67
+         ],
+         [
+          -123.12,
+          49.28
+         ]
+        ]
+       }
+      ],
+      "points": [
+       {
+        "lon": -97.14,
+        "lat": 49.9,
+        "label": "Winnipeg",
+        "anchor": "mb"
+       },
+       {
+        "lon": -104.62,
+        "lat": 50.45,
+        "label": "Regina",
+        "anchor": "mt"
+       },
+       {
+        "lon": -114.07,
+        "lat": 51.05,
+        "label": "Calgary",
+        "anchor": "mb"
+       },
+       {
+        "lon": -123.12,
+        "lat": 49.28,
+        "label": "Vancouver",
+        "anchor": "rm"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "The pull of the south",
+   "title_youtube": "The pull of the south",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "And then there is the neighbor. The United States has more than eight times Canada's population and the biggest economy in the world.",
+     "data": {
+      "text": "A neighbor with 8 times the people",
+      "highlight": [
+       "8"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Around three quarters of everything Canada exports goes to the United States.",
+     "data": {
+      "kicker": "Canadian exports",
+      "value": "~75%",
+      "caption": "go to the United States",
+      "color": "blue"
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "Highways, railways, bridges and pipelines all run north to south across the border, and the cities closest to it are the ones best placed to trade.",
+     "data": {
+      "title": "Why the border attracts cities",
+      "nodes": [
+       {
+        "id": "a",
+        "label": "US market",
+        "x": 0.15,
+        "y": 0.52,
+        "color": "blue"
+       },
+       {
+        "id": "b",
+        "label": "Border crossings",
+        "x": 0.5,
+        "y": 0.52
+       },
+       {
+        "id": "c",
+        "label": "Canadian cities",
+        "x": 0.85,
+        "y": 0.52,
+        "color": "green"
+       }
+      ],
+      "edges": [
+       [
+        "a",
+        "b"
+       ],
+       [
+        "b",
+        "c"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Here's a fun fact. Canada's southernmost tip, near Point Pelee in Lake Erie, is further south than the northern border of California.",
+     "data": {
+      "bbox": [
+       -126,
+       36,
+       -76,
+       50
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       },
+       {
+        "name": "United States of America",
+        "color": "blue",
+        "strength": 0.25
+       }
+      ],
+      "points": [
+       {
+        "lon": -82.5,
+        "lat": 41.9,
+        "label": "Point Pelee · 41.9°N",
+        "anchor": "mt",
+        "color": "red"
+       },
+       {
+        "lon": -120.0,
+        "lat": 42.0,
+        "label": "California border · 42°N",
+        "anchor": "mb"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "The north isn't completely empty, though. Mines, oil sands and small towns exist there. But they are islands of people in a vast, frozen landscape.",
+     "data": {
+      "text": "Islands of people in a frozen landscape",
+      "highlight": [
+       "frozen"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "The answer",
+   "card": false,
+   "title_youtube": "The answer",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "So why do most Canadians live near the US border? Because that's where the climate is mildest, where the soil can grow food, where the rivers and lakes carried the first settlers, where the railway built the cities, and where the biggest customer in the world is just a short drive away.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     }
+    },
+    {
+     "type": "end_screen",
+     "minDuration": 12,
+     "narration": "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.",
+     "data": {
+      "text": "Thanks for watching",
+      "sub_label": "Subscribe"
+     }
+    }
+   ]
+  }
+ ],
+ "shorts": [
+  {
+   "title": "Canada has about the same people as California 🇨🇦 #shorts",
+   "description": "The second biggest country on Earth is almost empty. Full video on the channel. #geography #canada #maps",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "Canada is the second largest country on Earth.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ]
+     }
+    },
+    {
+     "type": "bars",
+     "narration": "But it has roughly the same population as California.",
+     "data": {
+      "bars": [
+       {
+        "label": "Canada",
+        "value": 41,
+        "display": "~41 M"
+       },
+       {
+        "label": "California",
+        "value": 39,
+        "display": "~39 M",
+        "color": "blue"
+       }
+      ],
+      "highlight": 0
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "And most Canadians live in a thin strip right next to the United States.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          -125.5,
+          48.3
+         ],
+         [
+          -123,
+          48.9
+         ],
+         [
+          -95.2,
+          49.0
+         ],
+         [
+          -88,
+          48.0
+         ],
+         [
+          -84.5,
+          46.4
+         ],
+         [
+          -82.5,
+          42.0
+         ],
+         [
+          -79,
+          42.8
+         ],
+         [
+          -76.5,
+          44.0
+         ],
+         [
+          -71,
+          45.0
+         ],
+         [
+          -67.5,
+          45.2
+         ],
+         [
+          -64,
+          44.0
+         ],
+         [
+          -60,
+          45.8
+         ],
+         [
+          -61,
+          47.2
+         ],
+         [
+          -66,
+          48.8
+         ],
+         [
+          -71,
+          47.5
+         ],
+         [
+          -75,
+          46.6
+         ],
+         [
+          -79.5,
+          46.8
+         ],
+         [
+          -84.5,
+          48.2
+         ],
+         [
+          -89.5,
+          49.2
+         ],
+         [
+          -96,
+          50.6
+         ],
+         [
+          -104,
+          51.5
+         ],
+         [
+          -114,
+          54.0
+         ],
+         [
+          -119,
+          50.8
+         ],
+         [
+          -125.5,
+          50.6
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Cold, rock and one railway explain why. Full story on the channel.",
+     "data": {
+      "text": "Cold, rock and one railway",
+      "highlight": [
+       "railway"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "Part of Canada is further south than California 🤯 #shorts",
+   "description": "A map fact almost nobody knows. Full video on the channel. #geography #canada #mapfacts",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "Part of Canada is further south than part of California.",
+     "data": {
+      "text": "Part of Canada is further south than California",
+      "highlight": [
+       "south"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Canada's southern tip, near Point Pelee in Lake Erie, sits below forty-two degrees north.",
+     "data": {
+      "bbox": [
+       -126,
+       36,
+       -76,
+       50
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       },
+       {
+        "name": "United States of America",
+        "color": "blue",
+        "strength": 0.25
+       }
+      ],
+      "points": [
+       {
+        "lon": -82.5,
+        "lat": 41.9,
+        "label": "Point Pelee",
+        "anchor": "mt",
+        "color": "red"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "California's northern border is exactly at forty-two degrees. Full story on the channel.",
+     "data": {
+      "text": "California's border: exactly 42° north",
+      "highlight": [
+       "42°"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "A territory bigger than Mexico with 40,000 people ❄️ #shorts",
+   "description": "Canada's emptiest corner. Full video on the channel. #geography #canada #nunavut",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "This is Nunavut, in northern Canada. It's bigger than Mexico.",
+     "data": {
+      "bbox": [
+       -141,
+       40.5,
+       -52,
+       72
+      ],
+      "highlight_countries": [
+       {
+        "name": "Canada",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "labels": [
+       {
+        "lon": -95,
+        "lat": 66,
+        "text": "NUNAVUT",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "But only around forty thousand people live there.",
+     "data": {
+      "value": "~40,000",
+      "caption": "people in all of Nunavut"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Frozen ground, rock and extreme cold keep it almost empty. Full story on the channel.",
+     "data": {
+      "text": "Frozen ground keeps it empty",
+      "highlight": [
+       "Frozen"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}
