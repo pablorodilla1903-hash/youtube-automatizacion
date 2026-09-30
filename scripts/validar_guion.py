@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from yt.anim.scenes import SCENES  # noqa: E402
 
-MIN_WORDS, MAX_WORDS = 1200, 2200  # ≈ 8-13 min con la voz del canal
+MIN_WORDS, MAX_WORDS = 2250, 3200  # ≈ 15-20 min con la voz del canal
 
 
 def main(path: Path) -> int:

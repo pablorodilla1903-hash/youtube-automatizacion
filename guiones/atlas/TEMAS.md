@@ -6,7 +6,7 @@ Puedes reordenar, borrar o añadir temas cuando quieras (editando este archivo e
 Criterio: icono o lugar que todo el mundo conoce + una pregunta que casi nadie sabe responder + válido dentro de años.
 
 - [x] 001 · Why 95% of Egypt Lives on Just 5% of Its Land
-- [ ] Why Most Canadians Live Near the US Border
+- [x] 002 · Why Most Canadians Live Near the US Border
 - [ ] Why Russia Is So Big (and Still So Empty)
 - [ ] Why Almost No One Lives in the Middle of Australia
 - [ ] Why Istanbul Is the Most Fought-Over City in History
