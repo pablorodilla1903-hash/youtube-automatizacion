@@ -58,9 +58,9 @@ script = {
             {"prompt": "long passenger train of the Trans-Siberian Railway crossing a vast snowy Siberian landscape with birch forest at sunset, steam of cold air, dramatic sky, ultra realistic, cinematic photograph",
              "tag": "Russia", "text": "One railway, 9,000 km", "highlight": ["9,000"], "seed": 83,
              "fallback": {"art": "map", "map": dict(THUMB_MAP, routes=[{"points": TRANS_SIB}]), "target": [90, 55], "text": "One railway, 9,000 km"}},
-            {"prompt": "realistic night satellite photograph of Russia seen from space: bright city lights around Moscow and western Russia, while Siberia to the east is almost completely dark, curvature of the Earth, NASA style, high detail",
-             "tag": "Russia", "text": "The lights stop here", "highlight": ["STOP"], "seed": 97,
-             "fallback": {"art": "map", "map": dict(THUMB_MAP, routes=[URALS]), "target": [60, 60], "text": "The lights stop here"}},
+            {"prompt": "photograph of a small remote village in Yakutia, Siberia, in extreme winter: wooden houses with smoke rising from chimneys, thick ice fog, frosted trees and endless frozen taiga around, pale low sun, ultra realistic, cinematic, National Geographic style",
+             "tag": "Siberia", "text": "Who lives at −68 °C?", "highlight": ["−68"], "seed": 97,
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [142.8, 63.5], "text": "Who lives at −68 °C?"}},
         ],
         "description": (
             "Russia is the largest country on Earth, bigger than the whole surface of Pluto, yet it has fewer people than "

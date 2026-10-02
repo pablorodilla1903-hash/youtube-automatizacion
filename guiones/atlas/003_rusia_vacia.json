@@ -199,11 +199,11 @@
     }
    },
    {
-    "prompt": "realistic night satellite photograph of Russia seen from space: bright city lights around Moscow and western Russia, while Siberia to the east is almost completely dark, curvature of the Earth, NASA style, high detail",
-    "tag": "Russia",
-    "text": "The lights stop here",
+    "prompt": "photograph of a small remote village in Yakutia, Siberia, in extreme winter: wooden houses with smoke rising from chimneys, thick ice fog, frosted trees and endless frozen taiga around, pale low sun, ultra realistic, cinematic, National Geographic style",
+    "tag": "Siberia",
+    "text": "Who lives at −68 °C?",
     "highlight": [
-     "STOP"
+     "−68"
     ],
     "seed": 97,
     "fallback": {
@@ -232,41 +232,13 @@
         "color": "accent2",
         "start": 0.0
        }
-      ],
-      "routes": [
-       {
-        "points": [
-         [
-          66,
-          68.5
-         ],
-         [
-          60.5,
-          64
-         ],
-         [
-          59,
-          59
-         ],
-         [
-          59.3,
-          55
-         ],
-         [
-          58.5,
-          51.5
-         ]
-        ],
-        "label": "Ural Mountains",
-        "color": "muted"
-       }
       ]
      },
      "target": [
-      60,
-      60
+      142.8,
+      63.5
      ],
-     "text": "The lights stop here"
+     "text": "Who lives at −68 °C?"
     }
    }
   ],
