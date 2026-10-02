@@ -59,8 +59,8 @@ script = {
              "tag": "Russia", "text": "One railway, 9,000 km", "highlight": ["9,000"], "seed": 83,
              "fallback": {"art": "map", "map": dict(THUMB_MAP, routes=[{"points": TRANS_SIB}]), "target": [90, 55], "text": "One railway, 9,000 km"}},
             {"prompt": "photograph of a small remote village in Yakutia, Siberia, in extreme winter: wooden houses with smoke rising from chimneys, thick ice fog, frosted trees and endless frozen taiga around, pale low sun, ultra realistic, cinematic, National Geographic style",
-             "tag": "Siberia", "text": "Who lives at −68 °C?", "highlight": ["−68"], "seed": 97,
-             "fallback": {"art": "map", "map": THUMB_MAP, "target": [142.8, 63.5], "text": "Who lives at −68 °C?"}},
+             "tag": "Siberia", "text": "Who lives at -68 °C?", "highlight": ["-68"], "seed": 97,
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [142.8, 63.5], "text": "Who lives at -68 °C?"}},
         ],
         "description": (
             "Russia is the largest country on Earth, bigger than the whole surface of Pluto, yet it has fewer people than "

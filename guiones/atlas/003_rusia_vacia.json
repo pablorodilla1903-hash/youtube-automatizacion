@@ -201,9 +201,9 @@
    {
     "prompt": "photograph of a small remote village in Yakutia, Siberia, in extreme winter: wooden houses with smoke rising from chimneys, thick ice fog, frosted trees and endless frozen taiga around, pale low sun, ultra realistic, cinematic, National Geographic style",
     "tag": "Siberia",
-    "text": "Who lives at −68 °C?",
+    "text": "Who lives at -68 °C?",
     "highlight": [
-     "−68"
+     "-68"
     ],
     "seed": 97,
     "fallback": {
@@ -238,7 +238,7 @@
       142.8,
       63.5
      ],
-     "text": "Who lives at −68 °C?"
+     "text": "Who lives at -68 °C?"
     }
    }
   ],
