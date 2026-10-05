@@ -1,0 +1,3536 @@
+{
+ "videoId": "004-australia-interior",
+ "channel": "atlas",
+ "title": "Why Almost No One Lives in the Middle of Australia",
+ "hook_chapter": "The empty middle",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.abs.gov.au/",
+   "note": "Australian Bureau of Statistics – population, capital cities and remoteness areas"
+  },
+  {
+   "id": "s2",
+   "url": "http://www.bom.gov.au/climate/",
+   "note": "Bureau of Meteorology – rainfall, arid zone and temperature records"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ga.gov.au/scientific-topics/national-location-information/landforms",
+   "note": "Geoscience Australia – deserts, Lake Eyre, Great Artesian Basin and elevation"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.nma.gov.au/defining-moments",
+   "note": "National Museum of Australia – First Fleet, Burke and Wills, Overland Telegraph, Goyder's Line"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.flyingdoctor.org.au/",
+   "note": "Royal Flying Doctor Service – history since 1928"
+  },
+  {
+   "id": "s6",
+   "url": "https://parksaustralia.gov.au/uluru/",
+   "note": "Parks Australia – Uluru-Kata Tjuta National Park and the Anangu"
+  }
+ ],
+ "metadata": {
+  "alt_titles": [
+   "Australia Is Huge. So Why Is the Middle Empty?",
+   "The Real Reason Australians Live on the Coast"
+  ],
+  "thumbnails": [
+   {
+    "prompt": "aerial drone photograph of the red Australian outback desert stretching to the horizon, a single straight dirt road disappearing into the distance, red sand and spinifex, no towns, harsh midday sun, ultra realistic, cinematic, National Geographic style",
+    "tag": "Australia",
+    "text": "Why is it empty?",
+    "highlight": [
+     "EMPTY?"
+    ],
+    "seed": 113,
+    "pos": "top",
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       108,
+       -46,
+       158,
+       -8
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ],
+      "labels": [
+       {
+        "lon": 129,
+        "lat": -24.5,
+        "text": "THE OUTBACK",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2",
+        "start": 0.0
+       }
+      ]
+     },
+     "target": [
+      131,
+      -24
+     ],
+     "text": "Why is it empty?"
+    }
+   },
+   {
+    "prompt": "photograph of Uluru, the giant red sandstone monolith in central Australia, glowing red at sunset, flat desert plain with desert oak trees around it, dramatic sky, ultra realistic, cinematic",
+    "tag": "Australia",
+    "text": "Almost nobody lives here",
+    "highlight": [
+     "NOBODY"
+    ],
+    "seed": 127,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       108,
+       -46,
+       158,
+       -8
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ],
+      "labels": [
+       {
+        "lon": 129,
+        "lat": -24.5,
+        "text": "THE OUTBACK",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2",
+        "start": 0.0
+       }
+      ]
+     },
+     "target": [
+      131.04,
+      -25.34
+     ],
+     "text": "Almost nobody lives here"
+    }
+   },
+   {
+    "prompt": "aerial photograph of Sydney Harbour and the Sydney Opera House at golden hour, dense city skyline right on the coast, blue water, ultra realistic, cinematic",
+    "tag": "Australia",
+    "text": "Everyone lives on the edge",
+    "highlight": [
+     "EDGE"
+    ],
+    "seed": 139,
+    "fallback": {
+     "art": "map",
+     "map": {
+      "bbox": [
+       108,
+       -46,
+       158,
+       -8
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ],
+      "labels": [
+       {
+        "lon": 129,
+        "lat": -24.5,
+        "text": "THE OUTBACK",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2",
+        "start": 0.0
+       }
+      ]
+     },
+     "target": [
+      151.2,
+      -33.9
+     ],
+     "text": "Everyone lives on the edge"
+    }
+   }
+  ],
+  "description": "Australia is almost as big as the mainland United States, yet it has only around twenty-seven million people, and most of them live in a handful of cities on the coast. Why is the middle of the continent almost empty?\n\nIn this video: why Australia is the driest inhabited continent, how mountains and sinking air steal its rain, how Aboriginal peoples lived in the desert for tens of thousands of years, why the colonies grew as ports, the explorers and the telegraph line that crossed the outback, Goyder's Line, and life in the outback today.",
+  "tags": [
+   "australia",
+   "australian outback",
+   "why is australia empty",
+   "australia population",
+   "australia geography",
+   "australia map",
+   "why australians live on the coast",
+   "uluru",
+   "alice springs",
+   "great artesian basin",
+   "goyder's line",
+   "burke and wills",
+   "royal flying doctor service",
+   "coober pedy",
+   "geography explained",
+   "history explained",
+   "maps",
+   "timeline earth",
+   "lake eyre",
+   "geography documentary"
+  ],
+  "hashtags": [
+   "#geography",
+   "#australia",
+   "#history"
+  ],
+  "pinned_comment": "Australians: have you ever been to the middle of the country? Everyone else: guess how far Alice Springs is from the nearest big city 👇"
+ },
+ "chapters": [
+  {
+   "n": 0,
+   "title": "Hook",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "This is Australia. A country the size of a continent.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ]
+     }
+    },
+    {
+     "type": "bars",
+     "narration": "It's almost as big as the mainland United States. But while the United States has more than three hundred million people, Australia has only around twenty-seven million.",
+     "data": {
+      "title": "Population (millions, approx.)",
+      "highlight": 1,
+      "bars": [
+       {
+        "label": "Mainland US",
+        "value": 330,
+        "display": "~330 M",
+        "color": "blue"
+       },
+       {
+        "label": "Australia",
+        "value": 27,
+        "display": "~27 M"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "And almost all of them live here, along the edges. Mostly in the east and the south-east, and in one corner of the west.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The middle, an area bigger than most countries on Earth, is almost completely empty.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "labels": [
+       {
+        "lon": 129,
+        "lat": -24.5,
+        "text": "THE OUTBACK",
+        "font": "display",
+        "size": 0.07,
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So why does almost no one live in the middle of Australia?",
+     "data": {
+      "text": "Why does almost no one live in the middle?",
+      "highlight": [
+       "middle?"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 1,
+   "title": "A nearly empty continent",
+   "title_youtube": "A nearly empty continent",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "By the end of this video, you'll see how sinking air, a wall of mountains, ancient soil and a few brave and stubborn people drew the map of where Australians live.",
+     "data": {
+      "kicker": "Coming up",
+      "text": "Sinking air, mountains, ancient soil and stubborn people",
+      "highlight": [
+       "air",
+       "mountains"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Australia covers around seven point seven million square kilometers. It's the sixth largest country in the world, and the only one that covers an entire continent.",
+     "data": {
+      "kicker": "Area of Australia",
+      "value": "7,690,000 km²",
+      "caption": "a whole continent"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "To get a sense of the scale, put it over Europe. From Perth to Sydney is almost as far as from Madrid to Moscow.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          115.86,
+          -31.95
+         ],
+         [
+          151.21,
+          -33.87
+         ]
+        ],
+        "label": "Perth to Sydney · ~3,300 km",
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Spread evenly, Australia would have only about three and a half people per square kilometer. That's one of the lowest densities of any country on Earth.",
+     "data": {
+      "kicker": "People per square kilometer",
+      "value": "~3.5",
+      "caption": "one of the lowest on Earth",
+      "color": "accent2"
+     }
+    },
+    {
+     "type": "bars",
+     "narration": "Compare that with the United Kingdom, at around two hundred and eighty, or the United States, at around thirty-five.",
+     "data": {
+      "title": "People per km² (approx.)",
+      "highlight": 2,
+      "bars": [
+       {
+        "label": "United Kingdom",
+        "value": 280,
+        "display": "~280",
+        "color": "blue"
+       },
+       {
+        "label": "United States",
+        "value": 36,
+        "display": "~36",
+        "color": "blue"
+       },
+       {
+        "label": "Australia",
+        "value": 3.5,
+        "display": "~3.5"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "But just like in other giant countries, the average is misleading. Because Australians are not spread out at all. They're packed together.",
+     "data": {
+      "text": "Not spread out. Packed together.",
+      "highlight": [
+       "Packed"
+      ]
+     }
+    },
+    {
+     "type": "icon_grid",
+     "narration": "About two out of every three Australians live in just a handful of capital cities.",
+     "data": {
+      "icon": "person",
+      "icons": 100,
+      "cols": 20,
+      "highlight": 67,
+      "label": "Live in the capital cities",
+      "caption": "each figure = 1% of Australians"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Sydney and Melbourne, with around five million people each. Then Brisbane, Perth and Adelaide. Every one of them is on the coast.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 151.21,
+        "lat": -33.87,
+        "label": "Sydney",
+        "anchor": "rm"
+       },
+       {
+        "lon": 144.96,
+        "lat": -37.81,
+        "label": "Melbourne",
+        "anchor": "mt"
+       },
+       {
+        "lon": 153.03,
+        "lat": -27.47,
+        "label": "Brisbane",
+        "anchor": "rm"
+       },
+       {
+        "lon": 115.86,
+        "lat": -31.95,
+        "label": "Perth",
+        "anchor": "lm"
+       },
+       {
+        "lon": 138.6,
+        "lat": -34.93,
+        "label": "Adelaide",
+        "anchor": "mt"
+       }
+      ]
+     }
+    },
+    {
+     "type": "icon_grid",
+     "narration": "And more than eight in ten Australians live within about fifty kilometers of the sea.",
+     "data": {
+      "icon": "person",
+      "icons": 100,
+      "cols": 20,
+      "highlight": 85,
+      "label": "Within ~50 km of the coast",
+      "caption": "each figure = 1% of Australians"
+     }
+    },
+    {
+     "type": "versus",
+     "narration": "Now flip it around. The areas officially classed as remote or very remote cover most of the country, but they are home to only about two percent of the people.",
+     "data": {
+      "left": {
+       "name": "Cities and coast",
+       "lines": [
+        "a small part of the land",
+        "~98% of the people"
+       ],
+       "title_color": "green"
+      },
+      "right": {
+       "name": "Remote Australia",
+       "lines": [
+        "most of the land",
+        "~2% of the people"
+       ],
+       "title_color": "red"
+      }
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So the question is not why Australia has few people. It's why almost none of them live in the heart of their own country.",
+     "data": {
+      "text": "Why does no one live in the heart of the country?",
+      "highlight": [
+       "heart"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Into the outback",
+   "title_youtube": "What is in the middle?",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "Let's go to the middle. Right near the center of the continent is the town of Alice Springs, with around twenty-five thousand people.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 133.88,
+        "lat": -23.7,
+        "label": "Alice Springs",
+        "anchor": "lm"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The nearest big city is Adelaide, around one thousand three hundred kilometers away in a straight line. Darwin is about as far in the other direction.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 133.88,
+        "lat": -23.7,
+        "label": "Alice Springs",
+        "anchor": "lm"
+       },
+       {
+        "lon": 138.6,
+        "lat": -34.93,
+        "label": "Adelaide",
+        "anchor": "mt"
+       },
+       {
+        "lon": 130.84,
+        "lat": -12.46,
+        "label": "Darwin",
+        "anchor": "mb"
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          138.6,
+          -34.93
+         ]
+        ],
+        "label": "~1,300 km",
+        "color": "accent2"
+       },
+       {
+        "points": [
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          130.84,
+          -12.46
+         ]
+        ],
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Around four hundred and fifty kilometers away by road is Uluru, the giant sandstone rock that rises about three hundred and fifty meters above the plain.",
+     "data": {
+      "bbox": [
+       124,
+       -32,
+       143,
+       -18
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 133.88,
+        "lat": -23.7,
+        "label": "Alice Springs",
+        "anchor": "lm"
+       },
+       {
+        "lon": 131.04,
+        "lat": -25.34,
+        "label": "Uluru",
+        "anchor": "rm",
+        "color": "red"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "It is sacred to the Anangu, the Aboriginal traditional owners of the land, and since 2019, climbing it has been banned.",
+     "data": {
+      "kicker": "Uluru",
+      "text": "Sacred to the Anangu people",
+      "highlight": [
+       "Anangu"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "All around it is the outback. A huge, dry interior made of deserts, rocky ranges, scrubland and salt lakes.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "labels": [
+       {
+        "lon": 128.0,
+        "lat": -28.5,
+        "text": "Great Victoria Desert",
+        "size": 0.03,
+        "color": "muted"
+       },
+       {
+        "lon": 123.5,
+        "lat": -20.5,
+        "text": "Great Sandy Desert",
+        "size": 0.03,
+        "color": "muted"
+       },
+       {
+        "lon": 131.5,
+        "lat": -19.8,
+        "text": "Tanami Desert",
+        "size": 0.03,
+        "color": "muted"
+       },
+       {
+        "lon": 137.3,
+        "lat": -25.0,
+        "text": "Simpson Desert",
+        "size": 0.03,
+        "color": "muted"
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "The largest of these deserts, the Great Victoria Desert, covers around three hundred and fifty thousand square kilometers on its own. That's bigger than Italy.",
+     "data": {
+      "kicker": "Great Victoria Desert",
+      "value": "~350,000 km²",
+      "caption": "bigger than Italy"
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "The Northern Territory, which includes much of the center, is more than twice the size of France. But it has only around a quarter of a million people.",
+     "data": {
+      "kicker": "Northern Territory",
+      "value": "~250,000",
+      "caption": "people in an area twice the size of France"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "And in the south lies Lake Eyre, or Kati Thanda. At about fifteen meters below sea level, it's the lowest point in Australia, and the largest lake on the continent.",
+     "data": {
+      "bbox": [
+       124,
+       -32,
+       143,
+       -18
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 137.3,
+        "lat": -28.4,
+        "label": "Lake Eyre · Kati Thanda",
+        "anchor": "lm",
+        "color": "blue"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Except most of the time, it isn't a lake at all. It's a crust of dry salt. It has filled completely only a handful of times since records began.",
+     "data": {
+      "text": "A lake that is usually dry salt",
+      "highlight": [
+       "salt"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "When it does fill, after big rains far to the north, the desert comes alive. Huge flocks of pelicans and other waterbirds fly in from the coast, hundreds of kilometers away.",
+     "data": {
+      "kicker": "Lake Eyre in flood",
+      "text": "Pelicans in the middle of the desert",
+      "highlight": [
+       "Pelicans"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "And the heat is extreme. Australia's official record is around fifty point seven degrees Celsius, measured in the outback town of Oodnadatta in 1960, and equalled on the west coast in 2022.",
+     "data": {
+      "kicker": "Australia's hottest temperature",
+      "value": "50.7 °C",
+      "caption": "Oodnadatta, 1960",
+      "color": "red"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "In the 1920s, the mining town of Marble Bar recorded one hundred and sixty days in a row above thirty-seven point eight degrees. That's still a world record.",
+     "data": {
+      "kicker": "Marble Bar",
+      "text": "160 days in a row above 37.8 °C",
+      "highlight": [
+       "160"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So yes, the outback is hot. But heat alone doesn't empty a continent. Plenty of hot places are crowded. The real problem is something else.",
+     "data": {
+      "text": "Heat alone doesn't empty a continent",
+      "highlight": [
+       "Heat"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "The dry continent",
+   "title_youtube": "Why the middle is so dry",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "The real problem is water. Apart from Antarctica, Australia is the driest continent on Earth.",
+     "data": {
+      "text": "The driest inhabited continent on Earth",
+      "highlight": [
+       "driest"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Around seventy percent of the mainland is classed as arid or semi-arid. That means very little rain, and in many years, almost none.",
+     "data": {
+      "kicker": "Arid or semi-arid",
+      "value": "~70%",
+      "caption": "of the Australian mainland",
+      "color": "red"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The first reason is where Australia sits. Look at this band of latitude, around thirty degrees south. It runs right through the middle of the continent.",
+     "data": {
+      "bbox": [
+       -20,
+       -45,
+       160,
+       5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          -20,
+          -30
+         ],
+         [
+          160,
+          -30
+         ]
+        ],
+        "color": "red"
+       }
+      ],
+      "labels": [
+       {
+        "lon": 75,
+        "lat": -26.5,
+        "text": "~30° SOUTH",
+        "size": 0.045,
+        "color": "red",
+        "start": 0.9
+       }
+      ]
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "Near the equator, warm air rises and drops its rain. Then that air flows away from the equator, cools, and sinks again around thirty degrees north and south. Sinking air is dry, and it stops clouds from forming.",
+     "data": {
+      "title": "Why deserts form around 30°",
+      "nodes": [
+       {
+        "id": "a",
+        "label": "Air rises at the equator",
+        "x": 0.14,
+        "y": 0.52,
+        "color": "blue"
+       },
+       {
+        "id": "b",
+        "label": "Rain falls there",
+        "x": 0.38,
+        "y": 0.52
+       },
+       {
+        "id": "c",
+        "label": "Dry air flows away",
+        "x": 0.62,
+        "y": 0.52
+       },
+       {
+        "id": "d",
+        "label": "Sinks at ~30°: desert",
+        "x": 0.86,
+        "y": 0.52,
+        "color": "red"
+       }
+      ],
+      "edges": [
+       [
+        "a",
+        "b"
+       ],
+       [
+        "b",
+        "c"
+       ],
+       [
+        "c",
+        "d"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "text",
+     "narration": "That's the same reason the Sahara, the Arabian Desert and the Kalahari exist. Australia simply has a huge piece of land sitting right in that dry belt.",
+     "data": {
+      "text": "The same dry belt as the Sahara",
+      "highlight": [
+       "Sahara"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The second reason is a wall. Along the east coast runs the Great Dividing Range, stretching for more than three thousand kilometers.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          145.3,
+          -15.5
+         ],
+         [
+          146.0,
+          -19.5
+         ],
+         [
+          148.0,
+          -23.0
+         ],
+         [
+          151.0,
+          -27.5
+         ],
+         [
+          151.5,
+          -31.0
+         ],
+         [
+          149.8,
+          -34.5
+         ],
+         [
+          148.3,
+          -36.5
+         ],
+         [
+          145.5,
+          -37.5
+         ],
+         [
+          142.5,
+          -37.3
+         ]
+        ],
+        "label": "Great Dividing Range",
+        "color": "muted"
+       }
+      ]
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "Moist winds from the Pacific hit those mountains and rise. As the air cools, it drops its rain on the coastal side. By the time it crosses to the inland side, much of the moisture is gone.",
+     "data": {
+      "title": "How the mountains steal the rain",
+      "nodes": [
+       {
+        "id": "a",
+        "label": "Moist Pacific air",
+        "x": 0.14,
+        "y": 0.52,
+        "color": "blue"
+       },
+       {
+        "id": "b",
+        "label": "Rises over the range",
+        "x": 0.38,
+        "y": 0.52
+       },
+       {
+        "id": "c",
+        "label": "Rain on the coast",
+        "x": 0.62,
+        "y": 0.52,
+        "color": "green"
+       },
+       {
+        "id": "d",
+        "label": "Dry inland",
+        "x": 0.86,
+        "y": 0.52,
+        "color": "red"
+       }
+      ],
+      "edges": [
+       [
+        "a",
+        "b"
+       ],
+       [
+        "b",
+        "c"
+       ],
+       [
+        "c",
+        "d"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "That's why the green, fertile strip is in the east. It's the wet side of the mountains. And it's exactly where most Australians live today.",
+     "data": {
+      "bbox": [
+       133,
+       -44,
+       155,
+       -24
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       }
+      ],
+      "points": [
+       {
+        "lon": 151.21,
+        "lat": -33.87,
+        "label": "Sydney",
+        "anchor": "rm"
+       },
+       {
+        "lon": 144.96,
+        "lat": -37.81,
+        "label": "Melbourne",
+        "anchor": "mt"
+       },
+       {
+        "lon": 153.03,
+        "lat": -27.47,
+        "label": "Brisbane",
+        "anchor": "rm"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "The third reason is the shape of the land itself. Australia is the flattest continent. Its highest mountain, Mount Kosciuszko, is only about two thousand two hundred meters high.",
+     "data": {
+      "kicker": "The flattest continent",
+      "text": "Highest peak: only about 2,200 m",
+      "highlight": [
+       "flattest",
+       "2,200"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Without high mountains in the interior, there is little to push air upward and squeeze rain out of it. The clouds just pass over.",
+     "data": {
+      "text": "No high mountains, no rain",
+      "highlight": [
+       "rain"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Australia's biggest river system, the Murray and the Darling, drains around a seventh of the continent. It's one of the main farming regions of the country.",
+     "data": {
+      "bbox": [
+       133,
+       -44,
+       155,
+       -24
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Murray",
+         "Darling"
+        ],
+        "width": 6,
+        "grow": 2.0
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "But even this river can slow to a trickle in drought, and in some dry years its mouth has needed dredging to stay open to the sea.",
+     "data": {
+      "text": "Even the biggest river can nearly stop",
+      "highlight": [
+       "stop"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Under the outback, there's a surprise. The Great Artesian Basin, one of the largest underground water reserves in the world, lies beneath about a fifth of Australia.",
+     "data": {
+      "kicker": "Great Artesian Basin",
+      "text": "A hidden sea of water underground",
+      "highlight": [
+       "underground"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "It keeps cattle and some towns alive. But much of that water is ancient, slowly refilled, and often too salty or too deep to support big farms or cities.",
+     "data": {
+      "text": "Enough for cattle, not for cities",
+      "highlight": [
+       "cities"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "And then there's the soil. Australia is one of the oldest landmasses on Earth. Its rocks have been weathered for hundreds of millions of years, with few volcanoes or glaciers to bring fresh minerals.",
+     "data": {
+      "kicker": "Ancient land",
+      "text": "Old, worn-out soils",
+      "highlight": [
+       "Old"
+      ]
+     }
+    },
+    {
+     "type": "list",
+     "narration": "So the middle of Australia has three problems at once. Sinking dry air, mountains that steal the rain, and old soils that are poor in nutrients.",
+     "data": {
+      "title": "Why the middle is so hard to farm",
+      "items": [
+       "Sinking, dry air",
+       "Mountains that block the rain",
+       "Ancient, poor soils"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "The first Australians",
+   "title_youtube": "The first Australians",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "And yet, people have lived in the outback for an extraordinarily long time.",
+     "data": {
+      "text": "People have lived here for a very long time",
+      "highlight": [
+       "long"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Aboriginal and Torres Strait Islander peoples have lived in Australia for at least fifty thousand years, and possibly more than sixty-five thousand. It's one of the oldest continuous cultures on Earth.",
+     "data": {
+      "kicker": "People in Australia",
+      "value": "50,000+ years",
+      "caption": "one of the oldest living cultures"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Desert peoples survived in the harshest parts of the continent with knowledge passed down over countless generations: where to find water, when to move, and what could be eaten.",
+     "data": {
+      "text": "Knowledge passed down for countless generations",
+      "highlight": [
+       "knowledge"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Rock holes, soaks and springs were remembered and shared through stories, songs and law, sometimes connecting places hundreds of kilometers apart.",
+     "data": {
+      "text": "Water sources remembered in songs and stories",
+      "highlight": [
+       "songs"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "But notice something. Desert groups were small, and they moved across very large areas. The land could support people, but not many in one place.",
+     "data": {
+      "text": "The desert supported people, but not many",
+      "highlight": [
+       "many"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Aboriginal people also shaped the land itself, using carefully controlled fires to renew plants and attract animals. Today, this cultural burning is again being used to help manage the bush.",
+     "data": {
+      "kicker": "Cultural burning",
+      "text": "Fire used to care for the land",
+      "highlight": [
+       "Fire"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Even before Europeans arrived, the population was much denser along the wetter coasts and rivers, like the Murray, than in the deep desert.",
+     "data": {
+      "bbox": [
+       133,
+       -44,
+       155,
+       -24
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "rivers": [
+       {
+        "names": [
+         "Murray",
+         "Darling"
+        ],
+        "width": 6
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So the pattern we see today is ancient. Water has always decided how many people the land could hold. And in the middle, the answer has always been: very few.",
+     "data": {
+      "text": "Water has always decided how many people live here",
+      "highlight": [
+       "Water"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "A country built from the sea",
+   "title_youtube": "A country built from the sea",
+   "scenes": [
+    {
+     "type": "timeline",
+     "narration": "In 1788, the First Fleet of eleven British ships arrived at Sydney Cove, carrying around seven hundred and fifty convicts, plus soldiers, officials and their families.",
+     "data": {
+      "title": "Colonial Australia",
+      "focus": 0,
+      "events": [
+       {
+        "year": "1788",
+        "label": "First Fleet at Sydney Cove"
+       },
+       {
+        "year": "1829",
+        "label": "Perth founded"
+       },
+       {
+        "year": "1836",
+        "label": "Adelaide founded"
+       },
+       {
+        "year": "1901",
+        "label": "Federation"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Over the next decades, more colonies were founded. Each one had its own capital, and every capital was a port. Hobart, Brisbane, Melbourne, Perth, Adelaide.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 151.21,
+        "lat": -33.87,
+        "label": "Sydney",
+        "anchor": "rm"
+       },
+       {
+        "lon": 144.96,
+        "lat": -37.81,
+        "label": "Melbourne",
+        "anchor": "mt"
+       },
+       {
+        "lon": 153.03,
+        "lat": -27.47,
+        "label": "Brisbane",
+        "anchor": "rm"
+       },
+       {
+        "lon": 115.86,
+        "lat": -31.95,
+        "label": "Perth",
+        "anchor": "lm"
+       },
+       {
+        "lon": 138.6,
+        "lat": -34.93,
+        "label": "Adelaide",
+        "anchor": "mt"
+       },
+       {
+        "lon": 147.33,
+        "lat": -42.88,
+        "label": "Hobart",
+        "anchor": "lm"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "That made sense. Everything came and went by sea: people, supplies, wool and gold. Each colony was more connected to London than to its neighbors.",
+     "data": {
+      "text": "Closer to London than to each other",
+      "highlight": [
+       "London"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "In fact, the colonies even built their railways with different track widths. Trains from one colony often couldn't run on the tracks of the next.",
+     "data": {
+      "kicker": "Break of gauge",
+      "text": "Different colonies, different rail tracks",
+      "highlight": [
+       "different"
+      ]
+     }
+    },
+    {
+     "type": "timeline",
+     "narration": "It wasn't until 1970 that a train could run all the way from Sydney to Perth on one standard track.",
+     "data": {
+      "title": "Colonial Australia",
+      "focus": 3,
+      "events": [
+       {
+        "year": "1788",
+        "label": "First Fleet at Sydney Cove"
+       },
+       {
+        "year": "1829",
+        "label": "Perth founded"
+       },
+       {
+        "year": "1901",
+        "label": "Federation"
+       },
+       {
+        "year": "1970",
+        "label": "One track Sydney to Perth"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Meanwhile, the interior remained a mystery to the colonists. Some even believed there might be a great inland sea in the middle of the continent.",
+     "data": {
+      "kicker": "A colonial theory",
+      "text": "A great inland sea?",
+      "highlight": [
+       "sea?"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "In 1860, the Burke and Wills expedition set out from Melbourne to cross the continent from south to north. They reached the tidal channels near the Gulf of Carpentaria, but on the way back, both leaders died.",
+     "data": {
+      "bbox": [
+       133,
+       -40,
+       146,
+       -15
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          144.96,
+          -37.81
+         ],
+         [
+          144.3,
+          -34.3
+         ],
+         [
+          142.4,
+          -32.4
+         ],
+         [
+          141.4,
+          -29.6
+         ],
+         [
+          141.6,
+          -27.6
+         ],
+         [
+          140.9,
+          -24.0
+         ],
+         [
+          140.5,
+          -20.7
+         ],
+         [
+          140.9,
+          -17.6
+         ]
+        ],
+        "label": "Burke and Wills · 1860-61",
+        "color": "red"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "A year later, John McDouall Stuart crossed from Adelaide to the north coast and returned alive. His route became the path of one of the great engineering projects of the century.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          138.6,
+          -34.93
+         ],
+         [
+          137.77,
+          -32.49
+         ],
+         [
+          136.6,
+          -29.6
+         ],
+         [
+          135.45,
+          -27.55
+         ],
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          134.19,
+          -19.65
+         ],
+         [
+          133.4,
+          -16.3
+         ],
+         [
+          132.26,
+          -14.47
+         ],
+         [
+          130.84,
+          -12.46
+         ]
+        ],
+        "label": "Stuart · 1862"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "In 1872, the Overland Telegraph Line was finished. About three thousand two hundred kilometers of wire from Adelaide to Darwin, where it joined an undersea cable to Asia and on to Britain.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          138.6,
+          -34.93
+         ],
+         [
+          137.77,
+          -32.49
+         ],
+         [
+          136.6,
+          -29.6
+         ],
+         [
+          135.45,
+          -27.55
+         ],
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          134.19,
+          -19.65
+         ],
+         [
+          133.4,
+          -16.3
+         ],
+         [
+          132.26,
+          -14.47
+         ],
+         [
+          130.84,
+          -12.46
+         ]
+        ],
+        "label": "Overland Telegraph · 1872"
+       }
+      ],
+      "points": [
+       {
+        "lon": 138.6,
+        "lat": -34.93,
+        "label": "Adelaide",
+        "anchor": "mt"
+       },
+       {
+        "lon": 130.84,
+        "lat": -12.46,
+        "label": "Darwin",
+        "anchor": "mb"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "News from London that once took weeks by ship now arrived in hours. And along the line, small repeater stations were built in the desert to boost the signal.",
+     "data": {
+      "text": "From weeks to hours",
+      "highlight": [
+       "hours"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "One of those stations was built by a waterhole in the center of the continent. The town that grew around it is Alice Springs.",
+     "data": {
+      "bbox": [
+       124,
+       -32,
+       143,
+       -18
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          138.6,
+          -34.93
+         ],
+         [
+          137.77,
+          -32.49
+         ],
+         [
+          136.6,
+          -29.6
+         ],
+         [
+          135.45,
+          -27.55
+         ],
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          134.19,
+          -19.65
+         ],
+         [
+          133.4,
+          -16.3
+         ],
+         [
+          132.26,
+          -14.47
+         ],
+         [
+          130.84,
+          -12.46
+         ]
+        ]
+       }
+      ],
+      "points": [
+       {
+        "lon": 133.88,
+        "lat": -23.7,
+        "label": "Alice Springs",
+        "anchor": "lm"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "So the most famous town in the outback didn't grow because the land was rich. It grew because a wire needed to cross it.",
+     "data": {
+      "text": "A town born from a telegraph wire",
+      "highlight": [
+       "wire"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "If you're enjoying this, subscribe. Every week we find the story hidden in another map.",
+     "data": {
+      "kicker": "Timeline Earth",
+      "text": "Subscribe for a new map story every week",
+      "highlight": [
+       "Subscribe"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Testing the limits",
+   "title_youtube": "Testing the limits of the outback",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "Of course, settlers did try to farm further inland. And one man tried to warn them where to stop.",
+     "data": {
+      "text": "One man tried to warn them where to stop",
+      "highlight": [
+       "stop"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "In 1865, after a severe drought, George Goyder, the surveyor general of South Australia, traveled the colony and drew a line on the map. North of it, he said, rainfall was too unreliable for growing crops.",
+     "data": {
+      "bbox": [
+       132,
+       -37,
+       142,
+       -29
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          134.2,
+          -33.0
+         ],
+         [
+          136.0,
+          -32.9
+         ],
+         [
+          137.8,
+          -32.6
+         ],
+         [
+          138.6,
+          -32.5
+         ],
+         [
+          139.3,
+          -33.2
+         ],
+         [
+          139.9,
+          -33.6
+         ],
+         [
+          140.97,
+          -34.2
+         ]
+        ],
+        "label": "Goyder's Line (approx.)",
+        "color": "red"
+       }
+      ],
+      "points": [
+       {
+        "lon": 138.6,
+        "lat": -34.93,
+        "label": "Adelaide",
+        "anchor": "mt"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Then came a run of unusually wet years in the 1870s. Many people decided Goyder had been wrong, and farms and towns spread north of his line.",
+     "data": {
+      "text": "A few wet years, and the warning was ignored",
+      "highlight": [
+       "ignored"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "When the dry years returned, the crops failed. Today you can still find abandoned stone farmhouses beyond the line, and it is still used as a guide for where cropping is risky.",
+     "data": {
+      "text": "Abandoned farms beyond the line",
+      "highlight": [
+       "Abandoned"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "To move goods across the desert, the colonists brought in camels, along with cameleers mostly from what are now Afghanistan, Pakistan and India.",
+     "data": {
+      "kicker": "Ships of the desert",
+      "text": "Camels and cameleers crossed the outback",
+      "highlight": [
+       "Camels"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "When trucks and railways replaced them, many camels were released. Today Australia has hundreds of thousands of wild camels, one of the largest wild camel populations in the world.",
+     "data": {
+      "text": "Hundreds of thousands of wild camels",
+      "highlight": [
+       "camels"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The cameleers are remembered in the name of a famous train, the Ghan, which today runs from Adelaide through Alice Springs to Darwin. The line only reached Darwin in 2004.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "routes": [
+       {
+        "points": [
+         [
+          138.6,
+          -34.93
+         ],
+         [
+          137.77,
+          -32.49
+         ],
+         [
+          136.6,
+          -29.6
+         ],
+         [
+          135.45,
+          -27.55
+         ],
+         [
+          133.88,
+          -23.7
+         ],
+         [
+          134.19,
+          -19.65
+         ],
+         [
+          133.4,
+          -16.3
+         ],
+         [
+          132.26,
+          -14.47
+         ],
+         [
+          130.84,
+          -12.46
+         ]
+        ],
+        "label": "The Ghan"
+       }
+      ],
+      "points": [
+       {
+        "lon": 133.88,
+        "lat": -23.7,
+        "label": "Alice Springs",
+        "anchor": "lm"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Where crops failed, cattle worked. But on dry land, each animal needs a huge area of grazing. So the outback is divided into cattle stations of incredible size.",
+     "data": {
+      "text": "Where crops failed, cattle survived",
+      "highlight": [
+       "cattle"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "The largest, Anna Creek Station in South Australia, covers around twenty-four thousand square kilometers. That's bigger than the whole of Israel, run by just a small team of people.",
+     "data": {
+      "kicker": "Anna Creek Station",
+      "value": "~24,000 km²",
+      "caption": "bigger than Israel"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "Then there's mining. In the 1910s, opal was found at Coober Pedy. Today, Australia produces most of the world's precious opal.",
+     "data": {
+      "bbox": [
+       124,
+       -33,
+       143,
+       -24
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 134.75,
+        "lat": -29.01,
+        "label": "Coober Pedy",
+        "anchor": "lm",
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Summer days in Coober Pedy are so hot that many residents live underground, in homes dug into the hillside called dugouts, where the temperature stays comfortable all year.",
+     "data": {
+      "kicker": "Coober Pedy",
+      "text": "A town that lives underground",
+      "highlight": [
+       "underground"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Every one of these places shows the same thing. People can live in the outback. But only with a special reason, and only in small numbers.",
+     "data": {
+      "text": "Only with a special reason, only in small numbers",
+      "highlight": [
+       "reason"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Life in the outback today",
+   "title_youtube": "Life in the outback today",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "So what's it like to live there now? The biggest challenge is distance. The nearest hospital, school or supermarket can be hundreds of kilometers away.",
+     "data": {
+      "text": "The nearest hospital: hundreds of kilometers away",
+      "highlight": [
+       "hundreds"
+      ]
+     }
+    },
+    {
+     "type": "timeline",
+     "narration": "In 1928, a minister called John Flynn started an aerial medical service. Today, the Royal Flying Doctor Service flies doctors and nurses to patients across the outback.",
+     "data": {
+      "title": "Solutions for the outback",
+      "focus": 0,
+      "events": [
+       {
+        "year": "1928",
+        "label": "Flying Doctor service begins"
+       },
+       {
+        "year": "1951",
+        "label": "School of the Air"
+       },
+       {
+        "year": "Today",
+        "label": "Online classes"
+       }
+      ]
+     }
+    },
+    {
+     "type": "timeline",
+     "narration": "And from 1951, children on remote stations could attend the School of the Air, first with lessons over two-way radio, and today over the internet.",
+     "data": {
+      "title": "Solutions for the outback",
+      "focus": 1,
+      "events": [
+       {
+        "year": "1928",
+        "label": "Flying Doctor service begins"
+       },
+       {
+        "year": "1951",
+        "label": "School of the Air"
+       },
+       {
+        "year": "Today",
+        "label": "Online classes"
+       }
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The outback is also where much of Australia's wealth comes from. Huge iron ore mines in the Pilbara, in the north-west, have helped make Australia the world's largest iron ore exporter.",
+     "data": {
+      "bbox": [
+       112,
+       -28,
+       126,
+       -17
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "labels": [
+       {
+        "lon": 119.5,
+        "lat": -22.3,
+        "text": "PILBARA",
+        "font": "display",
+        "size": 0.06,
+        "color": "red"
+       }
+      ]
+     }
+    },
+    {
+     "type": "diagram",
+     "narration": "But many miners don't live there. They fly in from Perth for a couple of weeks of long shifts, then fly home again. The mines grow, but the towns don't.",
+     "data": {
+      "title": "Fly in, fly out",
+      "nodes": [
+       {
+        "id": "a",
+        "label": "Home in Perth",
+        "x": 0.15,
+        "y": 0.52,
+        "color": "green"
+       },
+       {
+        "id": "b",
+        "label": "Two weeks at the mine",
+        "x": 0.5,
+        "y": 0.52
+       },
+       {
+        "id": "c",
+        "label": "Fly home again",
+        "x": 0.85,
+        "y": 0.52,
+        "color": "green"
+       }
+      ],
+      "edges": [
+       [
+        "a",
+        "b"
+       ],
+       [
+        "b",
+        "c"
+       ]
+      ],
+      "pulse": true
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "The far north is different again. It's tropical, not desert. But almost all of its rain falls in a few months of the wet season, cutting off roads, followed by months with almost no rain at all.",
+     "data": {
+      "bbox": [
+       120,
+       -24,
+       146,
+       -10
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 130.84,
+        "lat": -12.46,
+        "label": "Darwin",
+        "anchor": "lm"
+       }
+      ],
+      "labels": [
+       {
+        "lon": 133,
+        "lat": -17,
+        "text": "WET SEASON · DRY SEASON",
+        "size": 0.04,
+        "color": "blue"
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Even the largest inland city in Australia is Canberra, the national capital, with around four hundred and seventy thousand people. And it's only about one hundred and fifty kilometers from the sea.",
+     "data": {
+      "kicker": "Australia's largest inland city",
+      "value": "Canberra",
+      "caption": "only ~150 km from the coast"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Canberra was a compromise. In the early 1900s, Sydney and Melbourne couldn't agree which should be the capital, so a new city was built between them.",
+     "data": {
+      "text": "A capital built as a compromise",
+      "highlight": [
+       "compromise"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Looking ahead, the outback's sunshine is among the strongest on Earth, and there are plans to use it for huge solar farms. But solar panels, like mines, need very few people.",
+     "data": {
+      "kicker": "The future",
+      "text": "Endless sunshine, still few people",
+      "highlight": [
+       "sunshine"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "And climate change may make the dry interior even harder, with more intense heat waves and droughts.",
+     "data": {
+      "text": "Hotter heat waves, longer droughts",
+      "highlight": [
+       "droughts"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "The answer",
+   "card": false,
+   "title_youtube": "The answer",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "So let's put the whole story together.",
+     "data": {
+      "text": "Putting the whole story together",
+      "highlight": [
+       "story"
+      ]
+     }
+    },
+    {
+     "type": "list",
+     "narration": "The middle of Australia sits in the same dry belt as the Sahara. Mountains in the east catch the rain before it can travel inland. And the ancient soils are poor.",
+     "data": {
+      "title": "Why the middle is empty",
+      "items": [
+       "The same dry belt as the Sahara",
+       "Mountains catch the rain",
+       "Old, poor soils"
+      ]
+     }
+    },
+    {
+     "type": "list",
+     "narration": "The colonies grew as ports facing the sea, and every attempt to settle the interior ran into the same limit: water.",
+     "data": {
+      "title": "Why Australians live on the coast",
+      "items": [
+       "Colonies grew as ports",
+       "Inland farms failed in drought",
+       "Water sets the limit"
+      ]
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "That's why almost no one lives in the middle of Australia. Not because no one tried, but because the land and the climate have always decided how many people it can hold.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ]
+     }
+    },
+    {
+     "type": "end_screen",
+     "minDuration": 12,
+     "narration": "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.",
+     "data": {
+      "text": "Thanks for watching",
+      "sub_label": "Subscribe"
+     }
+    }
+   ]
+  }
+ ],
+ "shorts": [
+  {
+   "title": "Australia vs the USA: same size, 12x fewer people 🇦🇺 #shorts",
+   "description": "Why is Australia almost empty? Full video on the channel. #geography #australia #maps",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "Australia is almost as big as the mainland United States.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "But it has only around twenty-seven million people, compared with more than three hundred million.",
+     "data": {
+      "kicker": "Australia",
+      "value": "~27 M",
+      "caption": "people, vs 330+ million in the mainland US"
+     }
+    },
+    {
+     "type": "map_route",
+     "narration": "And most of them live along the coast. The middle is almost empty. Full story on the channel.",
+     "data": {
+      "bbox": [
+       111,
+       -44.5,
+       155,
+       -9.5
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "polygons": [
+       {
+        "points": [
+         [
+          145.6,
+          -17.2
+         ],
+         [
+          146.2,
+          -19.4
+         ],
+         [
+          148.9,
+          -20.9
+         ],
+         [
+          150.3,
+          -23.3
+         ],
+         [
+          152.5,
+          -25.4
+         ],
+         [
+          153.0,
+          -27.6
+         ],
+         [
+          153.0,
+          -30.5
+         ],
+         [
+          152.2,
+          -32.4
+         ],
+         [
+          151.0,
+          -34.0
+         ],
+         [
+          150.0,
+          -36.8
+         ],
+         [
+          148.0,
+          -37.6
+         ],
+         [
+          145.5,
+          -38.2
+         ],
+         [
+          143.0,
+          -38.5
+         ],
+         [
+          140.8,
+          -37.8
+         ],
+         [
+          139.7,
+          -36.5
+         ],
+         [
+          139.0,
+          -35.4
+         ],
+         [
+          138.2,
+          -34.6
+         ],
+         [
+          138.3,
+          -33.5
+         ],
+         [
+          139.3,
+          -33.6
+         ],
+         [
+          141.5,
+          -35.0
+         ],
+         [
+          144.0,
+          -35.6
+         ],
+         [
+          146.5,
+          -35.5
+         ],
+         [
+          148.5,
+          -33.8
+         ],
+         [
+          150.0,
+          -31.5
+         ],
+         [
+          150.8,
+          -28.5
+         ],
+         [
+          150.5,
+          -26.0
+         ],
+         [
+          148.5,
+          -23.5
+         ],
+         [
+          146.5,
+          -21.0
+         ],
+         [
+          145.0,
+          -18.0
+         ]
+        ],
+        "color": "green",
+        "start": 0.4
+       },
+       {
+        "points": [
+         [
+          115.2,
+          -30.5
+         ],
+         [
+          116.6,
+          -30.6
+         ],
+         [
+          117.3,
+          -33.2
+         ],
+         [
+          118.0,
+          -34.6
+         ],
+         [
+          116.4,
+          -34.8
+         ],
+         [
+          115.3,
+          -34.1
+         ],
+         [
+          115.7,
+          -33.4
+         ],
+         [
+          115.6,
+          -31.9
+         ]
+        ],
+        "color": "green",
+        "start": 0.5
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "The outback town where people live underground 🏜️ #shorts",
+   "description": "Coober Pedy, the opal capital of the world. Full video on the channel. #australia #outback #geography",
+   "scenes": [
+    {
+     "type": "map_route",
+     "narration": "This is Coober Pedy, a mining town in the Australian outback.",
+     "data": {
+      "bbox": [
+       124,
+       -32,
+       143,
+       -18
+      ],
+      "highlight_countries": [
+       {
+        "name": "Australia",
+        "color": "accent",
+        "strength": 0.22
+       }
+      ],
+      "points": [
+       {
+        "lon": 134.75,
+        "lat": -29.01,
+        "label": "Coober Pedy",
+        "anchor": "rm",
+        "color": "accent2"
+       }
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Summers are so hot that many people live underground, in homes dug into the rock called dugouts.",
+     "data": {
+      "text": "Homes dug into the rock",
+      "highlight": [
+       "rock"
+      ]
+     }
+    },
+    {
+     "type": "text",
+     "narration": "Down there, the temperature stays comfortable all year. Full story on the channel.",
+     "data": {
+      "text": "Comfortable all year, underground",
+      "highlight": [
+       "underground"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "title": "A cattle farm bigger than Israel 🐄 #shorts",
+   "description": "The outback's giant cattle stations. Full video on the channel. #australia #outback #geography",
+   "scenes": [
+    {
+     "type": "text",
+     "narration": "In the Australian outback, there is a cattle farm bigger than an entire country.",
+     "data": {
+      "text": "A farm bigger than a country",
+      "highlight": [
+       "country"
+      ]
+     }
+    },
+    {
+     "type": "big_number",
+     "narration": "Anna Creek Station covers around twenty-four thousand square kilometers. That's bigger than Israel.",
+     "data": {
+      "value": "~24,000 km²",
+      "caption": "Anna Creek Station",
+      "color": "accent"
+     }
+    },
+    {
+     "type": "text",
+     "narration": "The land is so dry that each cow needs a huge area to graze. Full story on the channel.",
+     "data": {
+      "text": "So dry that each cow needs huge space",
+      "highlight": [
+       "dry"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

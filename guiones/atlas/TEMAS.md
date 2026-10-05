@@ -8,7 +8,7 @@ Criterio: icono o lugar que todo el mundo conoce + una pregunta que casi nadie s
 - [x] 001 · Why 95% of Egypt Lives on Just 5% of Its Land
 - [x] 002 · Why Most Canadians Live Near the US Border
 - [x] 003 · Why Russia Is So Big (and Still So Empty)
-- [ ] Why Almost No One Lives in the Middle of Australia
+- [x] 004 · Why Almost No One Lives in the Middle of Australia
 - [ ] Why Istanbul Is the Most Fought-Over City in History
 - [ ] Why Venice Was Built on Water
 - [ ] Why Mexico City Is Sinking
