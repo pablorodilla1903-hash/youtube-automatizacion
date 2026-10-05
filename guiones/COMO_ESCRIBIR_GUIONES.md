@@ -26,6 +26,18 @@ Cada guion es un archivo `guiones/<canal>/NNN_slug.py` que, al ejecutarse, gener
 - **Nada de**: consejos médicos o financieros, ni detalles morbosos de tragedias con víctimas.
 - Narración escrita para leerse en voz alta: números en letras ("ninety-five percent"), sin símbolos.
 
+## Formatos (alterna para que el canal no sea monótono)
+
+No encadenes más de 2-3 vídeos seguidos con el mismo formato. Mismo nicho (geografía + historia: por qué la gente vive donde vive), distinta estructura:
+
+| Formato | Estructura | Ejemplo |
+|---|---|---|
+| **Pregunta** ("Why…") | una pregunta, 6-8 capítulos que la van respondiendo, respuesta al final | 001-004 |
+| **Cuenta atrás** ("The 10…") | gancho con 3-4 avances + reglas del ranking; un capítulo por puesto (`"card_label": "#10"`, `"card_kicker": "Number"`) que abre con `fact_file`; `ranking` a mitad (con los primeros puestos en `hidden`) y al final; bonus opcional | 005 |
+
+Claves de capítulo útiles: `card_label` (texto grande de la tarjeta en lugar del número), `card_kicker` (texto pequeño encima) y `bar` (texto de la etiqueta de arriba a la izquierda en capítulos sin tarjeta).
+Duración de una cuenta atrás: ~20 min (≈ 2.900 palabras, ~120 escenas).
+
 ## Tipos de escena disponibles (`src/yt/anim/scenes.py`)
 
 | type | Para qué | data principal |
@@ -43,6 +55,8 @@ Cada guion es un archivo `guiones/<canal>/NNN_slug.py` que, al ejecutarse, gener
 | `quote` | cita histórica real | `text`, `author` |
 | `stamp` | sello sobre un documento (tratados, quiebras…) | `doc_title`, `text` |
 | `scale` / `cross_section` / `multi_line` / `altitude` | comparaciones de tamaño, cortes, varias series, altitud | ver el código |
+| `fact_file` | ficha de un lugar con su puesto (cuentas atrás) | `rank` ("#10"), `name`, `place`, `rows [{label,value}]` |
+| `ranking` | clasificación con un puesto resaltado | `title`, `items [{rank,name,note}]`, `focus`, `hidden [índices → "???"]` |
 | `end_screen` | pantalla final: solo botón de suscribirse | `text`, `sub_label` (no usar `next_title` por ahora) |
 
 Los nombres de países son los de Natural Earth (`NAME` en inglés: "Egypt", "Canada", "Russia"…). Los ríos, por su nombre en inglés ("Nile", "Danube", "Mississippi"…).

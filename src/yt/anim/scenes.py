@@ -198,7 +198,7 @@ def icon(d, kind, x, y, s, color, bg):
 def s_title_card(c, t, dur, data, th):
     d = ImageDraw.Draw(c)
     w, h = c.size
-    n = str(data.get("n", "")).zfill(2)
+    n = str(data.get("label") or str(data.get("n", "")).zfill(2))  # label: "#10" en las cuentas atrás
     a = prog(t, 0, 0.6)
     f_num = font("display", int(h * 0.30))
     d.text((w / 2, h * 0.40 + (1 - a) * 60), n, font=f_num, fill=mix(th["bg"], th["accent"], a), anchor="mm")
@@ -1104,3 +1104,98 @@ def s_multi_line(c, t, dur, data, th):
 
 
 SCENES.update({"altitude": s_altitude, "multi_line": s_multi_line})
+
+
+# ───────────────────────── cuentas atrás: ficha y clasificación ─────────────────────────
+
+def s_fact_file(c, t, dur, data, th):
+    """Ficha de un lugar: número de puesto grande a la izquierda y datos que aparecen fila a fila.
+
+    data: name, place (país o región), rank ("#10"), rows [{label, value}], color
+    """
+    d = ImageDraw.Draw(c)
+    w, h = c.size
+    vertical = w < h
+    col = th.get(data.get("color", "accent"), th["accent"])
+    a = prog(t, 0, 0.5)
+    rows = data.get("rows", [])
+    if vertical:
+        px0, px1, py0 = w * 0.07, w * 0.93, h * 0.33
+        rank_xy = (w / 2, h * 0.21)
+    else:
+        px0, px1, py0 = w * 0.36, w * 0.94, h * 0.17
+        rank_xy = (w * 0.19, h * 0.50)
+    if data.get("rank"):
+        f_r = font("display", int(h * (0.12 if vertical else 0.34)))
+        d.text((rank_xy[0], rank_xy[1] + (1 - a) * 50), str(data["rank"]), font=f_r, fill=mix(th["bg"], col, a), anchor="mm")
+        d.text((rank_xy[0], rank_xy[1] + h * (0.08 if vertical else 0.22)), data.get("rank_label", "ON THE LIST").upper(),
+               font=font("semi", int(h * (0.022 if vertical else 0.032))), fill=mix(th["bg"], th["muted"], prog(t, 0.3, 0.5)),
+               anchor="mm")
+    row_h = h * (0.085 if vertical else 0.125)
+    py1 = py0 + h * (0.16 if vertical else 0.20) + row_h * len(rows)
+    sx = (1 - a) * 60
+    rrect(d, [px0 + sx, py0, px1 + sx, py1], 26, fill=mix(th["bg"], th["panel"], a))
+    d.rectangle([px0 + sx, py0 + 26, px0 + sx + 10, py1 - 26], fill=mix(th["bg"], col, a))
+    tx = px0 + 60 + sx
+    inner = px1 - px0 - 110
+    f_n = fit_font(d, data["name"].upper(), "display", inner, 1, int(h * (0.06 if vertical else 0.085)))
+    d.text((tx, py0 + h * 0.035), data["name"].upper(), font=f_n, fill=mix(th["bg"], th["text"], a), anchor="lt")
+    if data.get("place"):
+        f_p = fit_font(d, data["place"], "semi", inner, 1, int(h * (0.026 if vertical else 0.036)), minimum=20)
+        d.text((tx, py0 + h * (0.035 + (0.07 if vertical else 0.10))), data["place"], font=f_p,
+               fill=mix(th["bg"], th["muted"], a), anchor="lt")
+    y = py0 + h * (0.16 if vertical else 0.20)
+    step = min(0.9, dur * 0.55 / max(1, len(rows)))
+    f_l = font("semi", int(h * (0.02 if vertical else 0.028)))
+    for i, r in enumerate(rows):
+        ra = prog(t, 0.5 + i * step, 0.45)
+        if ra > 0:
+            d.line([(tx, y - h * 0.012), (px1 - 50 + sx, y - h * 0.012)], fill=mix(th["panel"], th["muted"], 0.35 * ra), width=2)
+            d.text((tx + (1 - ra) * 30, y), r["label"].upper(), font=f_l, fill=mix(th["panel"], th["muted"], ra), anchor="lt")
+            f_v = fit_font(d, r["value"], "bold", inner, 1, int(h * (0.032 if vertical else 0.046)))
+            d.text((tx + (1 - ra) * 30, y + h * (0.028 if vertical else 0.038)), r["value"], font=f_v,
+                   fill=mix(th["panel"], th["text"], ra), anchor="lt")
+        y += row_h
+
+
+def s_ranking(c, t, dur, data, th):
+    """Clasificación de la cuenta atrás. Las filas aparecen de abajo arriba; `focus` resalta una.
+
+    data: title, items [{rank, name, note}] (en el orden en que se muestran), focus (índice), hidden [índices → "???"]
+    """
+    d = ImageDraw.Draw(c)
+    w, h = c.size
+    items = data["items"]
+    focus = data.get("focus")
+    hidden = set(data.get("hidden", []))
+    top = h * 0.24
+    if data.get("title"):
+        f_t = fit_font(d, data["title"].upper(), "display", w * 0.8, 1, int(h * 0.07))
+        d.text((w / 2, h * 0.13), data["title"].upper(), font=f_t, fill=mix(th["bg"], th["text"], prog(t, 0, .4)), anchor="mm")
+    gap = min(h * 0.095, h * 0.68 / max(1, len(items)))
+    bh = gap * 0.8
+    x0, x1 = w * 0.16, w * 0.84
+    step = min(0.35, dur * 0.5 / max(1, len(items)))
+    f_rank = font("display", int(bh * 0.62))
+    f_name = font("bold", int(bh * 0.46))
+    f_note = font("semi", int(bh * 0.36))
+    n = len(items)
+    for i, it in enumerate(items):
+        a = prog(t, 0.2 + (n - 1 - i) * step, 0.45)
+        if a <= 0:
+            continue
+        y = top + i * gap
+        is_f = i == focus
+        fill = mix(th["bg"], th["accent"] if is_f else th["panel"], a)
+        sx = (1 - a) * 80
+        rrect(d, [x0 + sx, y, x1 + sx, y + bh], 14, fill=fill)
+        txt = th["bg"] if is_f else th["text"]
+        d.text((x0 + 40 + sx, y + bh / 2), str(it["rank"]), font=f_rank, fill=mix(fill, txt, a), anchor="lm")
+        name = "???" if i in hidden else it["name"]
+        d.text((x0 + 170 + sx, y + bh / 2), name, font=f_name, fill=mix(fill, txt, a), anchor="lm")
+        if it.get("note") and i not in hidden:
+            d.text((x1 - 36 + sx, y + bh / 2), it["note"], font=f_note,
+                   fill=mix(fill, th["bg"] if is_f else th["muted"], a), anchor="rm")
+
+
+SCENES.update({"fact_file": s_fact_file, "ranking": s_ranking})

@@ -1,0 +1,474 @@
+"""Guion del vídeo 005 de Timeline Earth. Ejecutar para generar el .json que lee el motor.
+
+Formato distinto a los vídeos 001-004: en vez de una sola pregunta ("Why…"), es una CUENTA ATRÁS
+de 10 lugares (del #10 al #1), cada uno con su tarjeta "#N", una ficha de datos (fact_file),
+mapa, historia y la razón por la que la gente vive allí. Dos clasificaciones (ranking) a mitad y al final,
+y un "bonus" con el lugar que la gente acabó abandonando.
+"""
+import json
+from pathlib import Path
+
+WORLD = [-180, -58, 180, 80]
+
+
+def pt(lon, lat, label, anchor="lm", color=None):
+    p = {"lon": lon, "lat": lat, "label": label, "anchor": anchor}
+    if color:
+        p["color"] = color
+    return p
+
+
+# lugares de la lista
+IQUITOS = pt(-73.25, -3.75, "Iquitos")
+RINCONADA = pt(-69.45, -14.63, "La Rinconada", color="accent2")
+LONGYEARBYEN = pt(15.65, 78.22, "Longyearbyen", "rm")
+GRISE = pt(-82.89, 76.42, "Grise Fiord")
+ITTOQ = pt(-21.97, 70.49, "Ittoqqortoormiit")
+EASTER = pt(-109.35, -27.11, "Easter Island")
+HELENA = pt(-5.72, -15.93, "Saint Helena")
+PALMERSTON = pt(-163.17, -18.05, "Palmerston")
+PITCAIRN = pt(-130.10, -25.07, "Pitcairn")
+TRISTAN = pt(-12.31, -37.07, "Tristan da Cunha", color="red")
+ST_KILDA = pt(-8.58, 57.81, "St Kilda", color="muted")
+# ciudades de referencia
+LIMA = pt(-77.04, -12.05, "Lima", "rm")
+CAPE_TOWN = pt(18.42, -33.92, "Cape Town", "rm")
+SANTIAGO = pt(-70.67, -33.45, "Santiago", "rm")
+
+ALL10 = [IQUITOS, RINCONADA, LONGYEARBYEN, GRISE, ITTOQ, EASTER, HELENA, PALMERSTON, PITCAIRN, TRISTAN]
+ALL_MAP = {"bbox": WORLD, "points": [{k: v for k, v in p.items() if k != "label"} for p in ALL10]}
+
+RANK_NAMES = [("#1", "Tristan da Cunha", "South Atlantic"), ("#2", "Pitcairn Islands", "South Pacific"),
+              ("#3", "Palmerston Island", "Cook Islands"), ("#4", "Saint Helena", "South Atlantic"),
+              ("#5", "Easter Island", "Chile"), ("#6", "Ittoqqortoormiit", "Greenland"),
+              ("#7", "Grise Fiord", "Canada"), ("#8", "Longyearbyen", "Svalbard, Norway"),
+              ("#9", "La Rinconada", "Peru"), ("#10", "Iquitos", "Peru")]
+RANKING = [{"rank": r, "name": n, "note": note} for r, n, note in RANK_NAMES]
+
+PERU_BBOX = [-82, -19, -66, 1]
+AMAZON_BBOX = [-80, -8, -68, -1]
+ARCTIC_NA_BBOX = [-110, 55, -55, 82]
+SVALBARD_BBOX = [-5, 62, 35, 81.5]
+GREENLAND_BBOX = [-60, 58, -10, 79]
+S_ATLANTIC_BBOX = [-62, -42, 25, 2]
+COOK_BBOX = [-170, -25, -150, -7]
+PITCAIRN_BBOX = [-155, -32, -125, -13]
+SCOTLAND_BBOX = [-11, 54.5, 0, 59.5]
+
+THUMB_MAP = {"bbox": [-60, -45, 30, 5], "points": [TRISTAN, HELENA, CAPE_TOWN]}
+
+script = {
+    "videoId": "005-lugares-aislados",
+    "channel": "atlas",
+    "title": "The 10 Most Isolated Places Where People Actually Live",
+    "hook_chapter": "The edge of the world",
+    "format": "countdown",
+    "sources": [
+        {"id": "s1", "url": "https://www.tristandc.com/", "note": "Tristan da Cunha Government – population, access by sea, 1961 eruption, history"},
+        {"id": "s2", "url": "https://www.government.pn/", "note": "Pitcairn Islands Government – population, Bounty history, access via Mangareva"},
+        {"id": "s3", "url": "https://www.sainthelena.gov.sh/", "note": "St Helena Government – census, airport, Napoleon"},
+        {"id": "s4", "url": "https://www.sysselmesteren.no/en/", "note": "Governor of Svalbard – polar bear safety rules, Svalbard Treaty"},
+        {"id": "s5", "url": "https://www.rcaanc-cirnac.gc.ca/", "note": "Government of Canada – 2010 apology for the High Arctic relocation"},
+        {"id": "s6", "url": "https://www.nts.org.uk/visit/places/st-kilda", "note": "National Trust for Scotland – St Kilda history and 1930 evacuation"},
+        {"id": "s7", "url": "https://www.britannica.com/", "note": "Encyclopaedia Britannica – Iquitos, Easter Island, La Rinconada, Ittoqqortoormiit, Palmerston"},
+    ],
+    "metadata": {
+        "alt_titles": ["The Loneliest Towns on Earth, Ranked", "10 Places So Remote It Takes Days to Get There"],
+        "thumbnails": [
+            {"prompt": "aerial photograph of Tristan da Cunha, a lonely volcanic island in the middle of the South Atlantic ocean, a tiny village of white houses on a green coastal plain beneath a huge cloud-capped volcano, endless dark blue ocean all around, ultra realistic, cinematic, National Geographic style",
+             "tag": "#1", "text": "Nearest neighbor: 2,400 km", "highlight": ["2,400"], "seed": 151, "pos": "top",
+             "fallback": {"art": "map", "map": THUMB_MAP, "target": [-12.31, -37.07], "text": "Nearest neighbor: 2,400 km"}},
+            {"prompt": "photograph of a tiny Arctic village of brightly colored wooden houses on a rocky hillside above a frozen fjord full of sea ice and icebergs in East Greenland, snowy mountains, soft low sunlight, ultra realistic, cinematic",
+             "tag": "Top 10", "text": "No road leads here", "highlight": ["NO"], "seed": 163,
+             "fallback": {"art": "map", "map": ALL_MAP, "target": [-21.97, 70.49], "text": "No road leads here"}},
+            {"prompt": "photograph of the steep green cliffs of Pitcairn Island rising out of a rough deep blue Pacific ocean, a small wooden longboat landing in a tiny rocky bay, dramatic clouds, remote and lonely, ultra realistic, cinematic",
+             "tag": "Top 10", "text": "Only 40 people live here", "highlight": ["40"], "seed": 177,
+             "fallback": {"art": "map", "map": {"bbox": PITCAIRN_BBOX, "points": [PITCAIRN]}, "target": [-130.10, -25.07], "text": "Only 40 people live here"}},
+        ],
+        "description": (
+            "Some people live days away from the nearest city, on islands with no airport, above the Arctic Circle, "
+            "or at more than five thousand meters. We ranked the ten most isolated places where people actually live, "
+            "from a city of half a million that no road can reach to a volcanic island in the middle of the South Atlantic.\n\n"
+            "In this countdown: Iquitos, La Rinconada, Longyearbyen, Grise Fiord, Ittoqqortoormiit, Easter Island, "
+            "Saint Helena, Palmerston Island, the Pitcairn Islands and Tristan da Cunha, plus the island everyone finally left.\n\n"
+            "The ranking is ours: it weighs distance to the nearest neighbor, how you get there and how often. "
+            "Which one would you choose? Tell us in the comments."
+        ),
+        "tags": ["most isolated places on earth", "most remote places", "remote islands", "tristan da cunha", "pitcairn islands",
+                 "easter island", "saint helena", "palmerston island", "longyearbyen", "svalbard", "ittoqqortoormiit",
+                 "grise fiord", "la rinconada", "iquitos", "st kilda", "top 10 geography", "geography explained",
+                 "history explained", "timeline earth", "maps"],
+        "hashtags": ["#geography", "#top10", "#travel"],
+        "pinned_comment": "Before you watch number one: which of these places would YOU actually move to? And did you guess the top spot? 👇",
+    },
+    "chapters": [
+        {"n": 0, "title": "Hook", "scenes": [
+            {"type": "map_route", "narration": "Most of the world's eight billion people live within reach of a road, a hospital and a supermarket. But not everyone.",
+             "data": {"bbox": WORLD}},
+            {"type": "text", "narration": "Somewhere on this planet, there's a city of half a million people that no road can reach.",
+             "data": {"text": "A city of half a million. No road in.", "highlight": ["road"]}},
+            {"type": "text", "narration": "There's a town where you're expected to carry a rifle when you leave it. An island where almost everyone shares the same surname.",
+             "data": {"text": "A rifle to leave town. One surname for everyone.", "highlight": ["rifle", "surname"]}},
+            {"type": "text", "narration": "And there's a place with no airport, where the nearest neighbor is about two thousand four hundred kilometers away.",
+             "data": {"text": "No airport. Nearest neighbor 2,400 km away.", "highlight": ["2,400"]}},
+            {"type": "map_route", "narration": "Today, we're counting down the ten most isolated places on Earth where people actually live, all year round.",
+             "data": ALL_MAP},
+        ]},
+        {"n": 1, "title": "How we ranked them", "card": False, "bar": "How we ranked them", "title_youtube": "How we ranked them", "scenes": [
+            {"type": "list", "narration": "First, the rules. Research stations don't count, and neither do military bases. These are real communities, with families, schools and homes.",
+             "data": {"title": "The rules", "items": ["Research stations", "Military bases", "Real communities with families"], "marks": ["x", "x", "check"]}},
+            {"type": "list", "narration": "To rank them, we looked at three things. How far it is to the nearest neighbor. How you get there. And how often you can.",
+             "data": {"title": "How isolated is it?", "items": ["Distance to the nearest neighbor", "How you get there", "How often you can"]}},
+            {"type": "text", "narration": "And for every place, we'll answer the question this channel is all about. Why do people live there at all? Keep a guess for number one. The answer might surprise you.",
+             "data": {"kicker": "The real question", "text": "Why does anyone live here?", "highlight": ["Why"]}},
+        ]},
+        {"n": 2, "title": "Iquitos", "card_label": "#10", "card_kicker": "Number", "title_youtube": "#10 Iquitos, Peru", "scenes": [
+            {"type": "fact_file", "narration": "Number ten. Iquitos, in Peru. With around half a million people, it's often called the largest city in the world that you can't reach by road.",
+             "data": {"rank": "#10", "name": "Iquitos", "place": "Amazon rainforest · Peru", "rows": [
+                 {"label": "Population", "value": "About 500,000"}, {"label": "Roads to the rest of Peru", "value": "None"},
+                 {"label": "How to get there", "value": "By plane or by river boat"}]}},
+            {"type": "map_route", "narration": "It sits deep in the Amazon rainforest, on the banks of the Amazon River. Lima, the capital, is on the other side of the Andes.",
+             "data": {"bbox": PERU_BBOX, "highlight_countries": [{"name": "Peru", "strength": 0.25}], "points": [IQUITOS, LIMA],
+                      "rivers": [{"names": ["Amazon"], "width": 6}]}},
+            {"type": "map_route", "narration": "To get there, you either fly, or you take a boat. From the nearest port connected to the road network, the river journey takes a few days.",
+             "data": {"bbox": AMAZON_BBOX, "highlight_countries": [{"name": "Peru", "strength": 0.25}],
+                      "routes": [{"points": [[-76.08, -5.90], [-75.4, -5.2], [-74.4, -4.6], [-73.58, -4.51], [-73.25, -3.75]], "label": "A few days by boat"}],
+                      "points": [pt(-76.08, -5.90, "Yurimaguas", "rm"), IQUITOS]}},
+            {"type": "text", "narration": "The city's only highway runs about a hundred kilometers south, to the river town of Nauta. And then it simply ends.",
+             "data": {"text": "One highway. About 100 km. Then it ends.", "highlight": ["ends."]}},
+            {"type": "text", "narration": "So why is there a big city here at all? The answer is a tree. In the late eighteen hundreds, the world wanted rubber, for bicycle tires, machines and, soon, cars.",
+             "data": {"kicker": "The rubber boom", "text": "The world wanted rubber", "highlight": ["rubber"]}},
+            {"type": "text", "narration": "Wild rubber trees grew across the Amazon, and Iquitos became a boom town. Rubber barons built mansions decorated with tiles shipped from Europe.",
+             "data": {"text": "Mansions in the middle of the jungle", "highlight": ["jungle"]}},
+            {"type": "text", "narration": "That wealth was built on the forced labor and suffering of many indigenous people. And it didn't last.",
+             "data": {"text": "Wealth built on forced labor", "highlight": ["forced"]}},
+            {"type": "map_route", "narration": "Rubber seeds had been taken from Brazil to Britain, and plantations in Southeast Asia soon produced rubber far more cheaply. By the nineteen-tens, the boom was over.",
+             "data": {"bbox": [-85, -25, 125, 60], "routes": [{"points": [[-60, -3], [-30, 10], [-6, 45], [0, 51]], "label": "Seeds to Britain", "color": "accent2"},
+                                                           {"points": [[0, 51], [30, 32], [60, 12], [101, 3]], "label": "Plantations in Asia", "color": "green"}]}},
+            {"type": "text", "narration": "But the city survived, as a river port, and later with oil, timber and tourism. Today its streets are full of motorcycle taxis. Cars have to arrive by boat.",
+             "data": {"text": "Cars arrive by boat", "highlight": ["boat"]}},
+            {"type": "text", "narration": "In the district of Belén, houses float on rafts or stand on stilts. When the river rises by several meters in the rainy season, the whole neighborhood rises with it.",
+             "data": {"kicker": "Belén", "text": "A neighborhood that rises with the river", "highlight": ["rises"]}},
+            {"type": "text", "narration": "Iquitos is isolated, but it's still a big city, with an airport and daily flights. Things are about to get much more extreme.",
+             "data": {"text": "Isolated, but still a city", "highlight": ["city"]}},
+        ]},
+        {"n": 3, "title": "La Rinconada", "card_label": "#9", "card_kicker": "Number", "title_youtube": "#9 La Rinconada, Peru", "scenes": [
+            {"type": "fact_file", "narration": "Number nine is also in Peru. But this time the isolation isn't about distance. It's about height. This is La Rinconada.",
+             "data": {"rank": "#9", "name": "La Rinconada", "place": "Andes mountains · Peru", "rows": [
+                 {"label": "Altitude", "value": "About 5,100 m"}, {"label": "Population", "value": "Tens of thousands"},
+                 {"label": "Oxygen in the air", "value": "About half of sea level"}]}},
+            {"type": "map_route", "narration": "It's high in the Andes, in the south of the country, not far from Lake Titicaca and the border with Bolivia.",
+             "data": {"bbox": [-74, -18, -66, -12], "highlight_countries": [{"name": "Peru", "strength": 0.25}], "points": [RINCONADA, pt(-70.13, -15.50, "Juliaca", "rm")]}},
+            {"type": "big_number", "narration": "At around five thousand one hundred meters above sea level, it's often called the highest permanent settlement in the world.",
+             "data": {"kicker": "La Rinconada", "value": "~5,100 m", "caption": "the highest town on Earth"}},
+            {"type": "text", "narration": "Water boils at around eighty-three degrees Celsius up here, and even a short walk uphill leaves visitors gasping for air.",
+             "data": {"text": "Water boils at about 83 °C", "highlight": ["83"]}},
+            {"type": "bars", "narration": "That's higher than the base camp on the south side of Mount Everest, and more than three times higher than Denver, the famous Mile High City.",
+             "data": {"title": "Altitude (meters, approx.)", "highlight": 0, "bars": [
+                 {"label": "La Rinconada", "value": 5100, "display": "~5,100 m"},
+                 {"label": "Everest South Base Camp", "value": 5364, "display": "~5,360 m", "color": "blue"},
+                 {"label": "Denver", "value": 1609, "display": "~1,600 m", "color": "blue"}]}},
+            {"type": "text", "narration": "Every breath here has only about half the oxygen it would have by the sea. Researchers have found that many residents suffer from chronic mountain sickness.",
+             "data": {"text": "Every breath: half the oxygen", "highlight": ["half"]}},
+            {"type": "text", "narration": "So why would tens of thousands of people live here? Because of what's under the glacier above the town. Gold.",
+             "data": {"kicker": "The reason", "text": "Gold under the glacier", "highlight": ["Gold"]}},
+            {"type": "text", "narration": "When gold prices soared in the two thousands, the town grew fast. Many miners work under an old system often called cachorreo.",
+             "data": {"kicker": "Cachorreo", "text": "A gold rush at 5,000 meters", "highlight": ["gold"]}},
+            {"type": "diagram", "narration": "It's often described like this. Miners work for around a month without a regular wage. Then, at the end, they get to keep whatever ore they can carry out. It's a lottery.",
+             "data": {"title": "How cachorreo works", "nodes": [
+                 {"id": "a", "label": "A month of unpaid work", "x": 0.16, "y": 0.52, "color": "red"},
+                 {"id": "b", "label": "Final day: carry out ore", "x": 0.5, "y": 0.52},
+                 {"id": "c", "label": "Keep any gold in it", "x": 0.84, "y": 0.52, "color": "accent"}],
+                 "edges": [["a", "b"], ["b", "c"]], "pulse": True}},
+            {"type": "text", "narration": "The town has no proper sewage system, and mercury used to separate the gold pollutes the land and water. People stay for one reason: the chance of striking it rich.",
+             "data": {"text": "People stay for the chance of gold", "highlight": ["gold"]}},
+        ]},
+        {"n": 4, "title": "Longyearbyen", "card_label": "#8", "card_kicker": "Number", "title_youtube": "#8 Longyearbyen, Svalbard", "scenes": [
+            {"type": "fact_file", "narration": "Number eight. Longyearbyen, on the Arctic islands of Svalbard. It's one of the northernmost towns in the world.",
+             "data": {"rank": "#8", "name": "Longyearbyen", "place": "Svalbard · Norway", "rows": [
+                 {"label": "Population", "value": "About 2,500"}, {"label": "Distance to the North Pole", "value": "About 1,300 km"},
+                 {"label": "Sunless winter", "value": "About four months"}]}},
+            {"type": "map_route", "narration": "Svalbard lies far north of mainland Norway, roughly halfway between the Norwegian coast and the North Pole.",
+             "data": {"bbox": SVALBARD_BBOX, "highlight_countries": [{"name": "Norway", "strength": 0.3}],
+                      "points": [LONGYEARBYEN, pt(18.96, 69.65, "Tromsø"), pt(10.75, 59.91, "Oslo")],
+                      "routes": [{"points": [[18.96, 69.65], [17.3, 74.0], [15.65, 78.22]], "label": "Flights from Tromsø", "color": "accent2"}]}},
+            {"type": "text", "narration": "From around late October to mid February, the sun never rises above the horizon. Then in summer, it never sets.",
+             "data": {"kicker": "Polar night", "text": "About four months without the sun", "highlight": ["without"]}},
+            {"type": "text", "narration": "And there are polar bears. Outside the town, people are expected to carry protection, and many carry a rifle. Signs at the edge of town warn you why.",
+             "data": {"kicker": "Polar bears", "text": "Don't leave town without protection", "highlight": ["protection"]}},
+            {"type": "text", "narration": "You may have heard that dying is forbidden here. That's not literally true. But the town's small cemetery stopped taking new burials decades ago.",
+             "data": {"text": "Is dying really forbidden?", "highlight": ["forbidden?"]}},
+            {"type": "text", "narration": "In the frozen ground, bodies don't decompose properly. So people who are very ill, or very old, are usually expected to move to the mainland.",
+             "data": {"text": "The frozen ground preserves everything", "highlight": ["frozen"]}},
+            {"type": "text", "narration": "There's another unusual rule. Cats are not allowed in Longyearbyen, to protect the Arctic birds that nest around the town.",
+             "data": {"text": "No cats allowed", "highlight": ["cats"]}},
+            {"type": "timeline", "narration": "So why is the town here? Coal. In 1906, an American businessman called John Munro Longyear founded a mining company here. The town still carries his name.",
+             "data": {"title": "Longyearbyen", "focus": 0, "events": [
+                 {"year": "1906", "label": "A coal town is founded"}, {"year": "1920", "label": "Svalbard Treaty"}, {"year": "2008", "label": "Global Seed Vault opens"}]}},
+            {"type": "timeline", "narration": "In 1920, the Svalbard Treaty gave the islands to Norway. But citizens of the countries that signed it can live and work here without a visa. So the town is surprisingly international.",
+             "data": {"title": "Longyearbyen", "focus": 1, "events": [
+                 {"year": "1906", "label": "A coal town is founded"}, {"year": "1920", "label": "Svalbard Treaty"}, {"year": "2008", "label": "Global Seed Vault opens"}]}},
+            {"type": "timeline", "narration": "And in 2008, the Global Seed Vault opened in the mountain nearby. It stores more than a million seed samples from around the world, a backup for the planet's crops.",
+             "data": {"title": "Longyearbyen", "focus": 2, "events": [
+                 {"year": "1906", "label": "A coal town is founded"}, {"year": "1920", "label": "Svalbard Treaty"}, {"year": "2008", "label": "Global Seed Vault opens"}]}},
+            {"type": "text", "narration": "Today coal mining is winding down, and the town lives from research and tourism. It's remote, but it has an airport. Our next place has nothing like that.",
+             "data": {"text": "From coal to research and tourism", "highlight": ["research"]}},
+        ]},
+        {"n": 5, "title": "Grise Fiord", "card_label": "#7", "card_kicker": "Number", "title_youtube": "#7 Grise Fiord, Canada", "scenes": [
+            {"type": "fact_file", "narration": "Number seven. Grise Fiord, in the Canadian Arctic. It's the northernmost civilian community in Canada.",
+             "data": {"rank": "#7", "name": "Grise Fiord", "place": "Ellesmere Island · Nunavut, Canada", "rows": [
+                 {"label": "Population", "value": "About 150"}, {"label": "Inuktitut name", "value": "Aujuittuq"},
+                 {"label": "How to get there", "value": "Small planes, weather permitting"}]}},
+            {"type": "map_route", "narration": "It's on Ellesmere Island, more than a thousand kilometers north of the Arctic Circle. There are no roads to anywhere else.",
+             "data": {"bbox": ARCTIC_NA_BBOX, "highlight_countries": [{"name": "Canada", "strength": 0.25}], "points": [GRISE, pt(-94.83, 74.70, "Resolute", "rm")]}},
+            {"type": "text", "narration": "Its name in Inuktitut, Aujuittuq, means place that never thaws. In winter, there are months without sunlight.",
+             "data": {"kicker": "Aujuittuq", "text": "The place that never thaws", "highlight": ["never"]}},
+            {"type": "text", "narration": "Fresh food arrives by plane and is very expensive. Heavy supplies, like fuel and building materials, come by ship, once a year, when the sea ice opens.",
+             "data": {"text": "Supplies by ship, once a year", "highlight": ["once"]}},
+            {"type": "map_route", "narration": "The reason people live here is not gold or coal. It's a government decision. In 1953, Canada moved Inuit families here, from northern Quebec and from Pond Inlet.",
+             "data": {"bbox": [-100, 50, -60, 80], "highlight_countries": [{"name": "Canada", "strength": 0.25}],
+                      "routes": [{"points": [[-78.10, 58.45], [-80.5, 66.0], [-81.5, 72.0], [-82.89, 76.42]], "color": "red", "label": "Relocated · 1953"}],
+                      "points": [pt(-78.10, 58.45, "Inukjuak", "rm"), GRISE]}},
+            {"type": "text", "narration": "The families from Quebec were moved around two thousand kilometers north, to a colder and darker land they didn't know. They were told they could return after two years. Many found that promise wasn't kept.",
+             "data": {"text": "A promise to return that wasn't kept", "highlight": ["promise"]}},
+            {"type": "text", "narration": "Many historians argue the move was also about showing that Canada occupied its High Arctic. In 2010, the Government of Canada formally apologized.",
+             "data": {"kicker": "2010", "text": "A formal apology", "highlight": ["apology"]}},
+            {"type": "text", "narration": "Today, Grise Fiord is home. Its people hunt, teach their children Inuktitut, and keep a community alive in one of the harshest places on the planet.",
+             "data": {"text": "A community in one of the harshest places on Earth", "highlight": ["community"]}},
+        ]},
+        {"n": 6, "title": "Ittoqqortoormiit", "card_label": "#6", "card_kicker": "Number", "title_youtube": "#6 Ittoqqortoormiit, Greenland", "scenes": [
+            {"type": "fact_file", "narration": "Number six. Try saying it: Ittoqqortoormiit. A small town on the east coast of Greenland.",
+             "data": {"rank": "#6", "name": "Ittoqqortoormiit", "place": "East Greenland", "rows": [
+                 {"label": "Population", "value": "About 350"}, {"label": "Nearest town", "value": "About 800 km away"},
+                 {"label": "Frozen sea", "value": "About nine months a year"}]}},
+            {"type": "map_route", "narration": "Its nearest neighboring town, Tasiilaq, is about eight hundred kilometers to the south. And in Greenland, there are no roads between towns at all.",
+             "data": {"bbox": GREENLAND_BBOX, "highlight_countries": [{"name": "Greenland", "strength": 0.2}],
+                      "points": [ITTOQ, pt(-37.64, 65.61, "Tasiilaq"), pt(-51.72, 64.18, "Nuuk", "rm")],
+                      "routes": [{"points": [[-21.97, 70.49], [-37.64, 65.61]], "label": "~800 km, no road", "color": "accent2"}]}},
+            {"type": "text", "narration": "The town sits at the mouth of Scoresby Sound, often described as the largest fjord system in the world.",
+             "data": {"kicker": "Scoresby Sound", "text": "The largest fjord system on Earth", "highlight": ["largest"]}},
+            {"type": "text", "narration": "For around nine months of the year, the sea is frozen. A supply ship can reach the town only in the short summer, usually once or twice a year.",
+             "data": {"text": "One or two supply ships a year", "highlight": ["ships"]}},
+            {"type": "text", "narration": "That one ship has to bring almost everything for the year. Fuel, building materials, cars and food. If something is missing, you wait for next summer.",
+             "data": {"text": "Forgot something? Wait until next summer", "highlight": ["summer"]}},
+            {"type": "diagram", "narration": "The rest of the time, the way in is a small plane to an airstrip about forty kilometers away. Then a helicopter, if the weather allows.",
+             "data": {"title": "How to get there", "nodes": [
+                 {"id": "a", "label": "Plane to an airstrip", "x": 0.16, "y": 0.52, "color": "blue"},
+                 {"id": "b", "label": "Helicopter, ~40 km", "x": 0.5, "y": 0.52},
+                 {"id": "c", "label": "Ittoqqortoormiit", "x": 0.84, "y": 0.52, "color": "accent"}],
+                 "edges": [["a", "b"], ["b", "c"]], "pulse": True}},
+            {"type": "timeline", "narration": "The town was founded in 1925, when Denmark moved a group of families here from Tasiilaq. Partly, the aim was to strengthen Denmark's claim to East Greenland.",
+             "data": {"title": "Ittoqqortoormiit", "focus": 0, "events": [{"year": "1925", "label": "Founded with families from Tasiilaq"}, {"year": "Today", "label": "About 350 people"}]}},
+            {"type": "text", "narration": "And people stayed because the sea here is rich. Seals, narwhals, musk oxen and polar bears. Hunting is still at the heart of life in town.",
+             "data": {"text": "A rich sea: seals, narwhals and bears", "highlight": ["rich"]}},
+            {"type": "text", "narration": "Like Grise Fiord, this place shows a pattern we'll see again. A government drew a line on a map, and people made a home there.",
+             "data": {"text": "A line on a map became a home", "highlight": ["home"]}},
+        ]},
+        {"n": 7, "title": "Easter Island", "card_label": "#5", "card_kicker": "Number", "title_youtube": "#5 Easter Island, Chile", "scenes": [
+            {"type": "fact_file", "narration": "Number five. Rapa Nui, better known as Easter Island.",
+             "data": {"rank": "#5", "name": "Easter Island", "place": "Rapa Nui · Chile", "rows": [
+                 {"label": "Population", "value": "About 7,700"}, {"label": "Distance to mainland Chile", "value": "About 3,500 km"},
+                 {"label": "Nearest inhabited island", "value": "Pitcairn · about 2,000 km"}]}},
+            {"type": "map_route", "narration": "It belongs to Chile, but it's about three thousand five hundred kilometers off the Chilean coast. The nearest inhabited island is about two thousand kilometers away. Remember that name: Pitcairn.",
+             "data": {"bbox": [-140, -45, -55, -5], "points": [EASTER, PITCAIRN, SANTIAGO],
+                      "routes": [{"points": [[-109.35, -27.11], [-90, -30.0], [-71.6, -33.0]], "label": "~3,500 km", "color": "accent2"}]}},
+            {"type": "text", "narration": "Polynesian voyagers reached this tiny island hundreds of years ago, crossing thousands of kilometers of open ocean in canoes, navigating by the stars, the waves and the birds.",
+             "data": {"text": "Found by canoe, navigating by the stars", "highlight": ["stars"]}},
+            {"type": "big_number", "narration": "They carved the moai, the famous stone statues. There are close to a thousand of them, most cut from a single volcanic quarry.",
+             "data": {"kicker": "Moai statues", "value": "~1,000", "caption": "most carved from one volcanic quarry"}},
+            {"type": "big_number", "narration": "Then came disaster from outside. In the eighteen-sixties, slave raids from Peru and the diseases that followed devastated the island. By 1877, only around a hundred and eleven Rapa Nui people were left.",
+             "data": {"kicker": "Rapa Nui people in 1877", "value": "~111", "caption": "after slave raids and disease", "color": "red"}},
+            {"type": "text", "narration": "Chile annexed the island in 1888. Slowly, the population recovered, and the Rapa Nui language and culture are still alive today.",
+             "data": {"kicker": "1888", "text": "Annexed by Chile", "highlight": ["Chile"]}},
+            {"type": "text", "narration": "Here's a strange detail. The island's runway was extended with help from NASA in the nineteen-eighties, as an emergency landing site for the Space Shuttle.",
+             "data": {"text": "An emergency runway for the Space Shuttle", "highlight": ["Shuttle"]}},
+            {"type": "text", "narration": "That runway changed everything. Today, flights from Santiago take around five hours, and tourism is the island's main income. That's why Easter Island is only number five.",
+             "data": {"text": "The runway that changed everything", "highlight": ["runway"]}},
+        ]},
+        {"n": 8, "title": "Halfway", "card": False, "bar": "Halfway", "title_youtube": "The countdown so far", "scenes": [
+            {"type": "ranking", "narration": "We're halfway there. Here's the countdown so far. And notice how many of the top spots are still hidden.",
+             "data": {"title": "The countdown so far", "items": RANKING, "focus": 4, "hidden": [0, 1, 2, 3]}},
+            {"type": "text", "narration": "If you're enjoying this countdown, subscribe. Every week we find the story hidden in another map.",
+             "data": {"kicker": "Timeline Earth", "text": "Subscribe for a new map story every week", "highlight": ["Subscribe"]}},
+            {"type": "text", "narration": "From here on, every place on the list is an island. And not one of them has an easy way in.",
+             "data": {"text": "From here on: only islands", "highlight": ["islands"]}},
+        ]},
+        {"n": 9, "title": "Saint Helena", "card_label": "#4", "card_kicker": "Number", "title_youtube": "#4 Saint Helena", "scenes": [
+            {"type": "fact_file", "narration": "Number four. Saint Helena, a British territory in the middle of the South Atlantic.",
+             "data": {"rank": "#4", "name": "Saint Helena", "place": "South Atlantic · British Overseas Territory", "rows": [
+                 {"label": "Population", "value": "About 4,400"}, {"label": "Distance to Africa", "value": "Nearly 2,000 km"},
+                 {"label": "Nearest island", "value": "Ascension · about 1,300 km"}]}},
+            {"type": "map_route", "narration": "It's nearly two thousand kilometers from the coast of Africa. The nearest island, Ascension, is about one thousand three hundred kilometers away.",
+             "data": {"bbox": S_ATLANTIC_BBOX, "highlight_countries": [{"name": "Saint Helena", "strength": 0.6}],
+                      "points": [HELENA, pt(-14.36, -7.95, "Ascension"), CAPE_TOWN]}},
+            {"type": "text", "narration": "Portuguese sailors found the island in 1502. For centuries, it was a vital stop for ships sailing between Europe and Asia, a place to find fresh water and food.",
+             "data": {"kicker": "1502", "text": "A rest stop in the middle of the ocean", "highlight": ["ocean"]}},
+            {"type": "text", "narration": "It was so remote that Britain chose it as a prison for its most dangerous enemy. Napoleon Bonaparte was sent here in 1815, and he died here in 1821.",
+             "data": {"kicker": "1815 – 1821", "text": "Napoleon's last prison", "highlight": ["Napoleon's"]}},
+            {"type": "text", "narration": "Then, in 1869, the Suez Canal opened. Ships no longer needed to sail around Africa, and Saint Helena slowly lost its reason to exist.",
+             "data": {"text": "The Suez Canal changed everything", "highlight": ["Suez"]}},
+            {"type": "text", "narration": "For a long time, the main way in was a mail ship from Cape Town. The journey took about five days.",
+             "data": {"text": "Five days by mail ship", "highlight": ["Five"]}},
+            {"type": "timeline", "narration": "Then Britain built an airport, costing hundreds of millions of pounds. It was finished in 2016. But test flights found dangerous winds on the approach, and the British press called it the world's most useless airport.",
+             "data": {"title": "Saint Helena's airport", "focus": 0, "events": [{"year": "2016", "label": "Airport finished, but dangerous winds"}, {"year": "2017", "label": "First regular flights"}]}},
+            {"type": "timeline", "narration": "Regular flights finally began in 2017. Today, Saint Helena is reachable by air, but only a few times a week. And one of its famous residents is a giant tortoise called Jonathan, brought here in 1882.",
+             "data": {"title": "Saint Helena's airport", "focus": 1, "events": [{"year": "2016", "label": "Airport finished, but dangerous winds"}, {"year": "2017", "label": "First regular flights"}]}},
+        ]},
+        {"n": 10, "title": "Palmerston Island", "card_label": "#3", "card_kicker": "Number", "title_youtube": "#3 Palmerston Island", "scenes": [
+            {"type": "fact_file", "narration": "Number three. Palmerston Island, a tiny coral atoll in the Cook Islands, in the South Pacific.",
+             "data": {"rank": "#3", "name": "Palmerston Island", "place": "Cook Islands · South Pacific", "rows": [
+                 {"label": "Population", "value": "A few dozen"}, {"label": "Most common surname", "value": "Marsters"},
+                 {"label": "How to get there", "value": "A ship, a few times a year"}]}},
+            {"type": "map_route", "narration": "It's about five hundred kilometers from Rarotonga, the main island. There's no airport, and supply ships come only a few times a year. Sometimes months go by between visits.",
+             "data": {"bbox": COOK_BBOX, "highlight_countries": [{"name": "Cook Is.", "strength": 0.6}],
+                      "points": [PALMERSTON, pt(-159.78, -21.23, "Rarotonga")],
+                      "routes": [{"points": [[-159.78, -21.23], [-163.17, -18.05]], "label": "~500 km by sea", "color": "accent2"}]}},
+            {"type": "text", "narration": "Almost everyone on Palmerston has the same surname. Marsters. And that's because of one man.",
+             "data": {"text": "Almost everyone is called Marsters", "highlight": ["Marsters"]}},
+            {"type": "text", "narration": "In 1863, an Englishman named William Marsters arrived to look after the island's coconut palms. He brought his Polynesian wives, and they had many children.",
+             "data": {"kicker": "1863", "text": "One man, his wives and many children", "highlight": ["many"]}},
+            {"type": "diagram", "narration": "Marsters divided the island between his three families, and set rules about who could marry whom. Most people living there today are his descendants.",
+             "data": {"title": "One island, three families", "nodes": [
+                 {"id": "w", "label": "William Marsters", "x": 0.5, "y": 0.3, "color": "accent"},
+                 {"id": "a", "label": "Family one", "x": 0.2, "y": 0.72}, {"id": "b", "label": "Family two", "x": 0.5, "y": 0.72},
+                 {"id": "c", "label": "Family three", "x": 0.8, "y": 0.72}], "edges": [["w", "a"], ["w", "b"], ["w", "c"]]}},
+            {"type": "text", "narration": "Visitors often notice that islanders speak a unique form of English, said to carry traces of Marsters' own English accent.",
+             "data": {"text": "An English accent in the South Pacific", "highlight": ["accent"]}},
+            {"type": "text", "narration": "Life follows the sea and the coconut. Fish is the main food, and when a ship arrives, the whole island turns out to meet it.",
+             "data": {"text": "When a ship arrives, everyone turns out", "highlight": ["ship"]}},
+            {"type": "text", "narration": "For a long time, the island had no regular phone or internet connection. News from the outside world arrived with the ships, sometimes months late.",
+             "data": {"text": "News arrived months late", "highlight": ["months"]}},
+        ]},
+        {"n": 11, "title": "Pitcairn Islands", "card_label": "#2", "card_kicker": "Number", "title_youtube": "#2 Pitcairn Islands", "scenes": [
+            {"type": "fact_file", "narration": "Number two. Pitcairn, the island we passed near Easter Island. With fewer than fifty people, it's often called the least populated national jurisdiction in the world.",
+             "data": {"rank": "#2", "name": "Pitcairn Islands", "place": "South Pacific · British Overseas Territory", "rows": [
+                 {"label": "Population", "value": "Fewer than 50"}, {"label": "Only settlement", "value": "Adamstown"},
+                 {"label": "How to get there", "value": "About 32 hours by ship"}]}},
+            {"type": "map_route", "narration": "There's no airport. First you fly to Tahiti. Then to the small island of Mangareva. And from there, it's a boat trip of around a day and a half.",
+             "data": {"bbox": [-152, -30, -126, -14], "points": [pt(-149.43, -17.65, "Tahiti"), pt(-134.97, -23.12, "Mangareva", "rm"), PITCAIRN],
+                      "routes": [{"points": [[-149.43, -17.65], [-134.97, -23.12]], "label": "Flights", "color": "blue"},
+                                 {"points": [[-134.97, -23.12], [-130.10, -25.07]], "label": "~32 h by ship", "color": "accent2"}]}},
+            {"type": "text", "narration": "And when you arrive, there's no harbor big enough for ships. Islanders come out in aluminum longboats and ride the waves into a small landing called Bounty Bay.",
+             "data": {"kicker": "Bounty Bay", "text": "Landing by longboat", "highlight": ["longboat"]}},
+            {"type": "timeline", "narration": "That name tells the story. In 1789, sailors on the British ship HMS Bounty mutinied against their captain, William Bligh, in the South Pacific.",
+             "data": {"title": "The Bounty", "focus": 0, "events": [
+                 {"year": "1789", "label": "Mutiny on the Bounty"}, {"year": "1790", "label": "Arrival at Pitcairn"}, {"year": "1808", "label": "Found by an American ship"}]}},
+            {"type": "timeline", "narration": "Led by Fletcher Christian, nine mutineers, with a group of Polynesian men and women, went looking for a place to hide. In 1790 they found Pitcairn, which was wrongly placed on British charts.",
+             "data": {"title": "The Bounty", "focus": 1, "events": [
+                 {"year": "1789", "label": "Mutiny on the Bounty"}, {"year": "1790", "label": "Arrival at Pitcairn"}, {"year": "1808", "label": "Found by an American ship"}]}},
+            {"type": "text", "narration": "To make sure no one could find them, or leave, they burned the ship. Islanders still remember it every year on Bounty Day.",
+             "data": {"text": "They burned the ship", "highlight": ["burned"]}},
+            {"type": "timeline", "narration": "The years that followed were violent. When an American ship finally found the island in 1808, only one of the mutineers was still alive, John Adams. The capital, Adamstown, is named after him.",
+             "data": {"title": "The Bounty", "focus": 2, "events": [
+                 {"year": "1789", "label": "Mutiny on the Bounty"}, {"year": "1790", "label": "Arrival at Pitcairn"}, {"year": "1808", "label": "Found by an American ship"}]}},
+            {"type": "text", "narration": "Today, many islanders are descendants of the mutineers and the Tahitians. But the population is small and aging, and Pitcairn has even invited new people to move there.",
+             "data": {"text": "An island looking for new residents", "highlight": ["new"]}},
+            {"type": "text", "narration": "So Pitcairn exists because people needed a place where no one would ever find them. And that brings us to number one.",
+             "data": {"text": "A place where no one would find them", "highlight": ["no"]}},
+        ]},
+        {"n": 12, "title": "Tristan da Cunha", "card_label": "#1", "card_kicker": "Number", "title_youtube": "#1 Tristan da Cunha", "scenes": [
+            {"type": "fact_file", "narration": "Number one. Tristan da Cunha. Often called the most remote inhabited island in the world.",
+             "data": {"rank": "#1", "name": "Tristan da Cunha", "place": "South Atlantic · British Overseas Territory", "rows": [
+                 {"label": "Population", "value": "Fewer than 300"}, {"label": "Nearest inhabited place", "value": "Saint Helena · ~2,400 km"},
+                 {"label": "How to get there", "value": "About a week by ship"}, {"label": "Airport", "value": "None"}]}},
+            {"type": "map_route", "narration": "Its nearest inhabited neighbor is Saint Helena, about two thousand four hundred kilometers away. Cape Town is about two thousand eight hundred kilometers. South America is even further.",
+             "data": {"bbox": S_ATLANTIC_BBOX, "points": [TRISTAN, HELENA, CAPE_TOWN],
+                      "routes": [{"points": [[-12.31, -37.07], [-5.72, -15.93]], "label": "~2,400 km", "color": "accent2"},
+                                 {"points": [[-12.31, -37.07], [3, -35.5], [18.42, -33.92]], "label": "~2,800 km", "color": "accent2"}]}},
+            {"type": "text", "narration": "There's no airport, and there's no room to build one. The island is basically the top of a volcano, rising more than two thousand meters out of the ocean.",
+             "data": {"text": "No airport. No room for one.", "highlight": ["No"]}},
+            {"type": "text", "narration": "The only way in is by sea, usually from Cape Town, on a fishing vessel or a supply ship. It takes about a week. And there are only a handful of sailings a year.",
+             "data": {"text": "About a week by sea", "highlight": ["week"]}},
+            {"type": "text", "narration": "The village is called Edinburgh of the Seven Seas. Its name honors a visit by Prince Alfred, Duke of Edinburgh, in 1867.",
+             "data": {"kicker": "The only village", "text": "Edinburgh of the Seven Seas", "highlight": ["Seven", "Seas"]}},
+            {"type": "timeline", "narration": "The island was sighted in 1506 by the Portuguese explorer Tristão da Cunha. But for three centuries, no one stayed. And when people finally did, it was because of Napoleon.",
+             "data": {"title": "Tristan da Cunha", "focus": 0, "events": [
+                 {"year": "1506", "label": "Sighted by Tristão da Cunha"}, {"year": "1816", "label": "British garrison"}, {"year": "1961", "label": "Volcanic eruption"}]}},
+            {"type": "timeline", "narration": "Yes, Napoleon again. In 1816, Britain placed a garrison here, to make sure no one could use the island to rescue him from Saint Helena.",
+             "data": {"title": "Tristan da Cunha", "focus": 1, "events": [
+                 {"year": "1506", "label": "Sighted by Tristão da Cunha"}, {"year": "1816", "label": "British garrison"}, {"year": "1961", "label": "Volcanic eruption"}]}},
+            {"type": "text", "narration": "When the soldiers left, a corporal called William Glass asked to stay, with his family. Others joined over the years: shipwrecked sailors, settlers and women from Saint Helena.",
+             "data": {"text": "One soldier decided to stay", "highlight": ["stay"]}},
+            {"type": "text", "narration": "That's why, even today, the islanders share fewer than ten family names. And all the land is owned in common. No one can buy it.",
+             "data": {"text": "Fewer than ten surnames. Land owned in common.", "highlight": ["ten", "common."]}},
+            {"type": "timeline", "narration": "Then, in 1961, the volcano erupted right next to the village. The entire population was evacuated, all the way to England.",
+             "data": {"title": "Tristan da Cunha", "focus": 2, "events": [
+                 {"year": "1506", "label": "Sighted by Tristão da Cunha"}, {"year": "1816", "label": "British garrison"}, {"year": "1961", "label": "Volcanic eruption"}]}},
+            {"type": "text", "narration": "They could have stayed in Britain, with its roads, shops and hospitals. Instead, most of them voted to go back. By 1963, they were home.",
+             "data": {"text": "They chose to go back", "highlight": ["back"]}},
+            {"type": "text", "narration": "Today, the island lives mainly from fishing for its famous lobster, and from selling its postage stamps to collectors around the world.",
+             "data": {"text": "Lobster and postage stamps", "highlight": ["Lobster", "stamps"]}},
+            {"type": "text", "narration": "It even has its own postcode, so that parcels from online shops can find it. Even so, a delivery can take months to arrive.",
+             "data": {"text": "A postcode, and months to get a parcel", "highlight": ["months"]}},
+            {"type": "text", "narration": "The most isolated community on Earth didn't survive by accident. It survived because the people living there wanted it to.",
+             "data": {"text": "It survives because its people want it to", "highlight": ["want"]}},
+        ]},
+        {"n": 13, "title": "The island everyone left", "card_label": "BONUS", "card_kicker": "And one more", "title_youtube": "Bonus: the island everyone left", "scenes": [
+            {"type": "text", "narration": "But not every remote community made that choice. There's one more place we need to visit. One that didn't make the list, because no one lives there anymore.",
+             "data": {"text": "The place no one lives anymore", "highlight": ["anymore"]}},
+            {"type": "map_route", "narration": "This is St Kilda, a group of islands far out in the Atlantic, beyond the Outer Hebrides of Scotland.",
+             "data": {"bbox": SCOTLAND_BBOX, "highlight_countries": [{"name": "United Kingdom", "strength": 0.2}], "points": [ST_KILDA]}},
+            {"type": "text", "narration": "People lived here for at least two thousand years. They climbed huge sea cliffs to catch seabirds, which gave them food, oil and feathers to pay their rent.",
+             "data": {"text": "A life built on seabirds and cliffs", "highlight": ["seabirds"]}},
+            {"type": "text", "narration": "Every morning, the men met in the street to decide the day's work. Visitors called it the St Kilda Parliament.",
+             "data": {"kicker": "St Kilda", "text": "A parliament in the street", "highlight": ["parliament"]}},
+            {"type": "text", "narration": "To send a message to the mainland, islanders sometimes sealed a letter in a small floating container, and let the sea carry it toward Scotland.",
+             "data": {"text": "Letters sent by the waves", "highlight": ["waves"]}},
+            {"type": "text", "narration": "But contact with the outside world brought disease, emigration and a changing economy. Young people left, and the community got smaller and older.",
+             "data": {"text": "The young people left", "highlight": ["left"]}},
+            {"type": "stamp", "narration": "On the twenty-ninth of August 1930, at their own request, the last thirty-six islanders were taken to the mainland. St Kilda was empty.",
+             "data": {"doc_title": "St Kilda · 29 August 1930", "text": "EVACUATED"}},
+            {"type": "text", "narration": "Today, St Kilda is a World Heritage Site, with one of the largest gannet colonies on Earth. Its empty stone houses still stand along the bay.",
+             "data": {"text": "Empty houses, millions of seabirds", "highlight": ["Empty"]}},
+        ]},
+        {"n": 14, "title": "The final ranking", "card": False, "bar": "The final ranking", "title_youtube": "The final ranking", "scenes": [
+            {"type": "ranking", "narration": "So here's the full list. From a city no road can reach, to a volcano in the middle of the South Atlantic.",
+             "data": {"title": "The final ranking", "items": RANKING, "focus": 0}},
+            {"type": "list", "narration": "And look at why people ended up in each one. Treasure, like rubber, gold or coal. Strategy, like guarding Napoleon or claiming the Arctic. Or simply a need to hide.",
+             "data": {"title": "Why they live there", "items": ["Treasure: rubber, gold, coal", "Strategy: borders and empires", "Escape: a place to hide"]}},
+            {"type": "map_route", "narration": "Every one of these places began with a reason. But they survive for a different one. Because the people who live there decided it was home.",
+             "data": ALL_MAP},
+            {"type": "text", "narration": "Now it's your turn. If you had to move to one of these ten places for a year, which one would you choose? Tell us in the comments.",
+             "data": {"kicker": "Your turn", "text": "Which one would you choose?", "highlight": ["you"]}},
+            {"type": "end_screen", "minDuration": 12, "narration": "Every map hides a story like this one. If you want to discover the next one, subscribe to Timeline Earth.",
+             "data": {"text": "Thanks for watching", "sub_label": "Subscribe"}},
+        ]},
+    ],
+    "shorts": [
+        {"title": "A city of 500,000 people with no road in 🌳 #shorts",
+         "description": "Iquitos, Peru: the largest city you can't drive to. Full video on the channel. #geography #peru #amazon",
+         "scenes": [
+             {"type": "map_route", "narration": "This is Iquitos, in the Peruvian Amazon. Around half a million people live here.",
+              "data": {"bbox": PERU_BBOX, "highlight_countries": [{"name": "Peru", "strength": 0.25}], "points": [IQUITOS]}},
+             {"type": "text", "narration": "But no road connects it to the rest of Peru. You arrive by plane, or after days on a river boat.",
+              "data": {"text": "No road in. Plane or boat only.", "highlight": ["No"]}},
+             {"type": "text", "narration": "Even the cars have to arrive by boat. Full story on the channel.",
+              "data": {"text": "Even the cars arrive by boat", "highlight": ["boat"]}},
+         ]},
+        {"title": "The Arctic town where you can't be buried ❄️ #shorts",
+         "description": "Longyearbyen, Svalbard. Full video on the channel. #geography #arctic #norway",
+         "scenes": [
+             {"type": "map_route", "narration": "This is Longyearbyen, on the Arctic islands of Svalbard, about one thousand three hundred kilometers from the North Pole.",
+              "data": {"bbox": SVALBARD_BBOX, "highlight_countries": [{"name": "Norway", "strength": 0.3}], "points": [LONGYEARBYEN]}},
+             {"type": "text", "narration": "Its cemetery stopped taking burials decades ago, because in the frozen ground, bodies don't decompose.",
+              "data": {"text": "The ground is too frozen for burials", "highlight": ["frozen"]}},
+             {"type": "text", "narration": "So people who are very ill are usually expected to move to the mainland. Full story on the channel.",
+              "data": {"text": "Very ill? You move to the mainland", "highlight": ["mainland"]}},
+         ]},
+        {"title": "The island where everyone has the same surname 🏝️ #shorts",
+         "description": "Palmerston Island and the Marsters family. Full video on the channel. #geography #pacific #islands",
+         "scenes": [
+             {"type": "map_route", "narration": "This is Palmerston Island, a tiny atoll in the Cook Islands.",
+              "data": {"bbox": COOK_BBOX, "highlight_countries": [{"name": "Cook Is.", "strength": 0.6}], "points": [PALMERSTON, pt(-159.78, -21.23, "Rarotonga", "rm")]}},
+             {"type": "text", "narration": "Almost everyone who lives there has the same surname: Marsters.",
+              "data": {"text": "Everyone is called Marsters", "highlight": ["Marsters"]}},
+             {"type": "text", "narration": "They descend from one Englishman who arrived in 1863 with his Polynesian wives. Full story on the channel.",
+              "data": {"text": "One family, since 1863", "highlight": ["1863"]}},
+         ]},
+    ],
+}
+
+out = Path(__file__).with_suffix(".json")
+out.write_text(json.dumps(script, ensure_ascii=False, indent=1), "utf-8")
+words = sum(len(s.get("narration", "").split()) for c in script["chapters"] for s in c["scenes"])
+print(f"{out.name}: {sum(len(c['scenes']) for c in script['chapters'])} escenas, {words} palabras")

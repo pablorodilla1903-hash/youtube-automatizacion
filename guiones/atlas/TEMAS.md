@@ -9,6 +9,7 @@ Criterio: icono o lugar que todo el mundo conoce + una pregunta que casi nadie s
 - [x] 002 · Why Most Canadians Live Near the US Border
 - [x] 003 · Why Russia Is So Big (and Still So Empty)
 - [x] 004 · Why Almost No One Lives in the Middle of Australia
+- [x] 005 · The 10 Most Isolated Places Where People Actually Live (formato cuenta atrás)
 - [ ] Why Istanbul Is the Most Fought-Over City in History
 - [ ] Why Venice Was Built on Water
 - [ ] Why Mexico City Is Sinking

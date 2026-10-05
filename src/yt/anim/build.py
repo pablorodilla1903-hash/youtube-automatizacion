@@ -471,9 +471,10 @@ def build(script_path: Path, preview: int | None = None, make_short: bool = Fals
     # 1) aplanar escenas con su capítulo
     flat = []
     for ch in script["chapters"]:
-        label = f"{ch['n']} · {ch['title']}" if ch["n"] else None
+        label = ch.get("bar") or (f"{ch.get('card_label') or ch['n']} · {ch['title']}" if ch["n"] else None)
         if ch["n"] and ch.get("card", True):
-            flat.append(({"type": "title_card", "data": {"n": ch["n"], "title": ch["title"]}, "minDuration": 2.6},
+            card = {"n": ch["n"], "title": ch["title"], "label": ch.get("card_label"), "kicker": ch.get("card_kicker", "CHAPTER")}
+            flat.append(({"type": "title_card", "data": card, "minDuration": 2.6},
                          None, ch))
         for sc in ch["scenes"]:
             flat.append((sc, label, ch))
