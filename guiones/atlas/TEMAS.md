@@ -11,7 +11,7 @@ Criterio: icono o lugar que todo el mundo conoce + una pregunta que casi nadie s
 - [x] 004 · Why Almost No One Lives in the Middle of Australia
 - [x] 005 · Why Istanbul Was the Prize Every Empire Wanted
 - [x] 006 · Why Venice Was Built on Water
-- [ ] Why Mexico City Is Sinking
+- [x] 007 · Why Mexico City Is Sinking
 - [ ] Why Switzerland Was Never Invaded
 - [ ] Why Chile Is So Long and Thin
 - [ ] How the Mongols Built the Largest Land Empire in History
